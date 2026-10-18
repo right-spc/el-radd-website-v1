@@ -1,0 +1,67 @@
+{
+  "nav": { "service": "Service", "pricing": "Pricing", "questions": "Questions", "cta": "Get started", "toggle": "ع", "brand": "El Radd" },
+  "banner": { "text": "Founding offer: first 20 clients at 3,500 instead of 5,000 EGP/month, price locked for 12 months" },
+  "hero": {
+    "badge": "Replies in Egyptian Arabic, around the clock",
+    "h1": "Every message answered. Even the 3 AM ones.",
+    "sub": "El Radd answers your customers on WhatsApp and your website, in natural Egyptian Arabic, without an employee's salary",
+    "cta_primary": "Get started",
+    "cta_secondary": "Try the demo",
+    "trust": "No contracts, cancel anytime, unlimited website chat"
+  },
+  "chat": {
+    "header_name": "El Radd",
+    "header_sub": "Answering for El Noor AC",
+    "in1": "Good evening, I'd like to book a maintenance visit tomorrow please",
+    "out1": "Welcome! Two slots tomorrow: 11 AM or 1 PM. Which works for you?",
+    "in2": "11 AM works",
+    "out2": "Booked. We'll remind you an hour before your visit",
+    "widget_greeting": "Welcome! How can I help you today?"
+  },
+  "how": {
+    "title": "How it works",
+    "steps": [
+      { "title": "One onboarding call", "desc": "Your services, prices, and rules in a single call" },
+      { "title": "We train Radd on your business", "desc": "We build the knowledge base and handle all technical setup" },
+      { "title": "Relax", "desc": "Radd replies to your customers around the clock while we keep tuning it" }
+    ],
+    "note": "Website chat is live within 24 hours; WhatsApp follows Meta approval timelines"
+  },
+  "channels": {
+    "title": "Where it replies",
+    "unlimited": "Unlimited",
+    "cards": [
+      { "name": "WhatsApp", "desc": "Replies to every customer message, voice notes up to 3 minutes included" },
+      { "name": "Website chat", "desc": "Unlimited responses, no credits, always on", "highlight": true },
+      { "name": "Email", "desc": "One connected Gmail or Outlook inbox, fully handled" }
+    ]
+  },
+  "demo": {
+    "title": "Try Radd yourself",
+    "sub": "Ask anything, Radd answers right now",
+    "note": "The demo speaks Egyptian Arabic. That's the point.",
+    "placeholder": "widget embed goes here — TODO"
+  },
+  "questions": {
+    "title": "Anything you'd ask a receptionist, ask Radd",
+    "sub": "No canned text answers. Tap a question and Radd answers in the chat window",
+    "pills": [
+      "What happens when my credits run out?",
+      "Will my customers know it's AI?",
+      "Who owns my WhatsApp number?",
+      "Any contracts?",
+      "How fast can you go live?",
+      "Egyptian Arabic or formal Arabic?",
+      "How are voice notes charged?",
+      "What if Radd answers something wrong?"
+    ],
+    "footer": "Or ask your own question"
+  },
+  "final": { "title": "Ready to stop missing messages?", "cta": "Get started" },
+  "footer": {
+    "tagline": "El Radd. Replies for you, around the clock",
+    "pricing": "Pricing", "terms": "Terms", "privacy": "Privacy",
+    "copyright": "© 2026 El Radd"
+  },
+  "common": { "soon": "Coming soon" }
+}
