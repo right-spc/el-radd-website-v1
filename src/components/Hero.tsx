@@ -56,11 +56,8 @@ export default function Hero() {
               <div className="site-card-line site-card-line--short" />
               <div className="site-card-block" />
             </div>
-            <div className="chat-card chat-card--hero chat-card--hero-full">
+            <div className="chat-card chat-card--hero">
               <ChatContent />
-            </div>
-            <div className="chat-card chat-card--hero chat-card--hero-compact">
-              <ChatContent compact />
             </div>
           </div>
         </div>

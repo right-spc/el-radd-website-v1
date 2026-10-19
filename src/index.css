@@ -439,7 +439,7 @@ button:focus-visible {
 
   .hero .chat-scene {
     order: 4;
-    min-block-size: 450px;
+    min-block-size: 490px;
     margin-block-start: 28px;
   }
 
@@ -697,14 +697,6 @@ button:focus-visible {
   box-shadow: 0 32px 80px rgba(0, 0, 0, 0.5);
 }
 
-.chat-card--hero-full {
-  display: none;
-}
-
-.chat-card--hero-compact {
-  display: block;
-}
-
 @media (min-width: 768px) {
   .chat-scene {
     inline-size: 440px;
@@ -736,14 +728,6 @@ button:focus-visible {
     inset-inline-start: 0;
     inset-inline-end: auto;
     inline-size: 340px;
-  }
-
-  .chat-card--hero-full {
-    display: block;
-  }
-
-  .chat-card--hero-compact {
-    display: none;
   }
 }
 

@@ -1,10 +1,6 @@
 import { useTranslation } from 'react-i18next';
 
-interface ChatContentProps {
-  compact?: boolean;
-}
-
-export default function ChatContent({ compact = false }: ChatContentProps) {
+export default function ChatContent() {
   const { t } = useTranslation();
 
   return (
@@ -21,12 +17,8 @@ export default function ChatContent({ compact = false }: ChatContentProps) {
       <div className="chat-body">
         <div className="bubble bubble-in">{t('chat.in1')}</div>
         <div className="bubble bubble-out">{t('chat.out1')}</div>
-        {!compact && (
-          <>
-            <div className="bubble bubble-in">{t('chat.in2')}</div>
-            <div className="bubble bubble-out">{t('chat.out2')}</div>
-          </>
-        )}
+        <div className="bubble bubble-in">{t('chat.in2')}</div>
+        <div className="bubble bubble-out">{t('chat.out2')}</div>
         <div className="typing" aria-hidden="true">
           <span />
           <span />
