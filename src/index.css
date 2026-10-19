@@ -23,6 +23,33 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Chromium: slim charcoal scrollbar with gold hover (setting scrollbar-color
+   on html would disable these pseudo rules, so it lives in @supports below) */
+::-webkit-scrollbar {
+  inline-size: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--ink);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--ink-2);
+  border-radius: 999px;
+  border: 2px solid var(--ink);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--gold);
+}
+
+/* Firefox: no webkit pseudos, use the standard property */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-color: var(--ink-2) var(--ink);
+  }
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
