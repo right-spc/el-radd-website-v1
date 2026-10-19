@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ReactNode } from 'react';
 
@@ -42,6 +43,35 @@ export default function ProblemSection() {
   const { t } = useTranslation();
   const msgs = t('problem.msgs', { returnObjects: true }) as InboxMsg[];
   const villains = t('problem.villains', { returnObjects: true }) as Villain[];
+
+  // Mobile: the alternative cards are a swipe carousel; track the active one for the dots.
+  const trackRef = useRef<HTMLDivElement>(null);
+  const [activeCard, setActiveCard] = useState(0);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const onScroll = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      if (max <= 0) return;
+      // In RTL, scrollLeft runs 0..-max; distance from the start is what matters.
+      setActiveCard(Math.round(Math.abs(track.scrollLeft) / max));
+    };
+    track.addEventListener('scroll', onScroll, { passive: true });
+    return () => track.removeEventListener('scroll', onScroll);
+  }, []);
+
+  const goToCard = (index: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const max = track.scrollWidth - track.clientWidth;
+    if (max <= 0) return;
+    const rtl = getComputedStyle(track).direction === 'rtl';
+    track.scrollTo({
+      left: (index / (villains.length - 1)) * max * (rtl ? -1 : 1),
+      behavior: 'smooth',
+    });
+  };
 
   // Locale strings carry *markers* around the emphasized phrase.
   const title = t('problem.title') as string;
@@ -110,7 +140,7 @@ export default function ProblemSection() {
         </div>
 
         <h3 className="problem-alt-title">{t('problem.alternatives_title')}</h3>
-        <div className="problem-villains">
+        <div className="problem-villains" ref={trackRef}>
           {villains.map((villain) => (
             <div className="problem-villain" key={villain.title}>
               <span className="problem-villain-icon" aria-hidden="true">
@@ -123,6 +153,18 @@ export default function ProblemSection() {
                 ))}
               </ul>
             </div>
+          ))}
+        </div>
+        <div className="problem-villain-dots">
+          {villains.map((villain, index) => (
+            <button
+              type="button"
+              key={villain.title}
+              aria-label={villain.title}
+              aria-current={index === activeCard}
+              className={index === activeCard ? 'active' : undefined}
+              onClick={() => goToCard(index)}
+            />
           ))}
         </div>
       </div>

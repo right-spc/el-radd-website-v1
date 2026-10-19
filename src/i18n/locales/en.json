@@ -11,7 +11,7 @@
   },
   "problem": {
     "eyebrow": "The problem",
-    "title": "Customers message at night. Whoever *replies at night* wins them.",
+    "title": "Customers message at night. Whoever *replies first* wins them.",
     "lead": "It's midnight. A patient with a toothache messages five clinics on WhatsApp and Messenger. How many reply? None.",
     "body": "In the morning she's booked with *whichever clinic replied first* — not the best one, the fastest. Customers don't wait around; they message the next business on the list.",
     "clock": "12:47",
