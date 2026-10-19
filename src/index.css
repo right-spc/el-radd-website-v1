@@ -1236,26 +1236,26 @@ html[lang='en'] .solution-eyebrow {
 .solution-inbox {
   background-color: var(--ink-2);
   border: 1px solid rgba(201, 150, 46, 0.22);
-  border-radius: 24px;
+  border-radius: 20px;
   box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
-  padding-block: 24px;
-  padding-inline: 22px;
+  padding-block: 16px;
+  padding-inline: 16px;
 }
 
 .solution-inbox-head {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
-  padding-block-end: 20px;
+  gap: 12px;
+  padding-block-end: 12px;
   border-block-end: 1px solid rgba(246, 240, 228, 0.09);
-  margin-block-end: 18px;
+  margin-block-end: 12px;
 }
 
 .solution-clock {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: 36px;
+  font-size: 28px;
   color: var(--papyrus);
   line-height: 1;
 }
@@ -1263,14 +1263,14 @@ html[lang='en'] .solution-eyebrow {
 .solution-night-label {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 12px;
+  gap: 6px;
+  font-size: 11px;
   color: var(--stone);
 }
 
 .solution-night-label svg {
-  inline-size: 15px;
-  block-size: 15px;
+  inline-size: 13px;
+  block-size: 13px;
   color: var(--gold);
   flex-shrink: 0;
 }
@@ -1278,10 +1278,10 @@ html[lang='en'] .solution-eyebrow {
 .solution-msg {
   background-color: rgba(246, 240, 228, 0.04);
   border: 1px solid rgba(246, 240, 228, 0.06);
-  border-radius: 14px;
-  padding-block: 14px;
-  padding-inline: 16px;
-  margin-block-end: 12px;
+  border-radius: 12px;
+  padding-block: 11px;
+  padding-inline: 13px;
+  margin-block-end: 10px;
 }
 
 .solution-msg:last-child {
@@ -1293,22 +1293,22 @@ html[lang='en'] .solution-eyebrow {
   justify-content: space-between;
   align-items: center;
   gap: 10px;
-  margin-block-end: 8px;
+  margin-block-end: 6px;
 }
 
 .solution-ch {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  font-size: 12px;
+  gap: 6px;
+  font-size: 11px;
   font-weight: 700;
   color: var(--muted-on-ink);
 }
 
 .solution-ch::before {
   content: '';
-  inline-size: 8px;
-  block-size: 8px;
+  inline-size: 7px;
+  block-size: 7px;
   border-radius: 50%;
   background-color: var(--stone);
   flex-shrink: 0;
@@ -1323,55 +1323,57 @@ html[lang='en'] .solution-eyebrow {
 }
 
 .solution-time {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--stone);
   flex-shrink: 0;
 }
 
 .solution-msg-text {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--papyrus);
-  margin-block-end: 10px;
+  margin-block-end: 8px;
 }
 
 .solution-reply {
   background-color: var(--gold-tint);
   color: var(--ink);
-  border-radius: 14px;
+  border-radius: 12px;
   border-start-end-radius: 4px;
-  padding-block: 10px;
-  padding-inline: 14px;
-  font-size: 13px;
-  margin-block-end: 10px;
+  padding-block: 8px;
+  padding-inline: 12px;
+  font-size: 12px;
+  margin-block-end: 8px;
+}
+
+.solution-msg-foot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 .solution-confirm {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 700;
   color: #3E9B5F;
   background-color: rgba(62, 155, 95, 0.12);
   border-radius: 999px;
-  padding-block: 5px;
-  padding-inline: 12px;
-  margin-block-end: 8px;
+  padding-block: 3px;
+  padding-inline: 10px;
 }
 
 .solution-status {
   display: inline-flex;
   align-items: center;
-  font-size: 12px;
+  font-size: 11px;
   color: #3E9B5F;
   font-weight: 500;
 }
 
-.solution-msg .solution-status {
-  margin-inline-start: 10px;
-}
-
 .solution-punch {
-  margin-block-start: 18px;
+  margin-block-start: 14px;
   text-align: center;
   font-size: 15px;
   font-weight: 700;

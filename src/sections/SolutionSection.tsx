@@ -106,10 +106,12 @@ export default function SolutionSection() {
                   </div>
                   <p className="solution-msg-text">{msg.text}</p>
                   <div className="solution-reply">{msg.reply}</div>
-                  {msg.confirm && (
-                    <span className="solution-confirm">✓ {msg.confirm}</span>
-                  )}
-                  <span className="solution-status">✓✓ {msg.status}</span>
+                  <div className="solution-msg-foot">
+                    {msg.confirm && (
+                      <span className="solution-confirm">✓ {msg.confirm}</span>
+                    )}
+                    <span className="solution-status">✓✓ {msg.status}</span>
+                  </div>
                 </div>
               ))}
             </div>
