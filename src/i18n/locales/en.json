@@ -44,6 +44,50 @@
       }
     ]
   },
+  "solution": {
+    "eyebrow": "The solution",
+    "title": "Same night. Same messages. *The difference? El Radd.*",
+    "lead": "Your team spends its time on the actual work — El Radd holds every message, night or rush hour.",
+    "body": "Every message gets a reply in seconds, in natural Egyptian Arabic, using your prices and your rules. *Without touching your phone.*",
+    "clock": "12:47",
+    "night_label": "Sunday night",
+    "msgs": [
+      { "channel": "WhatsApp — El Noor Clinic", "time": "11:52 PM", "text": "Hi, I'd like to book a check-up with Dr. Ahmed tomorrow.. how much is it?", "reply": "Welcome! The check-up is 350 EGP, and Dr. Ahmed has two slots tomorrow: 11 AM or 6 PM — which works for you?", "confirm": "Booking confirmed — 11 AM", "status": "Replied in 3 seconds", "variant": "wa" },
+      { "channel": "Messenger", "time": "12:34 AM", "text": "Where exactly is the clinic? Do you accept insurance?", "reply": "We're in Nasr City, in front of the Baron — we do accept insurance. Send us your provider's name and we'll confirm", "status": "Replied in 2 seconds", "variant": "ms" },
+      { "channel": "Comment on your page", "time": "12:46 AM", "text": "I need to see the doctor urgently, is there an appointment tomorrow?", "reply": "Of course! Send us a message now and we'll book you the earliest available slot", "status": "Replied instantly" }
+    ],
+    "punch": "In the morning: three confirmed bookings. While you were asleep.",
+    "pillars_title": "Three things El Radd does differently",
+    "pillars": [
+      {
+        "title": "On 24/7",
+        "icon": "night",
+        "points": [
+          "No downtime, no days off — Fridays and holidays included",
+          "Rush hour or midnight, no message waits",
+          "Average reply time: 3 seconds"
+        ]
+      },
+      {
+        "title": "Arabic first",
+        "icon": "chat",
+        "points": [
+          "Understands Standard Arabic, Egyptian, and Gulf dialects",
+          "Built Arabic-first — not translated",
+          "Replies in natural Egyptian dialect"
+        ]
+      },
+      {
+        "title": "Pay the Egyptian way",
+        "icon": "money",
+        "points": [
+          "In EGP — no international card needed",
+          "InstaPay, or Paymob — our payment partner",
+          "Meeza, Visa, Mastercard, and mobile wallets"
+        ]
+      }
+    ]
+  },
   "chat": {
     "header_name": "El Radd",
     "header_sub": "Answering for El Noor Clinic",

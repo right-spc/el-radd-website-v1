@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 
 const HowItWorks = lazy(() => import('../sections/HowItWorks'));
 const ProblemSection = lazy(() => import('../sections/ProblemSection'));
+const SolutionSection = lazy(() => import('../sections/SolutionSection'));
 const Channels = lazy(() => import('../sections/Channels'));
 const DemoSection = lazy(() => import('../sections/DemoSection'));
 const QuestionsSection = lazy(() => import('../sections/QuestionsSection'));
@@ -20,6 +21,7 @@ export default function HomePage() {
         <TrustStrip />
         <Suspense fallback={null}>
           <ProblemSection />
+          <SolutionSection />
           <HowItWorks />
           <Channels />
           <DemoSection />
