@@ -130,11 +130,17 @@ export default function HowItWorks() {
               <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
             </svg>
           </span>
-          <p>
-            {panelPre}
-            <strong>{panelStrong}</strong>
-            {panelPost}
-          </p>
+          <div className="process-strip-body">
+            <p>
+              {panelPre}
+              <strong>{panelStrong}</strong>
+              {panelPost}
+            </p>
+            <div className="process-install">
+              <code>{t('how.install_code')}</code>
+              <span>{t('how.install')}</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>

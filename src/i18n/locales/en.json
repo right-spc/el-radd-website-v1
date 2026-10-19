@@ -103,10 +103,12 @@
     "lead": "*All you do is one call* explaining your business — the rest is on us.",
     "steps": [
       { "when": "Today", "chip": "On you", "chipType": "you", "icon": "call", "title": "A get-to-know call", "desc": "30 minutes where we understand your services, prices, and the rules of your business" },
-      { "when": "Within 24 hours", "chip": "On us", "chipType": "us", "icon": "bolt", "title": "El Radd is live on your site", "desc": "We build the knowledge base from the same training docs your team relies on, and connect the chat to your site" },
+      { "when": "Within 24 hours", "chip": "On us", "chipType": "us", "icon": "bolt", "title": "El Radd is live on your site", "desc": "We build the knowledge base from the same training docs your team relies on" },
       { "when": "From day two on", "chip": "On us", "chipType": "us", "icon": "trend", "title": "It gets better with every question", "desc": "We monitor El Radd's replies to your customers' real questions and keep improving them" }
     ],
-    "panel": "*You'll never open a config panel.* Your point of contact is our team directly — any edit or addition, we handle it for you without a line of code or setup."
+    "panel": "*You'll never open a config panel.* Your point of contact is our team directly — any edit or addition, we handle it for you.",
+    "install_code": "<script src=\"https://ctr.horusdesk.com/widget.js\"></script>",
+    "install": "The install is one line on your site — you paste it, or we do it for you with access"
   },
   "channels": {
     "title": "Where it replies",
