@@ -98,13 +98,15 @@
     "widget_greeting": "Welcome! How can I help you today?"
   },
   "how": {
-    "title": "How it works",
+    "eyebrow": "How it works",
+    "title": "One call. *Live within 24 hours.*",
+    "lead": "*All you do is one call* explaining your business — the rest is on us.",
     "steps": [
-      { "title": "One onboarding call", "desc": "Your services, prices, and rules in a single call" },
-      { "title": "We train Radd on your business", "desc": "We build the knowledge base and handle all technical setup" },
-      { "title": "Relax", "desc": "Radd replies to your customers around the clock while we keep tuning it" }
+      { "when": "Today", "chip": "On you", "chipType": "you", "icon": "call", "title": "A get-to-know call", "desc": "30 minutes where we understand your services, prices, and the rules of your business" },
+      { "when": "Within 24 hours", "chip": "On us", "chipType": "us", "icon": "bolt", "title": "El Radd is live on your site", "desc": "We build the knowledge base from the same training docs your team relies on, and connect the chat to your site" },
+      { "when": "From day two on", "chip": "On us", "chipType": "us", "icon": "trend", "title": "It gets better with every question", "desc": "We monitor El Radd's replies to your customers' real questions and keep improving them" }
     ],
-    "note": "Your chat goes live on your website within 24 hours of signing up"
+    "panel": "*You'll never open a config panel.* Your point of contact is our team directly — any edit or addition, we handle it for you without a line of code or setup."
   },
   "channels": {
     "title": "Where it replies",
