@@ -11,7 +11,7 @@ interface InboxMsg {
 
 interface Villain {
   title: string;
-  icon: 'headset' | 'card';
+  icon: 'clock' | 'card';
   points: string[];
 }
 
@@ -24,12 +24,10 @@ const stroke = {
 };
 
 const ICONS: Record<Villain['icon'], ReactNode> = {
-  headset: (
+  clock: (
     <svg viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
-      <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Z" />
-      <path d="M21 11h-3a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-5Z" />
-      <path d="M21 11a9 9 0 0 0-18 0" />
-      <path d="M21 16v2a4 4 0 0 1-4 4h-5" />
+      <circle cx="12" cy="12" r="10" />
+      <polyline points="12 6 12 12 16 14" />
     </svg>
   ),
   card: (
@@ -116,7 +114,7 @@ export default function ProblemSection() {
           {villains.map((villain) => (
             <div className="problem-villain" key={villain.title}>
               <span className="problem-villain-icon" aria-hidden="true">
-                {ICONS[villain.icon] ?? ICONS.headset}
+                {ICONS[villain.icon]}
               </span>
               <h3>{villain.title}</h3>
               <ul className="problem-villain-list">

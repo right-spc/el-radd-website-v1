@@ -25,12 +25,12 @@
     "alternatives_title": "And the alternatives out there?",
     "villains": [
       {
-        "title": "A receptionist",
-        "icon": "headset",
+        "title": "Answering it yourselves",
+        "icon": "clock",
         "points": [
-          "Long shifts still end — customers message after closing",
-          "Handles one customer at a time",
-          "A salary every month, and every day off means missed messages"
+          "At rush hours, messages pile up and the real work stalls",
+          "And at night? Nobody replies — not a failing, just human",
+          "Every reply steals minutes nobody has"
         ]
       },
       {
