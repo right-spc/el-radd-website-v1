@@ -1061,13 +1061,10 @@ button:focus-visible {
   margin-block-end: 24px;
 }
 
-/* Mobile: swipe carousel with snap + dots; desktop: two columns */
+/* Mobile: infinite swipe (wraps both directions); desktop: two columns */
 .problem-villains {
-  display: flex;
-  gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-  padding-block-end: 6px;
   scrollbar-width: none;
 }
 
@@ -1075,8 +1072,15 @@ button:focus-visible {
   display: none;
 }
 
+.problem-villains-track {
+  display: flex;
+  width: max-content;
+}
+
 .problem-villain {
-  flex: 0 0 100%;
+  flex: 0 0 auto;
+  inline-size: min(calc(100vw - 40px), 420px);
+  margin-inline-end: 12px;
   scroll-snap-align: center;
   background-color: #FFFFFF;
   border-radius: 20px;
@@ -1084,29 +1088,6 @@ button:focus-visible {
   padding-inline: 28px;
   border-inline-start: 3px solid rgba(180, 85, 45, 0.55);
   box-shadow: var(--card-shadow);
-}
-
-.problem-villain-dots {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin-block-start: 16px;
-}
-
-.problem-villain-dots button {
-  inline-size: 8px;
-  block-size: 8px;
-  border-radius: 999px;
-  background-color: var(--stone);
-  opacity: 0.45;
-  padding: 0;
-  transition: inline-size 0.2s ease-out, opacity 0.2s ease-out, background-color 0.2s ease-out;
-}
-
-.problem-villain-dots button.active {
-  inline-size: 22px;
-  background-color: var(--clay);
-  opacity: 1;
 }
 
 .problem-villain-icon {
@@ -1169,11 +1150,15 @@ button:focus-visible {
     overflow: visible;
   }
 
-  .problem-villain {
-    flex: auto;
+  .problem-villains-track {
+    display: contents;
   }
 
-  .problem-villain-dots {
+  .problem-villain {
+    inline-size: auto;
+  }
+
+  .problem-villain[aria-hidden='true'] {
     display: none;
   }
 }

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import type { ReactNode } from 'react';
 
@@ -44,34 +44,43 @@ export default function ProblemSection() {
   const msgs = t('problem.msgs', { returnObjects: true }) as InboxMsg[];
   const villains = t('problem.villains', { returnObjects: true }) as Villain[];
 
-  // Mobile: the alternative cards are a swipe carousel; track the active one for the dots.
+  // Mobile: infinite swipe — the list is doubled and, once a swipe settles,
+  // the scroll position silently teleports back by one copy width (identical
+  // content), so it never hits an end in either direction.
   const trackRef = useRef<HTMLDivElement>(null);
-  const [activeCard, setActiveCard] = useState(0);
 
   useEffect(() => {
     const track = trackRef.current;
     if (!track) return;
+    const copy = () => track.scrollWidth / 2;
+    const isRTL = () => getComputedStyle(track).direction === 'rtl';
+    // Start in the middle copy so swiping wraps both ways from the start.
+    const recenter = () => {
+      track.scrollLeft = (isRTL() ? -1 : 1) * copy();
+    };
+    recenter();
+    let settleTimer: number | undefined;
     const onScroll = () => {
-      const max = track.scrollWidth - track.clientWidth;
-      if (max <= 0) return;
-      // In RTL, scrollLeft runs 0..-max; distance from the start is what matters.
-      setActiveCard(Math.round(Math.abs(track.scrollLeft) / max));
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(() => {
+        const c = copy();
+        if (c <= 0) return;
+        let p = Math.abs(track.scrollLeft);
+        const sign = track.scrollLeft < 0 ? -1 : 1;
+        if (p < c) p += c;
+        else if (p >= c * 2) p -= c;
+        else return;
+        track.scrollLeft = p * sign;
+      }, 120);
     };
     track.addEventListener('scroll', onScroll, { passive: true });
-    return () => track.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', recenter);
+    return () => {
+      window.clearTimeout(settleTimer);
+      track.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', recenter);
+    };
   }, []);
-
-  const goToCard = (index: number) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const max = track.scrollWidth - track.clientWidth;
-    if (max <= 0) return;
-    const rtl = getComputedStyle(track).direction === 'rtl';
-    track.scrollTo({
-      left: (index / (villains.length - 1)) * max * (rtl ? -1 : 1),
-      behavior: 'smooth',
-    });
-  };
 
   // Locale strings carry *markers* around the emphasized phrase.
   const title = t('problem.title') as string;
@@ -141,31 +150,25 @@ export default function ProblemSection() {
 
         <h3 className="problem-alt-title">{t('problem.alternatives_title')}</h3>
         <div className="problem-villains" ref={trackRef}>
-          {villains.map((villain) => (
-            <div className="problem-villain" key={villain.title}>
-              <span className="problem-villain-icon" aria-hidden="true">
-                {ICONS[villain.icon]}
-              </span>
-              <h3>{villain.title}</h3>
-              <ul className="problem-villain-list">
-                {villain.points.map((point) => (
-                  <li key={point}>{point}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="problem-villain-dots">
-          {villains.map((villain, index) => (
-            <button
-              type="button"
-              key={villain.title}
-              aria-label={villain.title}
-              aria-current={index === activeCard}
-              className={index === activeCard ? 'active' : undefined}
-              onClick={() => goToCard(index)}
-            />
-          ))}
+          <div className="problem-villains-track">
+            {[...villains, ...villains].map((villain, index) => (
+              <div
+                className="problem-villain"
+                key={`${villain.title}-${index}`}
+                aria-hidden={index >= villains.length || undefined}
+              >
+                <span className="problem-villain-icon" aria-hidden="true">
+                  {ICONS[villain.icon]}
+                </span>
+                <h3>{villain.title}</h3>
+                <ul className="problem-villain-list">
+                  {villain.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
