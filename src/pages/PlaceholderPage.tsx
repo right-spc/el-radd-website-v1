@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 interface PlaceholderPageProps {
@@ -16,9 +15,15 @@ export default function PlaceholderPage({ titleKey }: PlaceholderPageProps) {
       </span>
       <h1>{t(titleKey)}</h1>
       <p className="placeholder-soon">{t('common.soon')}</p>
-      <Link className="lang-pill" to={i18n.language === 'ar' ? '/' : '/en'}>
+      <a
+        className="lang-pill"
+        href={i18n.language === 'ar' ? '/' : '/en'}
+        onClick={() =>
+          sessionStorage.setItem('lang-switch-scroll', String(window.scrollY))
+        }
+      >
         {t('nav.brand')}
-      </Link>
+      </a>
     </main>
   );
 }

@@ -3,4 +3,11 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
+  server: {
+    // The in-app browser's cache kept serving stale dev modules even with
+    // no-cache + ETag revalidation; never cache anything in dev.
+    headers: {
+      'Cache-Control': 'no-store',
+    },
+  },
 });
