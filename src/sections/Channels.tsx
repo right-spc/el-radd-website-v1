@@ -4,6 +4,7 @@ interface ChannelCard {
   name: string;
   desc: string;
   highlight?: boolean;
+  soon?: boolean;
 }
 
 export default function Channels() {
@@ -18,12 +19,21 @@ export default function Channels() {
           {cards.map((card) => (
             <div
               className={
-                card.highlight ? 'channel-card channel-card--highlight' : 'channel-card'
+                card.highlight
+                  ? 'channel-card channel-card--highlight'
+                  : card.soon
+                    ? 'channel-card channel-card--soon'
+                    : 'channel-card'
               }
               key={card.name}
             >
               {card.highlight && (
                 <span className="channel-pill">{t('channels.unlimited')}</span>
+              )}
+              {card.soon && (
+                <span className="channel-pill channel-pill--soon">
+                  {t('common.soon')}
+                </span>
               )}
               <h3 className="channel-name">{card.name}</h3>
               <p className="channel-desc">{card.desc}</p>

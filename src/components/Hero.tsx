@@ -1,26 +1,37 @@
 import { useTranslation } from 'react-i18next';
 import ChatContent from './ChatContent';
 
-const WA_URL =
-  'https://wa.me/201000000000?text=' +
-  encodeURIComponent('أهلاً، عايز أعرف تفاصيل عرض التأسيس');
-
 export default function Hero() {
   const { t, i18n } = useTranslation();
   const separator = i18n.language === 'ar' ? '، ' : ', ';
+  const accentWord = i18n.language === 'ar' ? 'الرد' : 'El Radd';
+  const h1 = t('hero.h1') as string;
+  const h1Parts = h1.split(accentWord);
 
   return (
     <section className="hero" id="hero">
+      <div className="hero-glow hero-glow--top" aria-hidden="true" />
+      <div className="hero-glow hero-glow--side" aria-hidden="true" />
       <div className="container hero-grid">
         <div className="hero-content">
           <span className="badge">{t('hero.badge')}</span>
-          <h1>{t('hero.h1')}</h1>
+          <h1>
+            {h1Parts.length > 1 ? (
+              <>
+                {h1Parts[0]}
+                <span className="h1-accent">{accentWord}</span>
+                {h1Parts[1]}
+              </>
+            ) : (
+              h1
+            )}
+          </h1>
           <p className="hero-sub">{t('hero.sub')}</p>
           <div className="hero-ctas">
-            <a className="btn-gold" href={WA_URL} target="_blank" rel="noreferrer">
+            <a className="btn-gold" href="#demo">
               {t('hero.cta_primary')}
             </a>
-            <a className="btn-outline" href="#demo">
+            <a className="btn-outline" href="#service">
               {t('hero.cta_secondary')}
             </a>
           </div>
@@ -31,23 +42,24 @@ export default function Hero() {
                 <span key={part}>{part}</span>
               ))}
           </p>
-          <div className="chat-card chat-card--mobile">
-            <ChatContent />
-          </div>
         </div>
         <div className="hero-visual">
-          <div className="phone-scene">
-            <div className="arch-outline" aria-hidden="true" />
-            <div className="phone-mock">
-              <div className="phone-screen">
-                <ChatContent />
+          <div className="chat-scene">
+            <div className="site-card" aria-hidden="true">
+              <div className="site-card-bar">
+                <span />
+                <span />
+                <span />
               </div>
+              <div className="site-card-line" />
+              <div className="site-card-line site-card-line--short" />
+              <div className="site-card-block" />
             </div>
-            <div className="widget-float">
-              <div className="widget-card">{t('chat.widget_greeting')}</div>
-              <div className="widget-bubble" aria-hidden="true">
-                رد
-              </div>
+            <div className="chat-card chat-card--hero chat-card--hero-full">
+              <ChatContent />
+            </div>
+            <div className="chat-card chat-card--hero chat-card--hero-compact">
+              <ChatContent compact />
             </div>
           </div>
         </div>

@@ -21,10 +21,15 @@ function LanguageSync() {
 }
 
 export default function App() {
+  const location = useLocation();
+  // Remount the route tree on language switch so every section renders
+  // in the active language even if an i18n change event is missed.
+  const lang = location.pathname.startsWith('/en') ? 'en' : 'ar';
+
   return (
     <>
       <LanguageSync />
-      <Routes>
+      <Routes key={lang}>
         <Route path="/" element={<HomePage />} />
         <Route path="/en" element={<HomePage />} />
         <Route path="/pricing" element={<PlaceholderPage titleKey="nav.pricing" />} />

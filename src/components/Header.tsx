@@ -1,22 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-
-const WA_URL =
-  'https://wa.me/201000000000?text=' +
-  encodeURIComponent('أهلاً، عايز أعرف تفاصيل عرض التأسيس');
 
 export default function Header() {
   const { t, i18n } = useTranslation();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const isArabic = i18n.language === 'ar';
   const langTarget = isArabic ? '/en' : '/';
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   return (
-    <header className="site-header">
-      <a className="founding-banner" href={WA_URL} target="_blank" rel="noreferrer">
-        {t('banner.text')}
-      </a>
+    <header className={`site-header${scrolled ? ' scrolled' : ''}`}>
       <nav className="navbar" aria-label="Main">
         <div className="container navbar-inner">
           <Link className="brand" to={isArabic ? '/' : '/en'}>
@@ -38,7 +39,7 @@ export default function Header() {
             <Link className="lang-pill" to={langTarget} aria-label="Switch language">
               {t('nav.toggle')}
             </Link>
-            <a className="cta-small" href={WA_URL} target="_blank" rel="noreferrer">
+            <a className="cta-small" href="#demo">
               {t('nav.cta')}
             </a>
             <button
@@ -66,9 +67,7 @@ export default function Header() {
             </a>
             <a
               className="panel-cta"
-              href={WA_URL}
-              target="_blank"
-              rel="noreferrer"
+              href="#demo"
               onClick={() => setOpen(false)}
             >
               {t('nav.cta')}
