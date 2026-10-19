@@ -393,6 +393,58 @@ button:focus-visible {
   position: relative;
 }
 
+/* Mobile-first hero: tight text, single CTA, chat scene filling the fold */
+.hero-sub--short {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-block: 40px 24px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+    margin-block-start: 16px;
+    margin-block-end: 12px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+  }
+
+  .hero-sub--full {
+    display: none;
+  }
+
+  .hero-sub--short {
+    display: block;
+  }
+
+  .hero-ctas {
+    gap: 4px;
+  }
+
+  .hero-ctas .btn-outline {
+    inline-size: auto;
+    align-self: center;
+    min-block-size: 44px;
+    padding-inline: 12px;
+    padding-block: 4px;
+    border: none;
+    background: none;
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--stone);
+    transition: color 0.2s ease-out;
+  }
+
+  .hero-ctas .btn-outline:hover {
+    color: var(--papyrus);
+  }
+}
+
 @media (min-width: 768px) {
   .hero {
     padding-block: 80px 96px;
@@ -555,10 +607,8 @@ button:focus-visible {
 .chat-scene {
   position: relative;
   inline-size: 100%;
-  max-inline-size: 340px;
-  min-block-size: 400px;
-  margin-block-start: 44px;
-  margin-inline: auto;
+  min-block-size: 480px;
+  margin-block-start: 32px;
   flex: 0 0 auto;
 }
 
@@ -566,7 +616,7 @@ button:focus-visible {
   position: absolute;
   inset-block-start: 0;
   inset-inline: 0;
-  block-size: 250px;
+  block-size: 300px;
   background-color: var(--ink-2);
   border: 1px solid rgba(246, 240, 228, 0.08);
   border-radius: 20px;

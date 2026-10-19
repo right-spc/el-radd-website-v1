@@ -26,7 +26,8 @@ export default function Hero() {
               h1
             )}
           </h1>
-          <p className="hero-sub">{t('hero.sub')}</p>
+          <p className="hero-sub hero-sub--full">{t('hero.sub')}</p>
+          <p className="hero-sub hero-sub--short">{t('hero.sub_short')}</p>
           <div className="hero-ctas">
             <a className="btn-gold" href="#demo">
               {t('hero.cta_primary')}
