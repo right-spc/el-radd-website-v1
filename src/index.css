@@ -403,13 +403,29 @@ button:focus-visible {
     padding-block: 40px 24px;
   }
 
+  /* Let badge/text/scene/CTAs order freely as one column */
+  .hero-content,
+  .hero-visual {
+    display: contents;
+  }
+
+  .hero-grid {
+    gap: 0;
+  }
+
+  .badge {
+    order: 1;
+  }
+
   .hero h1 {
+    order: 2;
     font-size: 34px;
     margin-block-start: 16px;
     margin-block-end: 12px;
   }
 
   .hero-sub {
+    order: 3;
     font-size: 15px;
   }
 
@@ -421,7 +437,19 @@ button:focus-visible {
     display: block;
   }
 
+  .hero .chat-scene {
+    order: 4;
+    min-block-size: 450px;
+    margin-block-start: 28px;
+  }
+
+  .hero .site-card {
+    block-size: 230px;
+  }
+
   .hero-ctas {
+    order: 5;
+    margin-block-start: 32px;
     gap: 4px;
   }
 
@@ -442,6 +470,11 @@ button:focus-visible {
 
   .hero-ctas .btn-outline:hover {
     color: var(--papyrus);
+  }
+
+  .trust-line {
+    order: 6;
+    margin-block-start: 14px;
   }
 }
 
