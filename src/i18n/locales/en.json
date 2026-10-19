@@ -9,11 +9,29 @@
     "cta_secondary": "How it works",
     "trust": "No contracts, cancel anytime"
   },
+  "problem": {
+    "eyebrow": "The problem",
+    "title": "Customers message at night. Whoever *replies at night* wins them.",
+    "lead": "It's midnight. A patient with a toothache messages five clinics on WhatsApp and Messenger. How many reply? None.",
+    "body": "In the morning she's booked with *whichever clinic replied first* — not the best one, the fastest. Customers don't wait around; they message the next business on the list.",
+    "clock": "12:47",
+    "night_label": "Sunday night",
+    "msgs": [
+      { "channel": "WhatsApp — El Noor Clinic", "time": "11:52 PM", "text": "Hi, I'd like to book a check-up with Dr. Ahmed tomorrow.. how much is it?", "status": "✓ Delivered — never read", "variant": "wa" },
+      { "channel": "Messenger", "time": "12:34 AM", "text": "Where exactly is the clinic? Do you accept insurance?", "status": "Seen.. no reply", "variant": "ms" },
+      { "channel": "Comment on your page", "time": "a week ago", "text": "I need to see the doctor urgently, is there an appointment tomorrow?", "status": "Still sitting there, no reply" }
+    ],
+    "punch": "By morning, all three were patients somewhere else.",
+    "villains": [
+      { "title": "A receptionist", "desc": "Asleep at night. Works nine to five. Handles one patient at a time — with a salary due every month." },
+      { "title": "Foreign tools", "desc": "Paid in dollars with an international card, an English dashboard, and most importantly — they can't hold a conversation in Egyptian Arabic." }
+    ]
+  },
   "chat": {
     "header_name": "El Radd",
-    "header_sub": "Answering for El Noor AC",
-    "in1": "Good evening, I'd like to book a maintenance visit tomorrow please",
-    "out1": "Welcome! Two slots tomorrow: 11 AM or 1 PM. Which works for you?",
+    "header_sub": "Answering for El Noor Clinic",
+    "in1": "Good evening, I'd like to book a check-up tomorrow please",
+    "out1": "Welcome! Dr. Ahmed has two slots tomorrow: 11 AM or 6 PM. Which works for you?",
     "in2": "11 AM works",
     "out2": "Booked. We'll remind you an hour before your visit",
     "widget_greeting": "Welcome! How can I help you today?"
@@ -33,6 +51,7 @@
     "cards": [
       { "name": "Website chat", "desc": "Unlimited responses, no credits, always on", "highlight": true },
       { "name": "WhatsApp", "desc": "Will reply to every customer message, voice notes up to 3 minutes included", "soon": true },
+      { "name": "Messenger", "desc": "Will reply to your page's messages and comments", "soon": true },
       { "name": "Email", "desc": "One connected Gmail or Outlook inbox, fully handled" }
     ]
   },

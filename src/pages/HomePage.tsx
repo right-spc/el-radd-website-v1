@@ -5,6 +5,7 @@ import TrustStrip from '../components/TrustStrip';
 import Footer from '../components/Footer';
 
 const HowItWorks = lazy(() => import('../sections/HowItWorks'));
+const ProblemSection = lazy(() => import('../sections/ProblemSection'));
 const Channels = lazy(() => import('../sections/Channels'));
 const DemoSection = lazy(() => import('../sections/DemoSection'));
 const QuestionsSection = lazy(() => import('../sections/QuestionsSection'));
@@ -18,6 +19,7 @@ export default function HomePage() {
         <Hero />
         <TrustStrip />
         <Suspense fallback={null}>
+          <ProblemSection />
           <HowItWorks />
           <Channels />
           <DemoSection />
