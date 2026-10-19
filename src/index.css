@@ -645,6 +645,23 @@ button:focus-visible {
   animation-delay: 0.3s;
 }
 
+/* Hero chat: messages keep their space and fade in on schedule */
+.chat-card--hero .bubble,
+.chat-card--hero .typing {
+  transition: opacity 0.45s ease-out;
+}
+
+.msg--pending {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chat-card--hero .bubble,
+  .chat-card--hero .typing {
+    transition: none;
+  }
+}
+
 @keyframes typing-blink {
   0%,
   100% {
