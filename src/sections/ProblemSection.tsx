@@ -47,7 +47,6 @@ export default function ProblemSection() {
               <div className="problem-inbox-head">
                 <span className="problem-clock">{t('problem.clock')}</span>
                 <span className="problem-night-label">
-                  {t('problem.night_label')}
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
@@ -59,6 +58,7 @@ export default function ProblemSection() {
                   >
                     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
                   </svg>
+                  {t('problem.night_label')}
                 </span>
               </div>
               {msgs.map((msg) => (

@@ -965,6 +965,13 @@ button:focus-visible {
 .problem-night-label svg {
   inline-size: 15px;
   block-size: 15px;
+  flex-shrink: 0;
+}
+
+/* Letter-spacing is a Latin device — on Arabic it visually detaches joined letters */
+[lang^='ar'] .problem-eyebrow,
+[lang^='ar'] .problem-night-label {
+  letter-spacing: normal;
 }
 
 .problem-msg {
