@@ -22,9 +22,26 @@
       { "channel": "Comment on your page", "time": "a week ago", "text": "I need to see the doctor urgently, is there an appointment tomorrow?", "status": "Still sitting there, no reply" }
     ],
     "punch": "By morning, all three were patients somewhere else.",
+    "alternatives_title": "And the alternatives out there?",
     "villains": [
-      { "title": "A receptionist", "desc": "Asleep at night. Works nine to five. Handles one patient at a time — with a salary due every month" },
-      { "title": "Foreign tools", "desc": "Paid in dollars with an international card, an English dashboard, and most importantly — they can't hold a conversation in Egyptian Arabic" }
+      {
+        "title": "A receptionist",
+        "icon": "headset",
+        "points": [
+          "Long shifts still end — customers message after closing",
+          "Handles one customer at a time",
+          "A salary every month, and every day off means missed messages"
+        ]
+      },
+      {
+        "title": "Foreign tools",
+        "icon": "card",
+        "points": [
+          "Priced in dollars, paid with an international card",
+          "An English dashboard and a complicated setup",
+          "Formal, robotic replies — they can't do Egyptian Arabic"
+        ]
+      }
     ]
   },
   "chat": {
