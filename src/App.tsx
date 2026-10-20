@@ -83,10 +83,14 @@ export default function App() {
       <ScrollRestore />
       <Routes key={lang}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/en" element={<HomePage />} />
         <Route path="/pricing" element={<PlaceholderPage titleKey="nav.pricing" />} />
         <Route path="/terms" element={<PlaceholderPage titleKey="footer.terms" />} />
         <Route path="/privacy" element={<PlaceholderPage titleKey="footer.privacy" />} />
+        {/* English mirrors of every Arabic route */}
+        <Route path="/en" element={<HomePage />} />
+        <Route path="/en/pricing" element={<PlaceholderPage titleKey="nav.pricing" />} />
+        <Route path="/en/terms" element={<PlaceholderPage titleKey="footer.terms" />} />
+        <Route path="/en/privacy" element={<PlaceholderPage titleKey="footer.privacy" />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </>
