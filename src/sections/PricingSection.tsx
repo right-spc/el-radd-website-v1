@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useInfiniteSwipe } from '../hooks/useInfiniteSwipe';
 import visaUrl from '../assets/payments/visa.svg';
 import mastercardUrl from '../assets/payments/mastercard.svg';
 import meezaUrl from '../assets/payments/meeza.svg';
@@ -30,41 +30,8 @@ export default function PricingSection() {
   const title = t('pricing.title') as string;
   const [titlePre, titleAccent, titlePost] = title.split('*');
 
-  // Mobile: infinite swipe — the plans are doubled and, once a swipe settles,
-  // the scroll position silently teleports back by one copy width.
-  const cardsRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const track = cardsRef.current;
-    if (!track) return;
-    const copy = () => track.scrollWidth / 2;
-    const isRTL = () => getComputedStyle(track).direction === 'rtl';
-    const recenter = () => {
-      track.scrollLeft = (isRTL() ? -1 : 1) * copy();
-    };
-    recenter();
-    let settleTimer: number | undefined;
-    const onScroll = () => {
-      window.clearTimeout(settleTimer);
-      settleTimer = window.setTimeout(() => {
-        const c = copy();
-        if (c <= 0) return;
-        let p = Math.abs(track.scrollLeft);
-        const sign = track.scrollLeft < 0 ? -1 : 1;
-        if (p < c) p += c;
-        else if (p >= c * 2) p -= c;
-        else return;
-        track.scrollLeft = p * sign;
-      }, 120);
-    };
-    track.addEventListener('scroll', onScroll, { passive: true });
-    window.addEventListener('resize', recenter);
-    return () => {
-      window.clearTimeout(settleTimer);
-      track.removeEventListener('scroll', onScroll);
-      window.removeEventListener('resize', recenter);
-    };
-  }, []);
+  // Mobile: infinite swipe via the shared hook.
+  const cardsRef = useInfiniteSwipe<HTMLDivElement>();
 
   const payMethods = [
     { src: instapayUrl, alt: 'انستا باي', tile: true },

@@ -1679,18 +1679,47 @@ html[lang='en'] .solution-eyebrow {
   margin-block-end: 24px;
 }
 
+/* Mobile: pillar cards are an infinite swipe carousel; desktop: three columns */
 .solution-pillars {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.solution-pillars::-webkit-scrollbar {
+  display: none;
 }
 
 .solution-pillar {
+  flex: 0 0 auto;
+  inline-size: min(calc(100vw - 40px), 420px);
+  margin-inline-end: 12px;
+  scroll-snap-align: center;
   background-color: var(--ink-2);
   border-radius: 20px;
   padding-block: 26px;
   padding-inline: 26px;
   border-inline-start: 3px solid var(--gold);
+}
+
+@media (min-width: 900px) {
+  .solution-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    overflow: visible;
+  }
+
+  .solution-pillar {
+    inline-size: auto;
+    margin-inline-end: 0;
+  }
+
+  .solution-pillar[aria-hidden='true'] {
+    display: none;
+  }
 }
 
 .solution-pillar-icon {
@@ -1746,28 +1775,49 @@ html[lang='en'] .solution-eyebrow {
 }
 
 @media (max-width: 900px) {
+  /* Mobile story order: title → the answered inbox → the description */
+  .solution-grid > div {
+    display: contents;
+  }
+
   .solution-grid {
+    display: grid;
     grid-template-columns: 1fr;
-    gap: 44px;
+    gap: 0;
+  }
+
+  .solution-eyebrow {
+    order: 1;
   }
 
   .solution-title {
+    order: 2;
     font-size: 29px;
   }
 
+  .solution-inbox {
+    order: 3;
+    margin-block-start: 28px;
+  }
+
+  .solution-punch {
+    order: 4;
+  }
+
   .solution-lead {
+    order: 5;
+    margin-block-start: 28px;
     font-size: 16px;
+  }
+
+  .solution-body {
+    order: 6;
   }
 
   .solution-pillars-title {
     margin-block-start: 48px;
     margin-block-end: 18px;
     font-size: 21px;
-  }
-
-  .solution-pillars {
-    grid-template-columns: 1fr;
-    gap: 14px;
   }
 }
 

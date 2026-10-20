@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import type { ReactNode } from 'react';
+import { useInfiniteSwipe } from '../hooks/useInfiniteSwipe';
 
 interface SolutionMsg {
   channel: string;
@@ -50,6 +51,7 @@ export default function SolutionSection() {
   const { t } = useTranslation();
   const msgs = t('solution.msgs', { returnObjects: true }) as SolutionMsg[];
   const pillars = t('solution.pillars', { returnObjects: true }) as Pillar[];
+  const pillarsRef = useInfiniteSwipe<HTMLDivElement>();
 
   // Locale strings carry *markers* around the emphasized phrase.
   const title = t('solution.title') as string;
@@ -120,9 +122,13 @@ export default function SolutionSection() {
         </div>
 
         <h3 className="solution-pillars-title">{t('solution.pillars_title')}</h3>
-        <div className="solution-pillars">
-          {pillars.map((pillar) => (
-            <div className="solution-pillar" key={pillar.title}>
+        <div className="solution-pillars" ref={pillarsRef}>
+          {[...pillars, ...pillars].map((pillar, index) => (
+            <div
+              className="solution-pillar"
+              key={`${pillar.title}-${index}`}
+              aria-hidden={index >= pillars.length || undefined}
+            >
               <span className="solution-pillar-icon" aria-hidden="true">
                 {ICONS[pillar.icon]}
               </span>
