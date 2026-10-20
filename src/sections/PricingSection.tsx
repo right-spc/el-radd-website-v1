@@ -48,7 +48,6 @@ export default function PricingSection() {
             {titlePost}
           </h2>
           <p className="pricing-lead">{t('pricing.lead')}</p>
-          <p className="pricing-offer-line">{t('pricing.offerLine')}</p>
         </div>
 
         <div className="pricing-cards">

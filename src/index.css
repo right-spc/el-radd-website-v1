@@ -1808,13 +1808,6 @@ html[lang='en'] .solution-eyebrow {
   color: var(--papyrus);
 }
 
-.pricing-offer-line {
-  margin-block-start: 14px;
-  font-size: 14.5px;
-  font-weight: 500;
-  color: var(--gold);
-}
-
 .pricing-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
