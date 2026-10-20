@@ -7,6 +7,7 @@ import Footer from '../components/Footer';
 const HowItWorks = lazy(() => import('../sections/HowItWorks'));
 const ProblemSection = lazy(() => import('../sections/ProblemSection'));
 const SolutionSection = lazy(() => import('../sections/SolutionSection'));
+const PricingSection = lazy(() => import('../sections/PricingSection'));
 const Channels = lazy(() => import('../sections/Channels'));
 const DemoSection = lazy(() => import('../sections/DemoSection'));
 const QuestionsSection = lazy(() => import('../sections/QuestionsSection'));
@@ -23,6 +24,7 @@ export default function HomePage() {
           <ProblemSection />
           <SolutionSection />
           <HowItWorks />
+          <PricingSection />
           <Channels />
           <DemoSection />
           <QuestionsSection />

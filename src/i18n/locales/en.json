@@ -88,6 +88,56 @@
       }
     ]
   },
+  "pricing": {
+    "eyebrow": "Pricing",
+    "title": "In EGP. No dollars. No *contracts.*",
+    "lead": "Two clear plans — pick the one that fits your business.",
+    "offerLine": "✦ Launch offer: the Website plan at 1,299 instead of 2,000 — for a limited time.",
+    "plans": [
+      {
+        "flag": "Limited time",
+        "name": "Website",
+        "sub": "Your site, answered by El Radd",
+        "amount": "1,299",
+        "old": "2,000",
+        "per": "EGP / month",
+        "promiseLabel": "Unlimited website chat",
+        "promiseSub": "The whole plan — no credits, no meter",
+        "features": [
+          "Site chat in your brand: logo and colors",
+          "Answers customer questions and books their appointments",
+          "Arabic and English",
+          "Fully managed setup — live within 24 hours",
+          "No contracts — cancel anytime"
+        ],
+        "cta": "Get started",
+        "ctaHref": "#demo",
+        "hot": true
+      },
+      {
+        "flag": "Coming soon",
+        "name": "Every channel",
+        "sub": "Your site, WhatsApp, Messenger — and any new channel",
+        "amount": "5,000",
+        "per": "EGP / month",
+        "promiseLabel": "Text only — no calls",
+        "promiseSub": "Website chat stays unlimited + 7,500 shared credits for the messaging channels",
+        "features": [
+          "Everything in the Website plan",
+          "WhatsApp — coming soon",
+          "Messenger — coming soon",
+          "Any new text channel we add"
+        ],
+        "cta": "When it launches, it'll be right here",
+        "ctaHref": "#questions",
+        "ctaGhost": true,
+        "soon": true,
+        "note": "Upgrade anytime — without losing anything from your setup"
+      }
+    ],
+    "payLabel": "Pay the Egyptian way: no international card, no currency conversion",
+    "walletsLabel": "Wallets"
+  },
   "chat": {
     "header_name": "El Radd",
     "header_sub": "Answering for El Noor Clinic",
