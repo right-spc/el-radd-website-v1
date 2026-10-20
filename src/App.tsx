@@ -71,6 +71,36 @@ function ScrollRestore() {
   return null;
 }
 
+// One-page site: deep links to sections redirect home with the section hash,
+// and the hash target is scrolled to once its lazy section has mounted.
+function HashScroll() {
+  const hash = useLocation().hash;
+
+  useEffect(() => {
+    if (!hash) return;
+    const id = hash.slice(1);
+    let elapsed = 0;
+    const jump = () => {
+      const el = document.getElementById(id);
+      if (!el) return false;
+      const html = document.documentElement;
+      const previous = html.style.scrollBehavior;
+      html.style.scrollBehavior = 'auto';
+      window.scrollTo(0, el.getBoundingClientRect().top + window.scrollY - 88);
+      html.style.scrollBehavior = previous;
+      return true;
+    };
+    if (jump()) return;
+    const interval = window.setInterval(() => {
+      elapsed += 150;
+      if (jump() || elapsed > 3000) window.clearInterval(interval);
+    }, 150);
+    return () => window.clearInterval(interval);
+  }, [hash]);
+
+  return null;
+}
+
 export default function App() {
   const location = useLocation();
   // Remount the route tree on language switch so every section renders
@@ -81,14 +111,15 @@ export default function App() {
     <>
       <LanguageSync />
       <ScrollRestore />
+      <HashScroll />
       <Routes key={lang}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/pricing" element={<PlaceholderPage titleKey="nav.pricing" />} />
+        <Route path="/pricing" element={<Navigate to="/#pricing" replace />} />
+        <Route path="/en/pricing" element={<Navigate to="/en#pricing" replace />} />
         <Route path="/terms" element={<PlaceholderPage titleKey="footer.terms" />} />
         <Route path="/privacy" element={<PlaceholderPage titleKey="footer.privacy" />} />
         {/* English mirrors of every Arabic route */}
         <Route path="/en" element={<HomePage />} />
-        <Route path="/en/pricing" element={<PlaceholderPage titleKey="nav.pricing" />} />
         <Route path="/en/terms" element={<PlaceholderPage titleKey="footer.terms" />} />
         <Route path="/en/privacy" element={<PlaceholderPage titleKey="footer.privacy" />} />
         <Route path="*" element={<Navigate to="/" replace />} />

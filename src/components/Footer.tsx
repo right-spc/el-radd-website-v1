@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <ul className="footer-links">
             <li>
-              <Link to="/pricing">{t('footer.pricing')}</Link>
+              <a href="#pricing">{t('footer.pricing')}</a>
             </li>
             <li>
               <Link to="/terms">{t('footer.terms')}</Link>

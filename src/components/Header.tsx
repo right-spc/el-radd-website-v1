@@ -54,7 +54,7 @@ export default function Header() {
               <a href="#service">{t('nav.service')}</a>
             </li>
             <li>
-              <Link to="/pricing">{t('nav.pricing')}</Link>
+              <a href="#pricing">{t('nav.pricing')}</a>
             </li>
             <li>
               <a href="#questions">{t('nav.questions')}</a>
@@ -89,9 +89,9 @@ export default function Header() {
             <a href="#service" onClick={() => setOpen(false)}>
               {t('nav.service')}
             </a>
-            <Link to="/pricing" onClick={() => setOpen(false)}>
+            <a href="#pricing" onClick={() => setOpen(false)}>
               {t('nav.pricing')}
-            </Link>
+            </a>
             <a href="#questions" onClick={() => setOpen(false)}>
               {t('nav.questions')}
             </a>

@@ -23,6 +23,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Anchor jumps land below the sticky header */
+section[id] {
+  scroll-margin-top: 88px;
+}
+
 /* Chromium: slim charcoal scrollbar with gold hover (setting scrollbar-color
    on html would disable these pseudo rules, so it lives in @supports below) */
 ::-webkit-scrollbar {
