@@ -14,6 +14,8 @@ export default defineConfig({
     watch: {
       usePolling: true,
       interval: 300,
+      // builds write dist/ during dev sessions — don't reload the page for it
+      ignored: ['**/dist/**'],
     },
   },
 });

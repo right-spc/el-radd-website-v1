@@ -67,7 +67,7 @@ export default function PricingSection() {
   }, []);
 
   const payMethods = [
-    { src: instapayUrl, alt: 'انستا باي' },
+    { src: instapayUrl, alt: 'انستا باي', tile: true },
     { src: paymobUrl, alt: 'بايموب' },
     { src: meezaUrl, alt: 'ميزة' },
     { src: visaUrl, alt: 'فيزا' },
@@ -125,20 +125,29 @@ export default function PricingSection() {
           <p className="pricing-pay-label">{t('pricing.payLabel')}</p>
           <div className="pricing-pay-cards">
             {payMethods.map((method) => (
-              <span className="pricing-pay-card" key={method.alt} title={method.alt}>
+              <span
+                className={`pricing-pay-card${method.tile ? ' pricing-pay-card--tile' : ''}`}
+                key={method.alt}
+                title={method.alt}
+              >
                 <img src={method.src} alt={method.alt} loading="lazy" />
               </span>
             ))}
             <span className="pricing-pay-card pricing-wallets-card" title="المحافظ الإلكترونية">
-              <span className="pricing-wallets">
-                <span>
-                  <i className="w1" />
-                  <i className="w2" />
-                  <i className="w3" />
-                  <i className="w4" />
-                </span>
-                <span>{t('pricing.walletsLabel')}</span>
-              </span>
+              <svg
+                className="pricing-wallet-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M21 12V7H5a2 2 0 0 1 0-4h14v4" />
+                <path d="M3 5v14a2 2 0 0 0 2 2h16v-5" />
+                <path d="M18 12a2 2 0 0 0 0 4h4v-4Z" />
+              </svg>
             </span>
           </div>
         </div>

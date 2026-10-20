@@ -2021,41 +2021,28 @@ html[lang='en'] .solution-eyebrow {
   display: block;
 }
 
-.pricing-wallets-card .pricing-wallets {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  line-height: 1.2;
+/* InstaPay's logo is a black app tile — show it as one */
+.pricing-pay-card--tile {
+  padding: 3px;
 }
 
-.pricing-wallets-card .pricing-wallets i {
-  display: inline-block;
-  inline-size: 8px;
-  block-size: 8px;
-  border-radius: 50%;
-  margin-inline: 1.5px;
+.pricing-pay-card--tile img {
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: none;
+  max-block-size: none;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
-.pricing-wallets-card .w1 {
-  background-color: #E60000;
+.pricing-wallet-icon {
+  inline-size: 30px;
+  block-size: 30px;
+  color: var(--ink);
 }
 
-.pricing-wallets-card .w2 {
-  background-color: #7C2529;
-}
-
-.pricing-wallets-card .w3 {
-  background-color: #FF7900;
-}
-
-.pricing-wallets-card .w4 {
-  background-color: #6F2C91;
-}
-
-.pricing-wallets-card .pricing-wallets span:last-child {
-  font-size: 9.5px;
-  font-weight: 700;
-  color: #333;
+.pricing-wallets-card {
+  color: var(--ink);
 }
 
 @media (min-width: 900px) {
