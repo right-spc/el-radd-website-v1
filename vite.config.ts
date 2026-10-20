@@ -9,5 +9,11 @@ export default defineConfig({
     headers: {
       'Cache-Control': 'no-store',
     },
+    // The default file watcher misses edits on this machine (Windows file
+    // events get lost); polling keeps HMR and reloads truthful.
+    watch: {
+      usePolling: true,
+      interval: 300,
+    },
   },
 });

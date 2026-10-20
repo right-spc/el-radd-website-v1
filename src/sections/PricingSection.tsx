@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import visaUrl from '../assets/payments/visa.svg';
 import mastercardUrl from '../assets/payments/mastercard.svg';
@@ -29,6 +30,42 @@ export default function PricingSection() {
   const title = t('pricing.title') as string;
   const [titlePre, titleAccent, titlePost] = title.split('*');
 
+  // Mobile: infinite swipe — the plans are doubled and, once a swipe settles,
+  // the scroll position silently teleports back by one copy width.
+  const cardsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const track = cardsRef.current;
+    if (!track) return;
+    const copy = () => track.scrollWidth / 2;
+    const isRTL = () => getComputedStyle(track).direction === 'rtl';
+    const recenter = () => {
+      track.scrollLeft = (isRTL() ? -1 : 1) * copy();
+    };
+    recenter();
+    let settleTimer: number | undefined;
+    const onScroll = () => {
+      window.clearTimeout(settleTimer);
+      settleTimer = window.setTimeout(() => {
+        const c = copy();
+        if (c <= 0) return;
+        let p = Math.abs(track.scrollLeft);
+        const sign = track.scrollLeft < 0 ? -1 : 1;
+        if (p < c) p += c;
+        else if (p >= c * 2) p -= c;
+        else return;
+        track.scrollLeft = p * sign;
+      }, 120);
+    };
+    track.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', recenter);
+    return () => {
+      window.clearTimeout(settleTimer);
+      track.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', recenter);
+    };
+  }, []);
+
   const payMethods = [
     { src: instapayUrl, alt: 'انستا باي' },
     { src: paymobUrl, alt: 'بايموب' },
@@ -50,11 +87,12 @@ export default function PricingSection() {
           <p className="pricing-lead">{t('pricing.lead')}</p>
         </div>
 
-        <div className="pricing-cards">
-          {plans.map((plan) => (
+        <div className="pricing-cards" ref={cardsRef}>
+          {[...plans, ...plans].map((plan, index) => (
             <div
               className={`pricing-card${plan.hot ? ' pricing-card--hot' : ''}${plan.soon ? ' pricing-card--soon' : ''}`}
-              key={plan.name}
+              key={`${plan.name}-${index}`}
+              aria-hidden={index >= plans.length || undefined}
             >
               <span className={`pricing-flag${plan.soon ? ' pricing-flag--soon' : ''}`}>
                 {plan.flag}

@@ -1808,15 +1808,26 @@ html[lang='en'] .solution-eyebrow {
   color: var(--papyrus);
 }
 
+/* Mobile: infinite swipe (wraps both directions); desktop: two columns */
 .pricing-cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
   align-items: stretch;
+}
+
+.pricing-cards::-webkit-scrollbar {
+  display: none;
 }
 
 .pricing-card {
   position: relative;
+  flex: 0 0 auto;
+  inline-size: min(calc(100vw - 40px), 440px);
+  margin-inline-end: 12px;
+  scroll-snap-align: center;
   background-color: var(--ink-2);
   border: 1px solid rgba(246, 240, 228, 0.08);
   border-radius: 24px;
@@ -2047,10 +2058,29 @@ html[lang='en'] .solution-eyebrow {
   color: #333;
 }
 
+@media (min-width: 900px) {
+  .pricing-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    overflow: visible;
+    align-items: stretch;
+  }
+
+  .pricing-card {
+    flex: auto;
+    inline-size: auto;
+    margin-inline-end: 0;
+  }
+
+  .pricing-card[aria-hidden='true'] {
+    display: none;
+  }
+}
+
 @media (max-width: 900px) {
   .pricing-cards {
-    grid-template-columns: 1fr;
-    gap: 32px;
+    padding-block-end: 6px;
   }
 }
 
