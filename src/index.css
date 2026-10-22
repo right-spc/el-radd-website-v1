@@ -1866,11 +1866,12 @@ html[lang='en'] .solution-eyebrow {
 /* Mobile: infinite swipe (wraps both directions); desktop: two columns */
 .pricing-cards {
   display: flex;
-  gap: 12px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   align-items: stretch;
+  /* room for the flags sticking out the top of the cards */
+  padding-block-start: 20px;
 }
 
 .pricing-cards::-webkit-scrollbar {
