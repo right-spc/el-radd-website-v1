@@ -57,7 +57,7 @@ export default function Header() {
               <a href="#pricing">{t('nav.pricing')}</a>
             </li>
             <li>
-              <a href="#questions">{t('nav.questions')}</a>
+              <a href="#demo">{t('nav.demo')}</a>
             </li>
           </ul>
           <div className="nav-actions">
@@ -92,8 +92,8 @@ export default function Header() {
             <a href="#pricing" onClick={() => setOpen(false)}>
               {t('nav.pricing')}
             </a>
-            <a href="#questions" onClick={() => setOpen(false)}>
-              {t('nav.questions')}
+            <a href="#demo" onClick={() => setOpen(false)}>
+              {t('nav.demo')}
             </a>
             <a
               className="panel-cta"

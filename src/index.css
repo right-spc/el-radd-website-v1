@@ -2206,20 +2206,159 @@ html[lang='en'] .solution-eyebrow {
   margin-block-start: 12px;
 }
 
-/* ---------- Questions ---------- */
+/* ---------- Demo / FAQs (closing section) ---------- */
 
-.questions-head {
+.demo-head {
   text-align: center;
   max-inline-size: 720px;
   margin-inline: auto;
 }
 
-.questions-head .section-title {
-  font-size: 30px;
+.demo-eyebrow {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--clay);
+  margin-block-end: 16px;
 }
 
-.questions-head .section-sub {
-  margin-block-start: 10px;
+html[lang='en'] .demo-eyebrow {
+  letter-spacing: 5px;
+}
+
+.demo-title {
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-block-end: 14px;
+}
+
+.demo-title .accent {
+  color: var(--clay);
+}
+
+.demo-lead {
+  font-size: 17px;
+  color: var(--stone);
+  margin-block-end: 8px;
+}
+
+.demo-cooking {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.demo-cooking strong {
+  color: var(--clay);
+}
+
+.demo-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-block: 40px 18px;
+}
+
+.demo-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ink);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(33, 29, 22, 0.18);
+  border-radius: 999px;
+  padding-block: 12px;
+  padding-inline: 22px;
+  min-block-size: 44px;
+  box-shadow: 0 2px 10px rgba(33, 29, 22, 0.07);
+  transition: border-color 0.2s ease-out, transform 0.2s ease-out;
+}
+
+.demo-chip:hover {
+  border-color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.demo-chip svg {
+  inline-size: 16px;
+  block-size: 16px;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.demo-caption {
+  text-align: center;
+  font-size: 14px;
+  color: var(--stone);
+  margin-block-end: 44px;
+}
+
+.demo-launcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.demo-bubble {
+  inline-size: 56px;
+  block-size: 56px;
+  border-radius: 50%;
+  background-color: var(--gold);
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 26px rgba(201, 150, 46, 0.4);
+}
+
+.demo-bubble svg {
+  inline-size: 24px;
+  block-size: 24px;
+}
+
+.demo-launcher-label {
+  font-size: 14px;
+  color: var(--stone);
+  text-align: start;
+}
+
+.demo-launcher-label strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .demo-head {
+    max-inline-size: none;
+  }
+
+  .demo-title {
+    font-size: 28px;
+  }
+
+  .demo-lead {
+    font-size: 15px;
+  }
+
+  .demo-chips {
+    gap: 10px;
+  }
+
+  .demo-chip {
+    font-size: 14px;
+    padding-block: 10px;
+    padding-inline: 18px;
+  }
 }
 
 .pills {
@@ -2245,14 +2384,6 @@ html[lang='en'] .solution-eyebrow {
 .pill-q:hover {
   border-color: var(--gold);
   color: var(--gold);
-}
-
-.questions-footer {
-  text-align: center;
-  color: var(--clay);
-  font-size: 15px;
-  font-weight: 500;
-  margin-block-start: 32px;
 }
 
 /* ---------- Final CTA ---------- */

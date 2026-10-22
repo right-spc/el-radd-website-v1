@@ -10,7 +10,6 @@ const SolutionSection = lazy(() => import('../sections/SolutionSection'));
 const PricingSection = lazy(() => import('../sections/PricingSection'));
 const Channels = lazy(() => import('../sections/Channels'));
 const DemoSection = lazy(() => import('../sections/DemoSection'));
-const QuestionsSection = lazy(() => import('../sections/QuestionsSection'));
 const FinalCta = lazy(() => import('../sections/FinalCta'));
 
 export default function HomePage() {
@@ -27,7 +26,6 @@ export default function HomePage() {
           <PricingSection />
           <Channels />
           <DemoSection />
-          <QuestionsSection />
           <FinalCta />
         </Suspense>
       </main>
