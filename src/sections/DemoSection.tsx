@@ -1,24 +1,26 @@
 import { useTranslation } from 'react-i18next';
 
-interface AskChip {
-  question: string;
-}
-
 // The HorusDesk widget queues ask() calls made before init finishes, so we
 // can fire immediately without waiting for the widget to be ready.
-function askElRadd(question: string) {
+function widgetCall(action: 'ask' | 'open', question: string | undefined, attempt = 0): void {
   const widget = window.horusDesk;
-  if (widget && typeof widget.ask === 'function') {
-    widget.ask(question);
+  if (widget && typeof widget[action] === 'function') {
+    if (action === 'ask') widget.ask(question as string);
+    else widget.open();
     return;
   }
   // Widget script not loaded (blocked or slow): retry shortly.
-  window.setTimeout(() => askElRadd(question), 400);
+  if (attempt < 25) window.setTimeout(() => widgetCall(action, question, attempt + 1), 400);
 }
 
 export default function DemoSection() {
   const { t } = useTranslation();
-  const chips = t('demo.chips', { returnObjects: true }) as AskChip[];
+  const chips = t('demo.chips', { returnObjects: true }) as { question: string }[];
+
+  const title = t('demo.title') as string;
+  const [titlePre, titleAccent, titlePost] = title.split('*');
+  const cooking = t('demo.cooking') as string;
+  const [cookingPre, cookingStrong, cookingPost] = cooking.split('*');
 
   return (
     <section className="section section--light" id="demo">
@@ -26,31 +28,15 @@ export default function DemoSection() {
         <div className="demo-head">
           <span className="demo-eyebrow">{t('demo.eyebrow')}</span>
           <h2 className="demo-title">
-            {(() => {
-              const title = t('demo.title') as string;
-              const [pre, accent, post] = title.split('*');
-              return (
-                <>
-                  {pre}
-                  <span className="accent">{accent}</span>
-                  {post}
-                </>
-              );
-            })()}
+            {titlePre}
+            <span className="accent">{titleAccent}</span>
+            {titlePost}
           </h2>
           <p className="demo-lead">{t('demo.lead')}</p>
           <p className="demo-cooking">
-            {(() => {
-              const cooking = t('demo.cooking') as string;
-              const [pre, strong, post] = cooking.split('*');
-              return (
-                <>
-                  {pre}
-                  <strong>{strong}</strong>
-                  {post}
-                </>
-              );
-            })()}
+            {cookingPre}
+            <strong>{cookingStrong}</strong>
+            {cookingPost}
           </p>
         </div>
 
@@ -60,7 +46,7 @@ export default function DemoSection() {
               className="demo-chip"
               type="button"
               key={chip.question}
-              onClick={() => askElRadd(chip.question)}
+              onClick={() => widgetCall('ask', chip.question)}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -79,7 +65,11 @@ export default function DemoSection() {
         </div>
         <p className="demo-caption">{t('demo.caption')}</p>
 
-        <div className="demo-launcher">
+        <button
+          className="demo-launcher"
+          type="button"
+          onClick={() => widgetCall('open', undefined)}
+        >
           <span className="demo-bubble" aria-hidden="true">
             <svg
               viewBox="0 0 24 24"
@@ -97,6 +87,17 @@ export default function DemoSection() {
             <strong>{t('demo.launcher_title')}</strong>
             {t('demo.launcher_sub')}
           </span>
+        </button>
+
+        <div className="demo-close">
+          <p className="demo-close-title">{t('demo.close_title')}</p>
+          <button
+            className="btn-gold"
+            type="button"
+            onClick={() => widgetCall('open', undefined)}
+          >
+            {t('demo.close_cta')}
+          </button>
         </div>
       </div>
     </section>

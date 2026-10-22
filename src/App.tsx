@@ -31,13 +31,10 @@ function ScrollRestore() {
     try {
       anchor = JSON.parse(saved);
     } catch {
-      sessionStorage.removeItem('lang-switch-scroll');
-      return;
+      /* ignore malformed */
     }
-    if (!anchor || !anchor.id) {
-      sessionStorage.removeItem('lang-switch-scroll');
-      return;
-    }
+    sessionStorage.removeItem('lang-switch-scroll');
+    if (!anchor || !anchor.id) return;
     const restore = () => {
       const el = document.getElementById(anchor.id);
       if (!el) return;

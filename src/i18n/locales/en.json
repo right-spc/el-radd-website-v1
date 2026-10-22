@@ -273,12 +273,9 @@
       {
         "question": "How does it connect to my site?"
       }
-    ]
-  },
-  "final": {
-    "title": "Ready to stop missing messages?",
-    "cta": "Try El Radd yourself",
-    "ctaHref": "#demo"
+    ],
+    "close_title": "Ready to leave the replies to El Radd?",
+    "close_cta": "Try El Radd yourself"
   },
   "footer": {
     "tagline": "El Radd. Replies for you, around the clock",

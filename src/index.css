@@ -2332,6 +2332,58 @@ html[lang='en'] .demo-eyebrow {
   color: var(--ink);
 }
 
+button.demo-launcher {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.demo-launcher .demo-bubble {
+  transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.demo-launcher:hover .demo-bubble {
+  transform: scale(1.07);
+  box-shadow: 0 14px 32px rgba(201, 150, 46, 0.5);
+}
+
+.demo-close {
+  margin-block-start: 44px;
+  background-color: var(--ink);
+  border-radius: 24px;
+  padding-block: 32px;
+  padding-inline: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  color: var(--papyrus);
+  box-shadow: 0 20px 50px rgba(33, 29, 22, 0.3);
+}
+
+.demo-close-title {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 22px;
+  color: var(--papyrus);
+  margin: 0;
+}
+
+.demo-close .btn-gold {
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .demo-close {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+    padding-block: 28px;
+    padding-inline: 24px;
+  }
+}
+
 @media (max-width: 900px) {
   .demo-head {
     max-inline-size: none;
