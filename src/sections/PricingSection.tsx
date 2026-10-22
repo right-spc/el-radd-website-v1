@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import { useInfiniteSwipe } from '../hooks/useInfiniteSwipe';
 import visaUrl from '../assets/payments/visa.svg';
 import mastercardUrl from '../assets/payments/mastercard.svg';
 import meezaUrl from '../assets/payments/meeza.svg';
@@ -30,9 +29,6 @@ export default function PricingSection() {
   const title = t('pricing.title') as string;
   const [titlePre, titleAccent, titlePost] = title.split('*');
 
-  // Mobile: infinite swipe via the shared hook.
-  const cardsRef = useInfiniteSwipe<HTMLDivElement>();
-
   const payMethods = [
     { src: instapayUrl, alt: 'انستا باي', tile: true },
     { src: paymobUrl, alt: 'بايموب' },
@@ -54,12 +50,11 @@ export default function PricingSection() {
           <p className="pricing-lead">{t('pricing.lead')}</p>
         </div>
 
-        <div className="pricing-cards" ref={cardsRef}>
-          {[...plans, ...plans].map((plan, index) => (
+        <div className="pricing-cards">
+          {plans.map((plan) => (
             <div
               className={`pricing-card${plan.hot ? ' pricing-card--hot' : ''}${plan.soon ? ' pricing-card--soon' : ''}`}
-              key={`${plan.name}-${index}`}
-              aria-hidden={index >= plans.length || undefined}
+              key={plan.name}
             >
               <span className={`pricing-flag${plan.soon ? ' pricing-flag--soon' : ''}`}>
                 {plan.flag}
