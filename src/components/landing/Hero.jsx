@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { useLang } from '../../i18n/LangContext.jsx'
 import { useReducedMotion } from '../../hooks/useReducedMotion.js'
 import WhatsAppCta from '../WhatsAppCta.jsx'
 import { ChatMessages } from '../ChatView.jsx'
+import { openElradd, askElradd } from '../../chat.js'
 import mark from '../../assets/logo/mark.svg'
 
 function HeroChatCard() {
@@ -73,10 +73,31 @@ function HeroChatCard() {
         <span className="inline-flex items-center gap-2">
           <img src={mark} alt="" className="h-5 w-auto" width="18" height="21" />
           <span className="text-sm font-extrabold text-primary">{t.brand.wordmark}</span>
+          <span className="inline-flex items-center gap-1.5 text-[11px] font-bold text-ink/50">
+            <span className="relative flex h-2 w-2">
+              {!reduced && (
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-wa opacity-75" />
+              )}
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-wa" />
+            </span>
+            {t.hero.liveNow}
+          </span>
         </span>
         <span className="rounded-full bg-highlight/50 px-3 py-1 text-xs font-bold text-ink">{t.hero.sampleLabel}</span>
       </div>
       <ChatMessages items={messages} shown={shown} typing={typing} className="h-[320px] p-4" />
+      <div className="flex flex-wrap gap-2 border-t border-ink/10 px-4 py-3">
+        {t.hero.quickAsks.map((q) => (
+          <button
+            key={q}
+            type="button"
+            onClick={() => askElradd(q)}
+            className="rounded-full border border-primary/25 bg-primary-soft/60 px-3.5 py-1.5 text-[13px] font-bold text-primary transition hover:border-primary/50 hover:bg-primary-soft active:scale-[0.97]"
+          >
+            {q}
+          </button>
+        ))}
+      </div>
     </div>
   )
 }
@@ -109,15 +130,25 @@ export default function Hero() {
           </h1>
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80 md:text-xl">{t.hero.sub}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
-            <Link
-              to="/#demo"
+            <button
+              type="button"
+              onClick={openElradd}
               className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-primary px-7 text-lg font-bold text-white shadow-soft transition hover:bg-primary-2 active:scale-[0.98]"
             >
               {t.hero.primary}
-            </Link>
+            </button>
             <WhatsAppCta label={t.hero.secondary} />
           </div>
-          <p className="mt-4 text-sm text-ink/60">{t.hero.hint}</p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            {t.hero.badges.map((b) => (
+              <span
+                key={b}
+                className="rounded-full bg-primary-soft px-3.5 py-1.5 text-[13px] font-bold text-primary"
+              >
+                {b}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="flex justify-center lg:justify-end">
           <HeroChatCard />
