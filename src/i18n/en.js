@@ -27,8 +27,8 @@ export default {
     closeMenu: 'Close menu',
   },
   hero: {
-    h1: 'Leave the replies to us',
-    sub: 'AI that speaks Egyptian — replying to your customers and booking for them on WhatsApp and your website, 24/7',
+    h1: 'AI that speaks Egyptian',
+    sub: 'It replies to your customers and books for them on WhatsApp and your website — 24 hours a day',
     primary: 'Try Elradd yourself',
     secondary: 'WhatsApp',
     liveNow: 'Live now',
