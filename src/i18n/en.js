@@ -31,7 +31,7 @@ export default {
     sub: 'It replies to your customers and books for them on WhatsApp and your website — 24 hours a day',
     primary: 'Try Elradd yourself',
     secondary: 'WhatsApp',
-    hint: 'The real bot is live right now — look for the chat bubble below 👇',
+    hint: 'The real Elradd is live right now — look for the chat bubble below 👇',
     sampleLabel: 'Illustrative example',
     chat: [
       { from: 'customer', text: 'Hi, are you still open?' },
@@ -134,12 +134,12 @@ export default {
         ],
       },
     ],
-    hint: 'These are illustrative samples — the real bot is the chat bubble below 👇 Talk to it now.',
+    hint: 'These are illustrative samples — the real AI is the chat bubble below 👇 Talk to it now.',
   },
   how: {
     header: 'How it works',
     steps: [
-      { title: 'Send us your data', body: 'Your services, prices, and common customer questions — send them over and done.' },
+      { title: 'Send us your data', body: 'Your services, prices, and common customer questions — plus the way you like to talk. Send them over and done.' },
       { title: 'Elradd learns them within 24–48 hours', body: '' },
       { title: 'Receive the bookings and replies', body: '' },
     ],
@@ -197,7 +197,11 @@ export default {
     items: [
       {
         q: 'Is this like regular chatbots?',
-        a: 'Try it yourself above 👆 — it understands Egyptian Arabic and answers from your own business data, not canned lines.',
+        a: 'No — a chatbot replies with canned lines. This is an AI that learns your business and answers from your own data. Try it yourself above 👆',
+      },
+      {
+        q: 'Can I control how it talks?',
+        a: 'Yes — it learns more than your answers. It learns your style too: salesy or simply helpful? formal or easygoing? You set the direction, and we tune it for you.',
       },
       {
         q: 'Do WhatsApp messages come to my number?',
@@ -209,7 +213,7 @@ export default {
       },
       {
         q: 'Can I try it before paying?',
-        a: 'Better than that — the bot on this site is the exact same product. Try it right now, on the house.',
+        a: 'Better than that — the AI on this site is the exact same product. Try it right now, on the house.',
       },
       {
         q: 'What if a customer asks something complex?',
@@ -279,7 +283,7 @@ export default {
       { q: 'Can I request changes?', a: 'You get one full design revision — any additional requests are priced based on their size.' },
     ],
     ctaWhatsapp: 'Message us on WhatsApp',
-    ctaBot: 'Or ask the bot from the chat bubble 👇',
+    ctaBot: 'Or ask Elradd from the chat bubble 👇',
     backToPricing: 'Back to pricing',
   },
   contactPage: {
@@ -296,11 +300,11 @@ export default {
       messagePh: 'Write your question or your business details…',
       submit: 'Send via WhatsApp',
       required: 'Please fill in your name and message first 🙏',
-      noWhatsapp: 'WhatsApp is still being set up — ask the bot from the chat bubble below 👇',
+      noWhatsapp: 'WhatsApp is still being set up — ask Elradd from the chat bubble below 👇',
       composeIntro: 'Hello, I am',
       composeType: 'My business type:',
     },
-    nudge: "Don't bother — ask the bot 😄",
+    nudge: "Don't bother — ask Elradd 😄",
     identity: 'Right Space — Cairo, Egypt',
   },
   privacyPage: {
