@@ -42,9 +42,6 @@ export default function Demo() {
               <img src={mark} alt="" className="h-5 w-auto" width="18" height="21" />
               <span className="text-sm font-extrabold text-primary">{persona.label}</span>
             </span>
-            <span className="rounded-full bg-highlight/50 px-3 py-1 text-xs font-bold text-ink">
-              {t.demo.sampleLabel}
-            </span>
           </div>
           <div key={persona.id} className="card-in flex flex-col gap-2.5 p-4 md:p-5">
             {persona.messages.map((m, i) => (
@@ -52,12 +49,6 @@ export default function Demo() {
             ))}
           </div>
         </div>
-      </Reveal>
-
-      <Reveal className="mt-8 text-center">
-        <p className="inline-flex items-center gap-2 rounded-full bg-primary-soft px-5 py-2.5 text-[15px] font-bold text-primary">
-          {t.demo.hint}
-        </p>
       </Reveal>
     </Section>
   )

@@ -132,12 +132,6 @@ export default function Pain() {
 
       <Reveal className="mt-10">
         <div className="mx-auto max-w-3xl" ref={simAreaRef}>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <span className="rounded-full bg-highlight/50 px-3.5 py-1.5 text-xs font-bold text-ink">
-              {t.pain.simLabel}
-            </span>
-          </div>
-
           <div className="mt-8 grid gap-6 md:grid-cols-2">
             <SimPhone
               label={t.pain.without.tab}

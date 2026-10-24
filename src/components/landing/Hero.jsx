@@ -83,7 +83,6 @@ function HeroChatCard() {
             {t.hero.liveNow}
           </span>
         </span>
-        <span className="rounded-full bg-highlight/50 px-3 py-1 text-xs font-bold text-ink">{t.hero.sampleLabel}</span>
       </div>
       <ChatMessages items={messages} shown={shown} typing={typing} className="h-[320px] p-4" />
       <div className="flex flex-wrap gap-2 border-t border-ink/10 px-4 py-3">

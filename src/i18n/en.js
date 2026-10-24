@@ -34,7 +34,6 @@ export default {
     liveNow: 'Live now',
     badges: ['24/7', 'Replies in seconds', 'Learns your style'],
     quickAsks: ['Do you reply at night?', 'How much is it?', 'Can it learn my style?'],
-    sampleLabel: 'Illustrative example',
     chat: [
       { time: '2:07 AM', from: 'customer', text: 'Hi, are you still open?' },
       { time: '2:07 AM', from: 'bot', text: "Hello 👋 welcome — we're open every day from 10 AM to 10 PM" },
@@ -47,7 +46,6 @@ export default {
   pain: {
     header: 'Not a single message left unanswered',
     lead: 'Customers write at night. The first to reply wins the customer.',
-    simLabel: 'Illustrative simulation — not a real conversation',
     without: {
       tab: 'Without Elradd',
       messages: [
@@ -85,7 +83,6 @@ export default {
   demo: {
     header: "Don't take our word for it — talk to it yourself",
     sub: 'The one replying to you right now — is Elradd itself.',
-    sampleLabel: 'Illustrative example',
     personas: [
       {
         id: 'clinic',
@@ -136,7 +133,6 @@ export default {
         ],
       },
     ],
-    hint: 'These are illustrative samples — the real AI is the chat bubble below 👇 Talk to it now.',
   },
   how: {
     header: 'How it works',
