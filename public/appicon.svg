@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Elradd app icon">
+  <defs>
+    <linearGradient id="glowC" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffd76e"/>
+      <stop offset="0.5" stop-color="#92d26a"/>
+      <stop offset="1" stop-color="#25D366"/>
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="27" fill="url(#glowC)"/>
+  <path d="M20 110 V70 A40 40 0 0 1 100 70 V110 H80 V70 A20 20 0 0 0 40 70 V110 Z" fill="#0b4f43"/>
+</svg>

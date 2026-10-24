@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://elradd.com/</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://elradd.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elradd.com/"/>
+  </url>
+  <url>
+    <loc>https://elradd.com/website</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://elradd.com/website"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elradd.com/website"/>
+  </url>
+  <url>
+    <loc>https://elradd.com/contact</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://elradd.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elradd.com/contact"/>
+  </url>
+  <url>
+    <loc>https://elradd.com/privacy</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://elradd.com/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elradd.com/privacy"/>
+  </url>
+  <url>
+    <loc>https://elradd.com/terms</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://elradd.com/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://elradd.com/terms"/>
+  </url>
+</urlset>
