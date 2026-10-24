@@ -85,21 +85,43 @@ export default function Pain() {
   const { t } = useLang()
   const [phase, setPhase] = useState('idle')
   const doneCount = useRef(0)
+  const simAreaRef = useRef(null)
 
   const onPhoneDone = useCallback(() => {
     doneCount.current += 1
     if (doneCount.current >= 2) setPhase('done')
   }, [])
 
-  const start = () => {
-    doneCount.current = 0
-    setPhase('playing')
-  }
-  const replay = () => {
-    doneCount.current = 0
-    setPhase('idle')
-    requestAnimationFrame(() => requestAnimationFrame(() => setPhase('playing')))
-  }
+  // Start the simulation automatically the first time it scrolls into view
+  useEffect(() => {
+    const el = simAreaRef.current
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setPhase('playing')
+      return
+    }
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setPhase('playing')
+          io.disconnect()
+        }
+      },
+      { threshold: 0.3 },
+    )
+    io.observe(el)
+    return () => io.disconnect()
+  }, [])
+
+  // Loop: once both phones finish, hold 15s, then run it again
+  useEffect(() => {
+    if (phase !== 'done') return
+    const timer = setTimeout(() => {
+      doneCount.current = 0
+      setPhase('idle')
+      requestAnimationFrame(() => requestAnimationFrame(() => setPhase('playing')))
+    }, 15000)
+    return () => clearTimeout(timer)
+  }, [phase])
 
   return (
     <Section className="bg-white/60">
@@ -109,18 +131,11 @@ export default function Pain() {
       </Reveal>
 
       <Reveal className="mt-10">
-        <div className="mx-auto max-w-3xl">
+        <div className="mx-auto max-w-3xl" ref={simAreaRef}>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <span className="rounded-full bg-highlight/50 px-3.5 py-1.5 text-xs font-bold text-ink">
               {t.pain.simLabel}
             </span>
-            <button
-              type="button"
-              onClick={phase === 'playing' ? replay : phase === 'done' ? replay : start}
-              className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-primary px-6 font-bold text-white shadow-sm transition hover:bg-primary-2 active:scale-[0.98]"
-            >
-              {phase === 'idle' ? t.pain.play : t.pain.replay}
-            </button>
           </div>
 
           <div className="mt-8 grid gap-6 md:grid-cols-2">

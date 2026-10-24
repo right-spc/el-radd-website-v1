@@ -46,8 +46,6 @@ export default {
     header: 'Not a single message left unanswered',
     lead: 'Customers write at night. The first to reply wins the customer.',
     simLabel: 'Illustrative simulation — not a real conversation',
-    play: 'Run the simulation ▶',
-    replay: 'Run it again ↺',
     without: {
       tab: 'Without Elradd',
       messages: [
