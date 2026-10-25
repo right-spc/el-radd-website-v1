@@ -1,6 +1,6 @@
 import Hero from '../components/landing/Hero.jsx'
 import Pain from '../components/landing/Pain.jsx'
-import Demo from '../components/landing/Demo.jsx'
+import Why from '../components/landing/Why.jsx'
 import How from '../components/landing/How.jsx'
 import Pricing from '../components/landing/Pricing.jsx'
 import QubixTeaser from '../components/landing/QubixTeaser.jsx'
@@ -12,7 +12,7 @@ export default function Landing() {
     <>
       <Hero />
       <Pain />
-      <Demo />
+      <Why />
       <How />
       <Pricing />
       <QubixTeaser />

@@ -72,58 +72,21 @@ export default {
       { icon: 'exit', title: 'Customers leave without a reply' },
     ],
   },
-  demo: {
-    header: "Don't take our word for it — talk to it yourself",
-    sub: 'The one replying to you right now — is Elradd itself.',
-    personas: [
-      {
-        id: 'clinic',
-        label: 'Clinic 🩺',
-        messages: [
-          { from: 'customer', text: "As-salamu alaykum, I'd like to book a check-up with Dr. Heba" },
-          { from: 'bot', text: 'Wa alaykum as-salam 👋 Dr. Heba is free tomorrow at 6 or 7:30 PM — which slot works for you?' },
-          { from: 'customer', text: '6 works. How much is the visit?' },
-          { from: 'bot', text: "The visit is EGP 350, and your appointment is confirmed tomorrow at 6 ✅ You'll get a reminder before it" },
-          { from: 'customer', text: 'And what if I have an emergency right now?' },
-          { from: 'bot', text: "Emergencies need a human reply — I'm handing you over to the receptionist right away 🙋" },
-        ],
-      },
-      {
-        id: 'agency',
-        label: 'Agency 🏢',
-        messages: [
-          { from: 'customer', text: 'As-salamu alaykum, we want someone to manage our social media' },
-          { from: 'bot', text: "Welcome 👋 What's your line of business? And roughly how many platforms do you want managed?" },
-          { from: 'customer', text: 'A restaurant chain — Instagram, Facebook, and TikTok' },
-          { from: 'bot', text: 'Great, noted all the details ✅ Shall I book you an intro call with the team? Tuesday at 12 noon or Wednesday at 4 are open' },
-          { from: 'customer', text: 'Wednesday at 4' },
-          { from: 'bot', text: 'Booked ✅ The team will send you the call details well before it' },
-        ],
-      },
-      {
-        id: 'realestate',
-        label: 'Real estate 🏠',
-        messages: [
-          { from: 'customer', text: "As-salamu alaykum, I'm looking for an apartment in Sheikh Zayed" },
-          { from: 'bot', text: "Welcome 👋 What's your budget range? And what size do you need?" },
-          { from: 'customer', text: 'Two and a half million at most, 150 sqm or more' },
-          { from: 'bot', text: 'There are 3 apartments with these specs available right now — shall I send you their photos and details?' },
-          { from: 'customer', text: 'Send them, and if possible a viewing on Thursday' },
-          { from: 'bot', text: 'Sent ✅ And the viewing is confirmed Thursday at 12 noon — our agent will call you an hour before' },
-        ],
-      },
-      {
-        id: 'restaurant',
-        label: 'Restaurant 🍽️',
-        messages: [
-          { from: 'customer', text: 'As-salamu alaykum, I want to book a table for four on Friday night' },
-          { from: 'bot', text: 'Welcome 👋 Friday night is open at 8 or 9:45 — which time shall I confirm?' },
-          { from: 'customer', text: "9:45 — it's my wife's birthday actually 😄" },
-          { from: 'bot', text: "Bless her 🎉 I've noted the occasion and the team will prepare something special. Table for four, Friday 9:45 ✅" },
-          { from: 'customer', text: 'Is there a dress code? And can we see the menu?' },
-          { from: 'bot', text: "Dress code is smart casual, and there's valet parking at the entrance. We're a fine-dining seafood restaurant — our specialty is charcoal-grilled fish and shrimp, in the high price range. The full menu is served at the table 🍽️" },
-        ],
-      },
+  why: {
+    header: 'Not a chatbot.',
+    sub: 'An AI assistant that learns your business and your style — and replies like a member of your team.',
+    chat: [
+      { from: 'customer', text: 'Good evening, how much is the follow-up visit?' },
+      { from: 'bot', text: 'Hi Menna 👋 EGP 350 — shall I book you tomorrow at 6?' },
+      { from: 'customer', text: 'Confirm please. Do I need to give my details again?' },
+      { from: 'bot', text: "Not at all — your details are saved from the first time ✅ and I'll remind you an hour before", highlight: 'your details are saved from the first time' },
+    ],
+    chips: [
+      { icon: 'tone', title: 'Learns your tone and voice', note: 'Salesy or helpful? You decide' },
+      { icon: 'channels', title: 'One brain, every channel', note: 'WhatsApp · Instagram · Email · Website' },
+      { icon: 'egp', title: 'Billed in EGP, not USD', note: 'One invoice, no FX surprises' },
+      { icon: 'support', title: 'Egyptian support', note: 'The person helping you is Egyptian too' },
+      { icon: 'handoff', title: 'Hands off to humans when needed', note: 'An assistant to your team, not a replacement' },
     ],
   },
   how: {

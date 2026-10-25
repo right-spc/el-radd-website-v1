@@ -153,3 +153,32 @@ export function IconUserExit({ className = 'h-6 w-6' }) {
     </svg>
   )
 }
+
+export function IconAudioLines({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className={className} aria-hidden="true">
+      <path d="M4 10v4M8 7v10M12 4v16M16 7v10M20 10v4" />
+    </svg>
+  )
+}
+
+export function IconHeadset({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M4 13v-1.5a8 8 0 0 1 16 0V13" />
+      <rect x="3" y="13" width="4" height="6" rx="2" />
+      <rect x="17" y="13" width="4" height="6" rx="2" />
+      <path d="M20 19v.5a2.5 2.5 0 0 1-2.5 2.5H14" />
+    </svg>
+  )
+}
+
+export function IconInstagram({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect x="4" y="4" width="16" height="16" rx="5" />
+      <circle cx="12" cy="12" r="3.6" />
+      <path d="M17.2 6.8h.01" strokeWidth="2.6" />
+    </svg>
+  )
+}
