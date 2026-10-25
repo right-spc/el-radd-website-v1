@@ -66,18 +66,9 @@ export default {
       caption: 'The customer went to sleep… and the booking was done.',
     },
     cards: [
-      {
-        title: 'WhatsApp messages get lost in the rush',
-        body: 'Between work, calls, and customers, a message gets forgotten — and the customer goes looking elsewhere.',
-      },
-      {
-        title: "A receptionist's salary, every month",
-        body: 'A fixed monthly cost… and still not replying 24 hours a day.',
-      },
-      {
-        title: 'Customers leave the site when no one replies',
-        body: 'A visitor who asks and gets no answer rarely comes back.',
-      },
+      { icon: 'whatsapp', title: 'Messages get lost in the rush' },
+      { icon: 'moon', title: 'At night, no one replies' },
+      { icon: 'exit', title: 'Customers leave without a reply' },
     ],
   },
   demo: {

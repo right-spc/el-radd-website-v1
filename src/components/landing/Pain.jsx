@@ -4,7 +4,9 @@ import { useReducedMotion } from '../../hooks/useReducedMotion.js'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
 import { ChatMessages } from '../ChatView.jsx'
-import { IconClock } from '../Icons.jsx'
+import { IconClock, IconWhatsApp, IconMoon, IconUserExit } from '../Icons.jsx'
+
+const cardIcons = { whatsapp: IconWhatsApp, moon: IconMoon, exit: IconUserExit }
 
 function SimPhone({ label, tone, script, playing, onDone, caption }) {
   const reduced = useReducedMotion()
@@ -154,12 +156,21 @@ export default function Pain() {
       </Reveal>
 
       <div className="mt-12 grid gap-4 md:grid-cols-3">
-        {t.pain.cards.map((card, i) => (
-          <Reveal key={i} delay={i * 90} className="rounded-card border border-ink/10 bg-white p-6 shadow-soft">
-            <h3 className="text-lg font-extrabold text-ink">{card.title}</h3>
-            <p className="mt-2 leading-relaxed text-ink/70">{card.body}</p>
-          </Reveal>
-        ))}
+        {t.pain.cards.map((card, i) => {
+          const Icon = cardIcons[card.icon]
+          return (
+            <Reveal
+              key={i}
+              delay={i * 90}
+              className="flex items-center gap-4 rounded-card border border-ink/10 bg-white p-6 shadow-soft"
+            >
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+                {Icon && <Icon className="h-6 w-6" />}
+              </span>
+              <h3 className="text-lg font-extrabold leading-snug text-ink">{card.title}</h3>
+            </Reveal>
+          )
+        })}
       </div>
     </Section>
   )

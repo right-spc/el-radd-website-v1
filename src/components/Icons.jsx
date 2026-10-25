@@ -134,3 +134,22 @@ export function IconClock({ className = 'h-5 w-5' }) {
     </svg>
   )
 }
+
+export function IconMoon({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" />
+    </svg>
+  )
+}
+
+export function IconUserExit({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <circle cx="9.5" cy="7.5" r="3.2" />
+      <path d="M4 20c0-3.2 2.4-5.5 5.5-5.5 1.2 0 2.3.4 3.2 1" />
+      <path d="M15.5 17.5H21" />
+      <path d="M18.8 15l2.2 2.5-2.2 2.5" />
+    </svg>
+  )
+}
