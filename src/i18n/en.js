@@ -46,6 +46,7 @@ export default {
   pain: {
     header: 'Not a single message left unanswered',
     lead: 'Customers write at night. The first to reply wins the customer.',
+    ghostTime: '2:07 AM',
     without: {
       tab: 'Without Elradd',
       messages: [

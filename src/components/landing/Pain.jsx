@@ -65,7 +65,7 @@ function SimPhone({ label, tone, script, playing, onDone, caption }) {
 
   return (
     <figure className="flex flex-col">
-      <div className={`rounded-[26px] border-2 bg-white shadow-soft ${tones[tone]}`}>
+      <div className={`rounded-[26px] border-2 bg-white shadow-glow ${tones[tone]}`}>
         <div className="flex items-center justify-between border-b border-ink/10 px-5 py-3">
           <span
             className={`rounded-full px-3.5 py-1 text-sm font-extrabold ${
@@ -78,7 +78,7 @@ function SimPhone({ label, tone, script, playing, onDone, caption }) {
         </div>
         <ChatMessages items={script} shown={shown} typing={typing} className="h-[352px] p-4" />
       </div>
-      <figcaption className="mt-3 text-center text-[15px] font-bold text-ink/70">{caption}</figcaption>
+      <figcaption className="mt-3 text-center text-[15px] font-bold text-white/70">{caption}</figcaption>
     </figure>
   )
 }
@@ -126,10 +126,16 @@ export default function Pain() {
   }, [phase])
 
   return (
-    <Section className="bg-white/60">
+    <Section className="relative overflow-hidden bg-night">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-4 start-0 select-none text-[7rem] font-extrabold leading-none text-white/[0.04] md:text-[11rem]"
+      >
+        {t.pain.ghostTime}
+      </div>
       <Reveal className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{t.pain.header}</h2>
-        <p className="mt-4 text-lg leading-relaxed text-ink/80 md:text-xl">{t.pain.lead}</p>
+        <h2 className="text-3xl font-extrabold text-white md:text-4xl">{t.pain.header}</h2>
+        <p className="mt-4 text-lg leading-relaxed text-white/70 md:text-xl">{t.pain.lead}</p>
       </Reveal>
 
       <Reveal className="mt-10">
@@ -162,12 +168,12 @@ export default function Pain() {
             <Reveal
               key={i}
               delay={i * 90}
-              className="flex items-center gap-4 rounded-card border border-ink/10 bg-white p-6 shadow-soft"
+              className="flex items-center gap-4 rounded-card border border-white/10 bg-white/[0.05] p-6"
             >
-              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary-soft text-primary">
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-highlight/15 text-highlight">
                 {Icon && <Icon className="h-6 w-6" />}
               </span>
-              <h3 className="text-lg font-extrabold leading-snug text-ink">{card.title}</h3>
+              <h3 className="text-lg font-extrabold leading-snug text-white">{card.title}</h3>
             </Reveal>
           )
         })}

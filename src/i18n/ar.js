@@ -46,6 +46,7 @@ export default {
   pain: {
     header: 'محصلش رسالة من غير رد',
     lead: 'العميل بيكتب بليل. اللي بيرد الأول، بيكسب العميل.',
+    ghostTime: '٢:٠٧ ص',
     without: {
       tab: 'من غير الرد',
       messages: [
