@@ -44,7 +44,7 @@ export default {
     ],
   },
   pain: {
-    header: 'Not a single message left unanswered',
+    header: 'Not a single conversation left unanswered',
     lead: 'Customers write at night. The first to reply wins the customer.',
     ghostTime: '2:07 AM',
     without: {
