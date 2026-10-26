@@ -4,7 +4,10 @@ import { useReducedMotion } from '../../hooks/useReducedMotion.js'
 import WhatsAppCta from '../WhatsAppCta.jsx'
 import { ChatMessages } from '../ChatView.jsx'
 import { openElradd, askElradd } from '../../chat.js'
+import { IconMoon, IconReceipt, IconAudioLines } from '../Icons.jsx'
 import mark from '../../assets/logo/mark.svg'
+
+const askIcons = { moon: IconMoon, receipt: IconReceipt, tone: IconAudioLines }
 
 function HeroChatCard() {
   const { t } = useLang()
@@ -85,17 +88,23 @@ function HeroChatCard() {
         </span>
       </div>
       <ChatMessages items={messages} shown={shown} typing={typing} className="h-[320px] p-4" />
-      <div className="flex flex-wrap gap-2 border-t border-ink/10 px-4 py-3">
-        {t.hero.quickAsks.map((q) => (
-          <button
-            key={q}
-            type="button"
-            onClick={() => askElradd(q)}
-            className="rounded-full border border-primary/25 bg-primary-soft/60 px-3.5 py-1.5 text-[13px] font-bold text-primary transition hover:border-primary/50 hover:bg-primary-soft active:scale-[0.97]"
-          >
-            {q}
-          </button>
-        ))}
+      <div className="border-t border-ink/10 p-3">
+        <div className="grid grid-cols-3 gap-2">
+          {t.hero.quickAsks.map((ask) => {
+            const Icon = askIcons[ask.icon]
+            return (
+              <button
+                key={ask.text}
+                type="button"
+                onClick={() => askElradd(ask.text)}
+                className="inline-flex min-h-[46px] items-center justify-center gap-1.5 rounded-xl border border-primary/20 bg-primary-soft/50 px-2 py-2 text-center text-[12.5px] font-bold leading-tight text-primary transition hover:border-primary/45 hover:bg-primary-soft active:scale-[0.97]"
+              >
+                {Icon && <Icon className="h-4 w-4 shrink-0 text-primary-2" />}
+                {ask.text}
+              </button>
+            )
+          })}
+        </div>
       </div>
     </div>
   )

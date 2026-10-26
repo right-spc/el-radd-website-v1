@@ -33,7 +33,11 @@ export default {
     secondary: 'WhatsApp',
     liveNow: 'Live now',
     badges: ['24/7', 'Replies in seconds', 'Learns your style'],
-    quickAsks: ['Do you reply at night?', 'How much is it?', 'Can it learn my style?'],
+    quickAsks: [
+      { icon: 'moon', text: 'Do you reply at night?' },
+      { icon: 'receipt', text: 'How much is it?' },
+      { icon: 'tone', text: 'Can it learn my style?' },
+    ],
     chat: [
       { time: '2:07 AM', from: 'customer', text: 'Hi, are you still open?' },
       { time: '2:07 AM', from: 'bot', text: "Hello 👋 welcome — we're open every day from 10 AM to 10 PM" },
