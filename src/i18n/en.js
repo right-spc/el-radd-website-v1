@@ -104,6 +104,7 @@ export default {
     header: 'Pricing',
     sub: 'Just two plans — they differ in scale, not in service.',
     perMonth: 'EGP / month',
+    unlimitedLabel: 'Unlimited website chat',
     plans: [
       {
         id: 'guard',
@@ -111,8 +112,8 @@ export default {
         role: 'Watches your site and answers its visitors',
         price: '1,500',
         badge: '25% off the first year',
+        unlimitedCap: 'The whole plan — no credits, no meter',
         features: [
-          'Your site chat free — unlimited replies',
           'Knowledge base built and managed for you',
           'Setup and guidance — on us',
           'Egyptian support',
@@ -126,6 +127,7 @@ export default {
         role: 'Replies on your behalf on every channel',
         price: '3,750',
         badge: '25% off the first year',
+        unlimitedCap: 'Never touches your credits — no matter how busy it gets',
         features: [
           'Every channel from your number: WhatsApp, Messenger, Instagram, email',
           '10,000 credits monthly',

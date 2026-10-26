@@ -47,6 +47,14 @@ export default function Pricing() {
               <span className="text-[15px] font-bold text-ink/55">{p.perMonth}</span>
             </div>
 
+            <div className="mt-4 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary-soft/70 px-4 py-3">
+              <span className="text-2xl font-black leading-none text-primary-2" aria-hidden="true">∞</span>
+              <div>
+                <p className="text-sm font-extrabold text-primary">{p.unlimitedLabel}</p>
+                <p className="mt-0.5 text-xs font-bold leading-snug text-ink/55">{plan.unlimitedCap}</p>
+              </div>
+            </div>
+
             <ul className="mt-4 flex flex-col gap-2.5">
               {plan.features.map((f, j) => (
                 <li key={j} className="flex items-start gap-2.5">
