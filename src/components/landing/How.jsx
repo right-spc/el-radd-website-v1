@@ -53,10 +53,10 @@ export default function How() {
         <span className="inline-flex h-[42px] w-[42px] shrink-0 items-center justify-center rounded-full bg-highlight text-primary">
           <IconBolt className="h-5 w-5" />
         </span>
-        <p className="text-[17px] font-extrabold leading-relaxed text-primary">
-          {t.how.promise.strong}{' '}
-          <span className="text-sm font-bold text-ink/60">{t.how.promise.light}</span>
-        </p>
+        <div>
+          <p className="text-[17px] font-extrabold leading-relaxed text-primary">{t.how.promise.strong}</p>
+          <p className="mt-1 text-sm font-bold leading-relaxed text-ink/60">{t.how.promise.light}</p>
+        </div>
       </Reveal>
     </Section>
   )
