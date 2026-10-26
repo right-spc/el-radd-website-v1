@@ -3,7 +3,7 @@ import { useLang } from '../i18n/LangContext.jsx'
 import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
 import WhatsAppCta from '../components/WhatsAppCta.jsx'
-import { Accordion } from '../components/landing/Faq.jsx'
+import Accordion from '../components/Accordion.jsx'
 import { IconArrow, IconCheck } from '../components/Icons.jsx'
 
 export default function Website() {

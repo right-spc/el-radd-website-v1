@@ -1,10 +1,7 @@
 import { useState } from 'react'
-import { useLang } from '../../i18n/LangContext.jsx'
-import Section from './Section.jsx'
-import Reveal from '../Reveal.jsx'
-import { IconChevron } from '../Icons.jsx'
+import { IconChevron } from './Icons.jsx'
 
-export function Accordion({ items, defaultOpen = 0 }) {
+export default function Accordion({ items, defaultOpen = 0 }) {
   const [openIdx, setOpenIdx] = useState(defaultOpen)
 
   return (
@@ -38,19 +35,5 @@ export function Accordion({ items, defaultOpen = 0 }) {
         )
       })}
     </div>
-  )
-}
-
-export default function Faq() {
-  const { t } = useLang()
-  return (
-    <Section id="faq">
-      <Reveal className="mx-auto max-w-2xl text-center">
-        <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{t.faq.header}</h2>
-      </Reveal>
-      <Reveal className="mx-auto mt-10 max-w-3xl">
-        <Accordion items={t.faq.items} />
-      </Reveal>
-    </Section>
   )
 }

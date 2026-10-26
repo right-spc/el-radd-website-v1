@@ -4,7 +4,7 @@ import Why from '../components/landing/Why.jsx'
 import How from '../components/landing/How.jsx'
 import Pricing from '../components/landing/Pricing.jsx'
 import QubixTeaser from '../components/landing/QubixTeaser.jsx'
-import Faq from '../components/landing/Faq.jsx'
+import Ask from '../components/landing/Ask.jsx'
 import CtaBand from '../components/landing/CtaBand.jsx'
 
 export default function Landing() {
@@ -16,7 +16,7 @@ export default function Landing() {
       <How />
       <Pricing />
       <QubixTeaser />
-      <Faq />
+      <Ask />
       <CtaBand />
     </>
   )

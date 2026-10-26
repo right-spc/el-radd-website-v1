@@ -160,38 +160,21 @@ export default {
     line2: 'A hand-designed landing page — EGP 7,000, with the first year of hosting free',
     cta: 'Learn more →',
   },
-  faq: {
-    header: 'Frequently asked questions',
-    items: [
-      {
-        q: 'Is this like regular chatbots?',
-        a: 'No — a chatbot replies with canned lines. This is an AI that learns your business and answers from your own data. Try it yourself above 👆',
-      },
-      {
-        q: 'Can I control how it talks?',
-        a: 'Yes — it learns more than your answers. It learns your style too: salesy or simply helpful? formal or easygoing? You set the direction, and we tune it for you.',
-      },
-      {
-        q: 'Do WhatsApp messages come to my number?',
-        a: 'Yes, your own number — Elradd is just the one replying from it.',
-      },
-      {
-        q: 'How do I set it up?',
-        a: 'We connect your channels in minutes, you share your materials — and we build the knowledge base on your behalf. You approve, and it is live. All in under one business day.',
-      },
-      {
-        q: 'Can I try it before paying?',
-        a: 'Better than that — the AI on this site is the exact same product. Try it right now, on the house.',
-      },
-      {
-        q: 'What if a customer asks something complex?',
-        a: 'It answers what it knows, and if the matter needs a human decision, it hands it to your staff right away.',
-      },
-      {
-        q: 'How does payment work?',
-        a: 'One monthly invoice covering everything — with no surprise charges.',
-      },
+  ask: {
+    header: "Don't believe it? Ask it yourself",
+    sub: 'Skip the FAQ page — ask Raddod, and he answers.',
+    live: 'Raddod is live — your reply comes in seconds',
+    pills: [
+      { icon: 'chat', text: 'Is this like a regular chatbot?' },
+      { icon: 'tone', text: 'Can I control how it talks?' },
+      { icon: 'whatsapp', text: 'Do WhatsApp messages come to my number?' },
+      { icon: 'bolt', text: 'How do I set it up?' },
+      { icon: 'check', text: 'Can I try it before paying?' },
+      { icon: 'handoff', text: 'What if a customer asks something complex?' },
+      { icon: 'receipt', text: 'How does payment work?' },
     ],
+    cta: 'Open the chat and ask',
+    free: 'Or ask your own question — type it in the bubble, just like any chat',
   },
   ctaBand: {
     heading: 'Ready to leave the replies to us?',
