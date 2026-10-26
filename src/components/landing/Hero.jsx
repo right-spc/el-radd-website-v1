@@ -4,10 +4,11 @@ import { useReducedMotion } from '../../hooks/useReducedMotion.js'
 import WhatsAppCta from '../WhatsAppCta.jsx'
 import { ChatMessages } from '../ChatView.jsx'
 import { openElradd, askElradd } from '../../chat.js'
-import { IconMoon, IconReceipt, IconAudioLines } from '../Icons.jsx'
+import { IconMoon, IconReceipt, IconAudioLines, IconClock, IconBolt } from '../Icons.jsx'
 import mark from '../../assets/logo/mark.svg'
 
 const askIcons = { moon: IconMoon, receipt: IconReceipt, tone: IconAudioLines }
+const badgeIcons = [IconClock, IconBolt, IconAudioLines]
 
 function HeroChatCard() {
   const { t } = useLang()
@@ -147,15 +148,19 @@ export default function Hero() {
             </button>
             <WhatsAppCta label={t.hero.secondary} />
           </div>
-          <div className="mt-5 flex flex-wrap gap-2">
-            {t.hero.badges.map((b) => (
-              <span
-                key={b}
-                className="rounded-full bg-primary-soft px-3.5 py-1.5 text-[13px] font-bold text-primary"
-              >
-                {b}
-              </span>
-            ))}
+          <div className="mt-5 flex flex-wrap gap-2.5">
+            {t.hero.badges.map((b, i) => {
+              const BIcon = badgeIcons[i]
+              return (
+                <span
+                  key={b}
+                  className="inline-flex items-center gap-1.5 rounded-full border border-primary/15 bg-primary-soft px-4 py-2 text-[13px] font-extrabold text-primary"
+                >
+                  {BIcon && <BIcon className="h-4 w-4 text-primary-2" />}
+                  {b}
+                </span>
+              )
+            })}
           </div>
         </div>
         <div className="flex justify-center lg:justify-end">
