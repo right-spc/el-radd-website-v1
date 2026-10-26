@@ -173,13 +173,9 @@ export default {
       { icon: 'handoff', text: 'What if a customer asks something complex?' },
       { icon: 'receipt', text: 'How does payment work?' },
     ],
-    cta: 'Open the chat and ask',
+    cta: 'Try Elradd yourself',
     free: 'Or ask your own question — type it in the bubble, just like any chat',
-  },
-  ctaBand: {
-    heading: 'Ready to leave the replies to us?',
-    primary: 'Try Elradd yourself',
-    secondary: 'WhatsApp',
+    close: 'Ready to leave the replies to us?',
   },
   websitePage: {
     h1: 'A website for your business, designed by hand.',

@@ -55,16 +55,18 @@ export default function Ask() {
         })}
       </Reveal>
 
-      <Reveal className="mt-9 flex flex-col items-center gap-3.5">
+      <p className="mt-6 text-center text-sm font-bold text-ink/55">{t.ask.free}</p>
+
+      <Reveal className="mx-auto mt-10 max-w-5xl rounded-[24px] bg-gradient-to-l from-primary to-primary-2 px-6 py-12 text-center text-white shadow-soft md:py-14">
+        <h3 className="text-3xl font-extrabold md:text-4xl">{t.ask.close}</h3>
         <button
           type="button"
           onClick={openElradd}
-          className="inline-flex min-h-[54px] items-center gap-2.5 rounded-full bg-primary px-8 text-[17px] font-extrabold text-white shadow-[0_10px_28px_rgba(11,79,67,0.28)] transition hover:bg-primary-2 active:scale-[0.98]"
+          className="mt-7 inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full bg-white px-7 text-lg font-bold text-primary shadow-sm transition hover:bg-highlight active:scale-[0.98]"
         >
           <IconChatBubble className="h-5 w-5" />
           {t.ask.cta}
         </button>
-        <p className="text-sm font-bold text-ink/55">{t.ask.free}</p>
       </Reveal>
     </Section>
   )
