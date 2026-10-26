@@ -111,6 +111,7 @@ export default {
         name: 'الحارس',
         role: 'بيحرس موقعك ويرد على زواره',
         price: '١٬٥٠٠',
+        oldPrice: '٢٬٠٠٠',
         badge: 'خصم ٢٥٪ أول سنة',
         unlimitedCap: 'ده نص الخطة كلها — من غير رصيد ولا عدّاد',
         features: [
@@ -126,6 +127,7 @@ export default {
         name: 'الوكيل',
         role: 'بيرد بالنيابة عنك على كل القنوات',
         price: '٣٬٧٥٠',
+        oldPrice: '٥٬٠٠٠',
         badge: 'خصم ٢٥٪ أول سنة',
         unlimitedCap: 'مش بيستهلك من رصيدك أبدًا — مهل الكلام زاد',
         features: [

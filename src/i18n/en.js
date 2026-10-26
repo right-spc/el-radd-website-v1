@@ -111,6 +111,7 @@ export default {
         name: 'The Guard',
         role: 'Watches your site and answers its visitors',
         price: '1,500',
+        oldPrice: '2,000',
         badge: '25% off the first year',
         unlimitedCap: 'The whole plan — no credits, no meter',
         features: [
@@ -126,6 +127,7 @@ export default {
         name: 'The Agent',
         role: 'Replies on your behalf on every channel',
         price: '3,750',
+        oldPrice: '5,000',
         badge: '25% off the first year',
         unlimitedCap: 'Never touches your credits — no matter how busy it gets',
         features: [
