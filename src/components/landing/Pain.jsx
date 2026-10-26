@@ -125,6 +125,45 @@ export default function Pain() {
     return () => clearTimeout(timer)
   }, [phase])
 
+  // Mobile carousel: when a full story finishes, glide to the other phone —
+  // until the visitor swipes or taps, then they drive
+  const scrollRef = useRef(null)
+  const userDrove = useRef(false)
+  const cardIndex = useRef(0)
+  const [activeCard, setActiveCard] = useState(0)
+
+  const jumpTo = (i) => {
+    userDrove.current = true
+    const el = scrollRef.current
+    const cards = el?.querySelectorAll('[data-card]')
+    cards?.[i]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+  }
+
+  useEffect(() => {
+    if (phase !== 'done' || userDrove.current) return
+    const el = scrollRef.current
+    if (!el || window.innerWidth >= 768) return
+    const next = cardIndex.current === 0 ? 1 : 0
+    el.querySelectorAll('[data-card]')[next]?.scrollIntoView({
+      behavior: 'smooth',
+      inline: 'center',
+      block: 'nearest',
+    })
+    cardIndex.current = next
+  }, [phase])
+
+  const onScroll = () => {
+    const el = scrollRef.current
+    if (!el) return
+    const cards = [...el.querySelectorAll('[data-card]')]
+    const center = el.getBoundingClientRect().left + el.clientWidth / 2
+    const idx = cards.findIndex((c) => {
+      const r = c.getBoundingClientRect()
+      return center >= r.left && center < r.right
+    })
+    if (idx >= 0) setActiveCard(idx)
+  }
+
   return (
     <Section className="relative overflow-hidden bg-night">
       <div
@@ -140,23 +179,46 @@ export default function Pain() {
 
       <Reveal className="mt-10">
         <div className="mx-auto max-w-3xl" ref={simAreaRef}>
-          <div className="mt-8 grid gap-6 md:grid-cols-2">
-            <SimPhone
-              label={t.pain.without.tab}
-              tone="muted"
-              script={t.pain.without.messages}
-              playing={phase !== 'idle'}
-              onDone={onPhoneDone}
-              caption={t.pain.without.caption}
-            />
-            <SimPhone
-              label={t.pain.with.tab}
-              tone="good"
-              script={t.pain.with.messages}
-              playing={phase !== 'idle'}
-              onDone={onPhoneDone}
-              caption={t.pain.with.caption}
-            />
+          <div
+            ref={scrollRef}
+            onScroll={onScroll}
+            onTouchStart={() => (userDrove.current = true)}
+            className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:pb-0"
+          >
+            <div data-card className="min-w-[86%] shrink-0 snap-center md:min-w-0">
+              <SimPhone
+                label={t.pain.without.tab}
+                tone="muted"
+                script={t.pain.without.messages}
+                playing={phase !== 'idle'}
+                onDone={onPhoneDone}
+                caption={t.pain.without.caption}
+              />
+            </div>
+            <div data-card className="min-w-[86%] shrink-0 snap-center md:min-w-0">
+              <SimPhone
+                label={t.pain.with.tab}
+                tone="good"
+                script={t.pain.with.messages}
+                playing={phase !== 'idle'}
+                onDone={onPhoneDone}
+                caption={t.pain.with.caption}
+              />
+            </div>
+          </div>
+          <div className="mt-4 flex justify-center gap-2 md:hidden">
+            {[0, 1].map((i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => jumpTo(i)}
+                aria-label={i === 0 ? t.pain.without.tab : t.pain.with.tab}
+                aria-current={activeCard === i}
+                className={`h-2.5 w-2.5 rounded-full transition ${
+                  activeCard === i ? 'bg-white' : 'bg-white/30'
+                }`}
+              />
+            ))}
           </div>
         </div>
       </Reveal>
