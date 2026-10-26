@@ -91,21 +91,14 @@ export default {
   },
   how: {
     header: 'How it works',
+    sub: 'All the heavy lifting is ours — your AI is live in under one business day.',
     steps: [
-      { title: 'Send us your data', body: 'Your services, prices, and common customer questions — plus the way you like to talk. Send them over and done.' },
-      { title: 'Elradd learns them within 24–48 hours', body: '' },
-      { title: 'Receive the bookings and replies', body: '' },
+      { title: 'We connect your channels', body: 'WhatsApp, your website, and more — guided step by step', who: 'You — with us in it', chip: 'Minutes' },
+      { title: 'You share your materials', body: 'Anything you would give a new hire: your services, prices, and tone', who: 'You', chip: 'Minutes too' },
+      { title: 'We build the knowledge', body: 'The Elradd team prepares the whole knowledge base on your behalf', who: 'On us', chip: 'All the heavy lifting', ours: true },
+      { title: 'You approve — it is live', body: 'Review it, approve it, and the AI goes live on your channels', who: 'Your final word', chip: 'That is it' },
     ],
-    handoff: 'And if something needs a human decision — it hands it to your staff.',
-    channelsLabel: 'It replies on all your channels',
-    channels: [
-      { id: 'whatsapp', label: 'WhatsApp', line: 'Replies to your WhatsApp customers from your number', credits: '3 credits per message' },
-      { id: 'messenger', label: 'Messenger', line: "Replies to your page's messages", credits: '1 credit' },
-      { id: 'instagram', label: 'Instagram', line: 'Replies to DMs and comments', credits: '1 credit' },
-      { id: 'email', label: 'Email', line: 'Replies to customer emails', credits: '1 credit' },
-      { id: 'webchat', label: 'Website chat', line: 'Replies to your own website visitors', credits: 'Free and unlimited' },
-    ],
-    oneBill: 'One bill for everything',
+    promise: { strong: 'From first hello to live AI: under one business day.', light: 'Your part in all of it: minutes.' },
   },
   pricing: {
     header: 'Pricing',
@@ -162,7 +155,7 @@ export default {
       },
       {
         q: 'How do I set it up?',
-        a: 'You send us your business data: your services, prices, and common customer questions. It learns them within 24–48 hours, then runs on its own.',
+        a: 'We connect your channels in minutes, you share your materials — and we build the knowledge base on your behalf. You approve, and it is live. All in under one business day.',
       },
       {
         q: 'Can I try it before paying?',
