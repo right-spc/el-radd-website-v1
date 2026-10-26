@@ -128,15 +128,18 @@ export default function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute bottom-[-30%] start-[-12%] h-[420px] w-[420px] rounded-full bg-wa/10 blur-3xl"
       />
-      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-12 md:pt-16 lg:grid-cols-2 lg:pb-24 lg:pt-20">
-        <div>
-          <h1 className="text-4xl font-extrabold leading-[1.2] text-primary md:text-5xl lg:text-[3.3rem]">
-            {h1a}{' '}
-            <span className="relative inline-block">
-              <span className="absolute inset-x-0 bottom-1 -z-10 h-4 rounded bg-highlight/70 md:h-5" aria-hidden="true" />
-              {h1b}
-            </span>
-          </h1>
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 pb-16 pt-12 md:pt-16 lg:grid-cols-2 lg:gap-y-0 lg:pb-24 lg:pt-20">
+        <h1 className="order-1 text-4xl font-extrabold leading-[1.2] text-primary md:text-5xl lg:order-none lg:col-start-1 lg:row-start-1 lg:text-[3.3rem]">
+          {h1a}{' '}
+          <span className="relative inline-block">
+            <span className="absolute inset-x-0 bottom-1 -z-10 h-4 rounded bg-highlight/70 md:h-5" aria-hidden="true" />
+            {h1b}
+          </span>
+        </h1>
+        <div className="order-2 mt-8 flex justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:mt-0 lg:self-center lg:justify-end">
+          <HeroChatCard />
+        </div>
+        <div className="order-3 lg:order-none lg:col-start-1 lg:row-start-2">
           <p className="mt-5 max-w-xl text-lg leading-relaxed text-ink/80 md:text-xl">{t.hero.sub}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <button
@@ -162,9 +165,6 @@ export default function Hero() {
               )
             })}
           </div>
-        </div>
-        <div className="flex justify-center lg:justify-end">
-          <HeroChatCard />
         </div>
       </div>
     </section>
