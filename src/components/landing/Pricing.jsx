@@ -44,6 +44,7 @@ export default function Pricing() {
 
             <div className="mt-4 flex items-baseline gap-2">
               <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.price}</span>
+              <span className="text-lg font-bold text-ink/40 line-through">{plan.oldPrice}</span>
               <span className="text-[15px] font-bold text-ink/55">{p.perMonth}</span>
             </div>
             <p className="mt-0.5 text-sm font-extrabold text-primary-2">{plan.note}</p>
