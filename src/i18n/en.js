@@ -28,7 +28,7 @@ export default {
   },
   hero: {
     h1: 'AI that speaks Egyptian',
-    sub: 'It replies to your customers and books for them on WhatsApp and your website — 24 hours a day',
+    sub: 'A smart assistant that learns your services and prices, and replies to your customers in natural Egyptian Arabic — instantly, around the clock',
     primary: 'Try Elradd yourself',
     secondary: 'WhatsApp',
     liveNow: 'Live now',
