@@ -58,7 +58,7 @@ export default {
         { status: 'Delivered… and no reply' },
         { time: '10:41 AM', from: 'customer', text: 'Never mind, I booked somewhere else 👍' },
       ],
-      caption: 'The message you never answered… answered your competitor.',
+      caption: "The message you never answered… your customer answered it at your competitor.",
     },
     with: {
       tab: 'With Elradd',
