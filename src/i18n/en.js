@@ -112,7 +112,7 @@ export default {
         role: 'Watches your site and answers its visitors',
         price: '1,500',
         oldPrice: '2,000',
-        badge: '25% off the first year',
+        badge: '25% off — limited time',
         unlimitedCap: 'The whole plan — no credits, no meter',
         features: [
           'Knowledge base built and managed for you',
@@ -128,7 +128,7 @@ export default {
         role: 'Replies on your behalf on every channel',
         price: '3,750',
         oldPrice: '5,000',
-        badge: '25% off the first year',
+        badge: '25% off — limited time',
         unlimitedCap: 'Never touches your credits — no matter how busy it gets',
         features: [
           'Every channel from your number: WhatsApp, Messenger, Instagram, email',
