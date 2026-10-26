@@ -110,9 +110,7 @@ export default {
         name: 'The Guard',
         role: 'Watches your site and answers its visitors',
         price: '1,500',
-        oldPrice: '2,000',
         badge: '25% off the first year',
-        note: 'First-year price — then EGP 2,000/month',
         features: [
           'Your site chat free — unlimited replies',
           'Knowledge base built and managed for you',
@@ -127,9 +125,7 @@ export default {
         name: 'The Agent',
         role: 'Replies on your behalf on every channel',
         price: '3,750',
-        oldPrice: '5,000',
         badge: '25% off the first year',
-        note: 'First-year price — then EGP 5,000/month',
         features: [
           'Every channel from your number: WhatsApp, Messenger, Instagram, email',
           '10,000 credits monthly',
