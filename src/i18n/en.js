@@ -290,7 +290,7 @@ export default {
     whatsapp: 'WhatsApp',
   },
   footer: {
-    tagline: 'Elradd — a name that means what it says.',
+    tagline: 'Leave the replies to us',
     links: [
       { label: 'Pricing', to: '/#pricing' },
       { label: 'Try it yourself', to: '/#demo' },

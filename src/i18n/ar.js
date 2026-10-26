@@ -290,7 +290,7 @@ export default {
     whatsapp: 'واتساب',
   },
   footer: {
-    tagline: 'الرد — اسم على مسمى.',
+    tagline: 'سيب الرد علينا',
     links: [
       { label: 'الأسعار', to: '/#pricing' },
       { label: 'جرّبه بنفسك', to: '/#demo' },
