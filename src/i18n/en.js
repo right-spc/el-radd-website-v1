@@ -2,7 +2,7 @@ export default {
   meta: {
     home: {
       title: 'Elradd — Leave the replies to us',
-      desc: 'It replies to your customers and books for them on WhatsApp and your website — 24 hours a day',
+      desc: 'A smart assistant that learns your services and prices, and replies to your customers in natural Egyptian Arabic — instantly, around the clock',
     },
     website: {
       title: 'A ready-made website for your business — Elradd',
