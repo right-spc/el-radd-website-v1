@@ -162,7 +162,7 @@ export default function Pricing() {
             </button>
 
             <p className="mt-3 text-center text-xs font-bold leading-relaxed text-ink/50">
-              {p.addons.map((addon) => `${addon.name} ${addon.price}`).join(' · ')}
+              {plan.extras.map((extra) => `${extra.name} ${extra.price}`).join(' · ')}
             </p>
           </Reveal>
           </div>

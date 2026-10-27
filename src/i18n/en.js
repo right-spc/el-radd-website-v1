@@ -125,6 +125,7 @@ export default {
         ],
         cta: 'Hire The Guard',
         ask: "I'd like The Guard — the website chat plan",
+        extras: [{ name: 'Setup & training', price: 'EGP 2,000 one-time' }],
       },
       {
         id: 'agent',
@@ -148,6 +149,10 @@ export default {
         ],
         cta: 'Hire The Agent',
         ask: "I'd like The Agent — the all-channels plan",
+        extras: [
+          { name: 'Setup & training', price: 'EGP 2,000 one-time' },
+          { name: 'Extra credits', price: 'EGP 500 / 1,000 credits' },
+        ],
       },
     ],
     payments: [
@@ -157,10 +162,6 @@ export default {
       { id: 'meza', name: 'Meza wallet' },
       { id: 'paymob', name: 'Paymob' },
       { id: 'instapay', name: 'InstaPay' },
-    ],
-    addons: [
-      { name: 'Setup & training', price: 'EGP 2,000 one-time' },
-      { name: 'Extra credits', price: 'EGP 500 / 1,000 credits' },
     ],
     trust: 'No hidden fees — everything on one bill',
   },
