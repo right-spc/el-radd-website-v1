@@ -73,7 +73,7 @@ function priceToNum(s) {
 export default function Pricing() {
   const { t, lang } = useLang()
   const p = t.pricing
-  const [billing, setBilling] = useState('monthly')
+  const [billing, setBilling] = useState('annual')
 
   // mobile carousel state (dots + swipe tracking)
   const scrollRef = useRef(null)
