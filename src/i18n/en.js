@@ -122,8 +122,8 @@ export default {
         oldPrice: '2,000',
         badge: '25% off — limited time',
         annualTotal: '18,000',
-        annualOld: '21,000',
-        annualBadge: 'Save EGP 5,000',
+        annualOld: '28,000',
+        annualBadge: '25% off + 2 months free',
         annualNote: '14 months instead of 12 — setup & training free',
         unlimitedCap: 'The whole plan — no credits, no meter',
         annual: {
@@ -146,8 +146,8 @@ export default {
         oldPrice: '5,000',
         badge: '25% off — limited time',
         annualTotal: '45,000',
-        annualOld: '52,500',
-        annualBadge: 'Save EGP 9,500',
+        annualOld: '70,000',
+        annualBadge: '25% off + 2 months free',
         annualNote: '14 months instead of 12 — setup & training free',
         unlimitedCap: 'Never touches your credits — no matter how busy it gets',
         annual: {

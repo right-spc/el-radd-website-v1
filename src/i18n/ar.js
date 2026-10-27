@@ -122,8 +122,8 @@ export default {
         oldPrice: '٢٬٠٠٠',
         badge: 'خصم ٢٥٪ لفترة محدودة',
         annualTotal: '١٨٬٠٠٠',
-        annualOld: '٢١٬٠٠٠',
-        annualBadge: 'وفّر ٥٬٠٠٠ ج.م',
+        annualOld: '٢٨٬٠٠٠',
+        annualBadge: 'خصم ٢٥٪ + شهرين مجانًا',
         annualNote: '١٤ شهر بدل ١٢ — والإعداد والتدريب مجانًا',
         unlimitedCap: 'ده كل اللي في الخطة — من غير رصيد ولا عدّاد',
         annual: {
@@ -146,8 +146,8 @@ export default {
         oldPrice: '٥٬٠٠٠',
         badge: 'خصم ٢٥٪ لفترة محدودة',
         annualTotal: '٤٥٬٠٠٠',
-        annualOld: '٥٢٬٥٠٠',
-        annualBadge: 'وفّر ٩٬٥٠٠ ج.م',
+        annualOld: '٧٠٬٠٠٠',
+        annualBadge: 'خصم ٢٥٪ + شهرين مجانًا',
         annualNote: '١٤ شهر بدل ١٢ — والإعداد والتدريب مجانًا',
         unlimitedCap: 'مش بيستهلك من رصيدك أبدًا — مهما زاد الكلام',
         annual: {
