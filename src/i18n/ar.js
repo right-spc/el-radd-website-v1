@@ -113,12 +113,9 @@ export default {
     billing: {
       groupLabel: 'فترة الفوترة',
       monthly: 'شهري',
-      monthlyBadge: 'خصم ١٠٪ لفترة محدودة',
       quarterly: 'ربع سنوي',
-      quarterlyBadge: 'خصم ٢٥٪ لفترة محدودة',
       annual: 'سنوي',
       annualTag: 'وفّر أكتر',
-      annualBadge: 'خصم ٢٥٪ + شهرين مجانًا',
     },
     annualSetupLine: 'الإعداد والتدريب — مجانًا مع العرض السنوي',
     plans: [

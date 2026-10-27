@@ -113,12 +113,9 @@ export default {
     billing: {
       groupLabel: 'Billing period',
       monthly: 'Monthly',
-      monthlyBadge: '10% off — limited time',
       quarterly: 'Quarterly',
-      quarterlyBadge: '25% off — limited time',
       annual: 'Annual',
       annualTag: 'Save more',
-      annualBadge: '25% off + 2 months free',
     },
     annualSetupLine: 'Setup & training — free with the annual plan',
     plans: [

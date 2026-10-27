@@ -50,8 +50,28 @@ const paymentMarks = {
   instapay: InstaPayMark,
 }
 
+// badge: actual discount vs list rate, rounded — computed so it stays
+// honest if prices change (e.g. 3,199 vs 5,000 -> 36%)
+function badgeText(billing, plan, lang) {
+  const rate =
+    billing === 'monthly' ? plan.price
+    : billing === 'quarterly' ? plan.quarterlyPrice
+    : plan.annualPrice
+  const pct = Math.round((1 - priceToNum(rate) / priceToNum(plan.oldPrice)) * 100)
+  const pctStr = lang === 'ar' ? String(pct).replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[Number(d)]) : String(pct)
+  if (lang === 'ar') {
+    return `خصم ${pctStr}٪ ${billing === 'annual' ? '+ شهرين مجانًا' : 'لفترة محدودة'}`
+  }
+  return `${pct}% off ${billing === 'annual' ? '+ 2 months free' : '— limited time'}`
+}
+
+// Arabic-Indic digits and thousands separator -> number
+function priceToNum(s) {
+  return Number(String(s).replace(/[٠-٩]/g, (d) => '٠١٢٣٤٥٦٧٨٩'.indexOf(d)).replace(/[٬,]/g, ''))
+}
+
 export default function Pricing() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const p = t.pricing
   const [billing, setBilling] = useState('monthly')
 
@@ -148,7 +168,7 @@ export default function Pricing() {
                 <p className="mt-0.5 text-[13px] font-bold text-ink/55">{plan.role}</p>
               </div>
               <span className="shrink-0 rounded-full bg-highlight px-3 py-1 text-xs font-extrabold text-ink">
-                {p.billing[billing + 'Badge']}
+                {badgeText(billing, plan, lang)}
               </span>
             </div>
 
