@@ -89,7 +89,7 @@ export default function Pricing() {
       </Reveal>
 
       <Reveal className="mt-6 flex justify-center">
-        <div className="inline-flex rounded-full border border-ink/10 bg-white p-1 shadow-sm" role="group" aria-label={p.annualLabel}>
+        <div className="inline-flex rounded-full border border-ink/10 bg-white p-1 shadow-sm" role="group" aria-label={p.billing.groupLabel}>
           <button
             type="button"
             onClick={() => setBilling('monthly')}
@@ -99,6 +99,16 @@ export default function Pricing() {
             }`}
           >
             {p.billing.monthly}
+          </button>
+          <button
+            type="button"
+            onClick={() => setBilling('quarterly')}
+            aria-pressed={billing === 'quarterly'}
+            className={`min-h-[44px] rounded-full px-6 text-[15px] font-extrabold transition ${
+              billing === 'quarterly' ? 'bg-primary text-white shadow-sm' : 'text-ink/60 hover:text-primary'
+            }`}
+          >
+            {p.billing.quarterly}
           </button>
           <button
             type="button"
@@ -138,17 +148,25 @@ export default function Pricing() {
                 <p className="mt-0.5 text-[13px] font-bold text-ink/55">{plan.role}</p>
               </div>
               <span className="shrink-0 rounded-full bg-highlight px-3 py-1 text-xs font-extrabold text-ink">
-                {billing === 'annual' ? plan.annualBadge : plan.badge}
+                {p.billing[billing + 'Badge']}
               </span>
             </div>
 
-            {billing === 'annual' ? (
+            {billing === 'annual' && (
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.annualTotal}</span>
                 <span className="text-lg font-bold text-ink/40 line-through">{plan.annualOld}</span>
                 <span className="text-[15px] font-bold text-ink/55">{p.annualUnit}</span>
               </div>
-            ) : (
+            )}
+            {billing === 'quarterly' && (
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.quarterlyTotal}</span>
+                <span className="text-lg font-bold text-ink/40 line-through">{plan.quarterlyOld}</span>
+                <span className="text-[15px] font-bold text-ink/55">{p.quarterlyUnit}</span>
+              </div>
+            )}
+            {billing === 'monthly' && (
               <div className="mt-4 flex items-baseline gap-2">
                 <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.price}</span>
                 <span className="text-lg font-bold text-ink/40 line-through">{plan.oldPrice}</span>
