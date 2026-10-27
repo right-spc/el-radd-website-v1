@@ -3,8 +3,52 @@ import { useLang } from '../i18n/LangContext.jsx'
 import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
 import WhatsAppCta from '../components/WhatsAppCta.jsx'
-import Accordion from '../components/Accordion.jsx'
-import { IconArrow, IconCheck } from '../components/Icons.jsx'
+import { askElradd, openElradd } from '../chat.js'
+import { IconArrow, IconCheck, IconChatBubble } from '../components/Icons.jsx'
+
+function MiniBrowser({ url }) {
+  return (
+    <div className="w-full max-w-md rounded-2xl border border-white/15 bg-white shadow-[0_24px_60px_rgba(0,0,0,0.45),0_0_80px_rgba(14,124,102,0.25)] overflow-hidden">
+      <div className="flex items-center gap-1.5 bg-ink/80 px-3 py-2">
+        <span className="h-2 w-2 rounded-full bg-white/20" />
+        <span className="h-2 w-2 rounded-full bg-white/20" />
+        <span className="h-2 w-2 rounded-full bg-white/20" />
+        <span className="flex-1 rounded-full bg-white/10 px-2.5 py-0.5 text-[9px] font-bold text-white/40" dir="ltr">
+          {url}
+        </span>
+      </div>
+      <div className="relative bg-white p-4 pb-9">
+        <div className="flex items-center gap-1.5 pb-3">
+          <span className="h-3 w-9 rounded bg-primary" />
+          <span className="ms-auto h-2 w-6 rounded bg-ink/10" />
+          <span className="h-2 w-5 rounded bg-ink/10" />
+          <span className="h-2 w-5 rounded bg-ink/10" />
+        </div>
+        <div className="h-3 w-3/4 rounded-md bg-ink/70" />
+        <div className="mt-1.5 h-2.5 w-2/5 rounded-md bg-highlight" />
+        <div className="mt-2.5 h-1.5 w-full rounded bg-ink/10" />
+        <div className="mt-1 h-1.5 w-3/5 rounded bg-ink/10" />
+        <div className="mt-3 flex gap-2">
+          <span className="h-5 w-16 rounded-full bg-primary" />
+          <span className="h-5 w-12 rounded-full border border-ink/20" />
+        </div>
+        <div className="mt-4 grid grid-cols-3 gap-2">
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="rounded-lg border border-ink/10 bg-page p-2">
+              <div className="h-3 w-3 rounded bg-primary-2" />
+              <div className="mt-1.5 h-1.5 w-4/5 rounded bg-ink/25" />
+              <div className="mt-1 h-1 w-full rounded bg-ink/10" />
+            </div>
+          ))}
+        </div>
+        <div className="absolute bottom-3 start-3 flex h-9 w-9 items-center justify-center rounded-full bg-primary text-white shadow-[0_6px_16px_rgba(11,79,67,0.4)]">
+          <IconChatBubble className="h-4 w-4" />
+          <span className="absolute -top-0.5 -end-0.5 h-2.5 w-2.5 rounded-full border-2 border-white bg-wa" />
+        </div>
+      </div>
+    </div>
+  )
+}
 
 export default function Website() {
   const { t } = useLang()
@@ -12,76 +56,66 @@ export default function Website() {
 
   return (
     <>
-      <section id="hero" className="relative overflow-hidden">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -top-40 end-[-10%] h-[420px] w-[420px] rounded-full bg-primary-2/10 blur-3xl"
-        />
-        <div className="relative mx-auto max-w-3xl px-4 pb-14 pt-14 text-center md:pt-20">
-          <Reveal>
-            <h1 className="text-4xl font-extrabold leading-[1.2] text-primary md:text-5xl">{w.h1}</h1>
-            <p className="mt-5 text-xl font-extrabold text-ink md:text-2xl">{w.sub1}</p>
-            <p className="mx-auto mt-4 max-w-xl text-lg leading-relaxed text-ink/75">{w.sub2}</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+      {/* dark hero with the glowing site mockup */}
+      <section id="site-hero" className="relative overflow-hidden bg-night">
+        <div className="relative mx-auto grid max-w-5xl items-center gap-12 px-4 pb-14 pt-14 md:pt-20 lg:grid-cols-2 lg:gap-y-0">
+          <Reveal className="order-1 lg:order-none lg:col-start-1 lg:row-start-1">
+            <h1 className="text-4xl font-extrabold leading-[1.2] text-white md:text-5xl">{w.h1}</h1>
+            <p className="mt-5 text-xl font-extrabold text-highlight md:text-2xl">{w.priceLine}</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <WhatsAppCta label={w.ctaWhatsapp} />
-              <span className="text-sm font-bold text-ink/60">{w.ctaBot}</span>
+              <button
+                type="button"
+                onClick={openElradd}
+                className="text-sm font-bold text-white/70 transition hover:text-white"
+              >
+                {w.ctaBot}
+              </button>
             </div>
           </Reveal>
+          <Reveal className="order-2 flex justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:justify-end">
+            <div className="w-full max-w-md">
+              <MiniBrowser url={w.mockUrl} />
+            </div>
+          </Reveal>
+          <div className="order-3 lg:order-none lg:col-start-1 lg:row-start-2">
+            <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">{w.sub2}</p>
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+              <WhatsAppCta label={w.ctaWhatsapp} />
+              <span className="text-sm font-bold text-white/60">{w.ctaBot}</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      <Section className="bg-white/60 pt-0 md:pt-0">
-        <Reveal className="mx-auto max-w-xl overflow-hidden rounded-card border border-ink/10 bg-white shadow-soft">
-          {w.stack.map((row, i) => (
-            <div
-              key={i}
-              className={`flex items-center justify-between gap-4 px-6 py-5 ${
-                i < w.stack.length - 1 ? 'border-b border-ink/10' : 'bg-primary-soft/60'
-              }`}
-            >
-              <div>
-                <p className="font-extrabold text-ink">{row.label}</p>
-                {row.note && <p className="mt-0.5 text-sm text-ink/55">{row.note}</p>}
-              </div>
-              <p className={`shrink-0 font-extrabold ${i === w.stack.length - 1 ? 'text-xl text-primary' : 'text-lg text-ink'}`}>
-                {row.value}
-              </p>
-            </div>
-          ))}
-        </Reveal>
-      </Section>
-
-      <Section className="pt-0 md:pt-0">
+      {/* offer checklist + total card */}
+      <Section className="bg-white/60">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.featuresHeader}</h2>
+          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.offerHeader}</h2>
         </Reveal>
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          {w.features.map((f, i) => (
-            <Reveal key={i} delay={i * 70} className="rounded-card border border-ink/10 bg-white p-6 shadow-soft">
-              <h3 className="flex items-start gap-2.5 text-lg font-extrabold text-ink">
-                <IconCheck className="mt-0.5 h-5 w-5 shrink-0 text-primary-2" />
-                {f.title}
-              </h3>
-              <p className="mt-2 leading-relaxed text-ink/70">{f.body}</p>
-              {f.coBrand && (
-                <p className="mt-3 text-sm font-bold text-ink/55">
-                  {f.coBrandPre}{' '}
-                  <a
-                    href="https://www.qubix.agency/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary-2 underline underline-offset-4 transition hover:text-primary"
-                  >
-                    {f.coBrand}
-                  </a>
-                </p>
-              )}
-            </Reveal>
-          ))}
+        <div className="mx-auto mt-10 grid max-w-4xl items-start gap-6 md:grid-cols-[1fr_300px]">
+          <Reveal className="rounded-card border border-ink/10 bg-white p-6 shadow-soft md:p-7">
+            <ul className="flex flex-col gap-4">
+              {w.offer.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <IconCheck className="mt-1 h-5 w-5 shrink-0 text-primary-2" />
+                  <span className="text-[15.5px] font-bold leading-relaxed text-ink">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal delay={120} className="flex flex-col gap-4 rounded-card border-2 border-primary/25 bg-white p-6 shadow-soft">
+            <span className="inline-flex items-center gap-2 self-start rounded-full bg-highlight px-3 py-1 text-xs font-extrabold text-ink">
+              {w.offerMarketNote}
+            </span>
+            <p className="text-lg font-extrabold leading-relaxed text-ink">{w.offerTotalLabel}</p>
+            <p className="text-4xl font-extrabold tracking-tight text-primary">{w.offerTotal}</p>
+          </Reveal>
         </div>
       </Section>
 
-      <Section className="bg-white/60">
+      {/* process */}
+      <Section>
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.processHeader}</h2>
         </Reveal>
@@ -97,29 +131,62 @@ export default function Website() {
         </div>
       </Section>
 
-      <Section>
-        <Reveal className="mx-auto max-w-2xl rounded-card border-2 border-primary/25 bg-white p-7 shadow-soft md:p-8">
-          <h2 className="text-2xl font-extrabold text-primary">{w.termsHeader}</h2>
-          <ul className="mt-5 space-y-4">
-            {w.terms.map((term, i) => (
-              <li key={i} className="flex items-start gap-3 leading-relaxed text-ink/80">
-                <IconCheck className="mt-1 h-5 w-5 shrink-0 text-primary-2" />
-                <span>{term}</span>
-              </li>
-            ))}
-          </ul>
-        </Reveal>
-      </Section>
-
+      {/* terms — فصحى, grouped */}
       <Section className="bg-white/60">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.faqHeader}</h2>
+          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.termsHeader}</h2>
         </Reveal>
-        <Reveal className="mx-auto mt-8 max-w-3xl">
-          <Accordion items={w.faq} defaultOpen={-1} />
+        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {w.termsGroups.map((group) => (
+            <Reveal key={group.title} className="rounded-card border border-ink/10 bg-white p-6 shadow-soft">
+              <h3 className="flex items-center gap-2.5 text-lg font-extrabold text-primary">
+                <IconCheck className="h-5 w-5 shrink-0 text-primary-2" />
+                {group.title}
+              </h3>
+              <ul className="mt-4 flex flex-col gap-2.5">
+                {group.items.map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-[13.5px] font-semibold leading-relaxed text-ink/75">
+                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-2" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          ))}
+        </div>
+      </Section>
+
+      {/* ask pills */}
+      <Section id="site-ask" className="bg-primary-soft/40">
+        <Reveal className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.ask.header}</h2>
+          <p className="mt-3 text-lg leading-relaxed text-ink/75">{w.ask.sub}</p>
+        </Reveal>
+        <Reveal className="mt-7 flex flex-wrap justify-center gap-2.5">
+          {w.ask.pills.map((pill) => (
+            <button
+              key={pill}
+              type="button"
+              onClick={() => askElradd(pill)}
+              className="inline-flex items-center rounded-full border-[1.5px] border-primary/20 bg-white px-[18px] py-[11px] text-[15px] font-bold text-primary shadow-sm transition hover:border-primary/45 hover:bg-primary-soft active:scale-[0.97]"
+            >
+              {pill}
+            </button>
+          ))}
+        </Reveal>
+        <Reveal className="mt-8 flex justify-center">
+          <button
+            type="button"
+            onClick={openElradd}
+            className="inline-flex min-h-[52px] items-center gap-2.5 rounded-full bg-primary px-8 text-[17px] font-extrabold text-white shadow-soft transition hover:bg-primary-2 active:scale-[0.98]"
+          >
+            <IconChatBubble className="h-5 w-5" />
+            {w.ask.cta}
+          </button>
         </Reveal>
       </Section>
 
+      {/* closing band */}
       <div className="px-4 pb-16">
         <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[24px] bg-gradient-to-l from-primary to-primary-2 px-6 py-12 text-center text-white shadow-soft">
           <div className="flex flex-wrap items-center justify-center gap-3">

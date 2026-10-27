@@ -221,58 +221,97 @@ export default {
   },
   websitePage: {
     h1: 'A website for your business, designed by hand.',
-    sub1: 'EGP 6,999 — first year hosting free — and replying to your customers from day one',
+    priceLine: 'EGP 6,999 one-time — first year of hosting free',
     sub2: 'A custom design made by hand — not a template and not AI-generated. The timeline is agreed when you reach out.',
-    stack: [
-      { label: 'Hand-made design', value: 'EGP 6,999' },
-      { label: 'A full year of hosting', value: 'Free', note: 'The market rate is EGP 1,500 to 3,000' },
-      { label: 'Your total', value: 'Just EGP 6,999' },
+    mockUrl: 'your-business.com',
+    ctaWhatsapp: 'Message us on WhatsApp',
+    ctaBot: 'Or ask Raddod in the chat',
+    offerHeader: 'Exactly what you get',
+    offer: [
+      'A full landing page: header + hero + 3 sections + footer',
+      'Hand-made design — in partnership with Qubix Agency',
+      'Raddod live from day one — replying to your customers instantly',
+      'Mobile-first and fast — most of your customers are on phones',
+      'First year of hosting free — we tell you renewal costs before they happen',
+      'The domain in your name — or we buy it for you at EGP 1,500/year',
+      'One full design revision — extras priced by size',
     ],
-    featuresHeader: 'What you get',
-    features: [
-      {
-        title: 'Hand-made design',
-        body: 'No ready template and no AI generation — a real designer working on your project.',
-        coBrandPre: 'In cooperation with',
-        coBrand: 'Qubix Agency',
-      },
-      {
-        title: 'Elradd pre-installed from day one',
-        body: 'Your site replies to customers the moment it opens — no setup needed from you.',
-      },
-      {
-        title: 'Mobile-first and fast',
-        body: 'Most of your customers browse on their phones — the site is designed for them and loads fast.',
-      },
-      {
-        title: 'First year hosting free',
-        body: "A full year of hosting on us — and we'll tell you the cost of any renewal before it happens.",
-      },
-    ],
+    offerTotalLabel: 'Your total',
+    offerTotal: 'EGP 6,999 only',
+    offerMarketNote: 'Market hosting costs EGP 1,500–3,000',
     processHeader: 'How we work',
     process: [
       'Message us on WhatsApp',
       'We agree on content & timeline',
       'We design and build',
-      'You receive your site live — with Elradd running on it',
+      'You receive your site live — with Raddod running on it',
     ],
-    termsHeader: 'The terms, honestly:',
-    terms: [
-      'Introductory landing page: header + hero + 3 sections + footer — no stores or booking systems',
-      'First year hosting free — and we tell you the cost of any renewal before it happens, not after',
-      'The domain is registered in your name — buy it yourself, or we buy it for you for EGP 1,500/year for .com or .net',
-      'One full design revision included — any extra requests are priced based on their size',
-      'The timeline is agreed when you reach out',
+    termsHeader: 'Details & terms',
+    termsGroups: [
+      {
+        title: 'Payment journey',
+        items: [
+          'A free consultation call — we map your project requirements and content',
+          'A 2,000 EGP advance — non-refundable, covers the start of design work; the domain cost (1,800 EGP) is paid with it if we buy it on your behalf',
+          'On design approval — 4,999 EGP to activate hosting and hand over the site',
+          'Launch — with Raddod working on it from the first moment',
+        ],
+      },
+      {
+        title: 'Ownership & delivery',
+        items: [
+          'The design is produced on Figma — upon final payment, a ZIP copy with full design and source files is sent to your email, and can be re-requested anytime',
+          'The design and code are yours after full payment — move the site to any hosting provider anytime, no restrictions',
+        ],
+      },
+      {
+        title: 'Domain',
+        items: [
+          'Registered in your own name',
+          'Buy it and set DNS per our guidance, or we buy and manage it for you',
+          'Domain cost is communicated before any purchase, and varies by name and availability',
+          'An available .com or .net domain = an extra 1,800 EGP paid with the design advance',
+        ],
+      },
+      {
+        title: 'Hosting',
+        items: [
+          'First year free with any active Raddod plan',
+          'If the plan is cancelled: EGP 550 per month',
+          'If payment stops for two weeks: the site goes temporarily offline until settled',
+          'Move your site to any provider anytime — the code is yours',
+        ],
+      },
+      {
+        title: 'Content & logo',
+        items: [
+          'Logo and content (texts, images) come from the client, reorganized and built into the design',
+          'A new logo design: an EGP 1,000 add-on',
+        ],
+      },
+      {
+        title: 'Scope of the offer',
+        items: [
+          'Landing page: header + hero + 3 sections + footer — no stores or booking systems',
+          'One full design revision; extras priced by size',
+          'Received and run by the Raddod team — hosting runs on Raddod infrastructure',
+          'Delivery timeline agreed on contact',
+        ],
+      },
     ],
-    faqHeader: 'Quick questions',
-    faq: [
-      { q: 'Support in Arabic?', a: 'Yes, of course — all communication is in Arabic, from the first message to delivery.' },
-      { q: 'Does the site connect to Elradd?', a: 'Elradd is installed on the site from day one — it replies to your customers immediately.' },
-      { q: 'Any other costs?', a: 'The domain only — and only if you choose for us to buy it for you. Other than that, no additional costs.' },
-      { q: 'Can I request changes?', a: 'You get one full design revision — any additional requests are priced based on their size.' },
-    ],
-    ctaWhatsapp: 'Message us on WhatsApp',
-    ctaBot: 'Or ask Elradd from the chat bubble 👇',
+    ask: {
+      header: 'Questions about your website?',
+      sub: 'Ask Raddod — he answers.',
+      pills: [
+        'How much is hosting after the first year?',
+        'Is the domain registered in my name?',
+        'Who owns the website after payment?',
+        'Who provides the content and logo?',
+        "What happens to my site if I cancel the Elradd plan?",
+        'How long does delivery take?',
+      ],
+      cta: 'Open the chat and ask',
+    },
     backToPricing: 'Back to pricing',
   },
   contactPage: {
