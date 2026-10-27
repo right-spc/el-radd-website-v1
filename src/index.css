@@ -19,6 +19,57 @@ body {
   border-radius: 4px;
 }
 
+/* themed scrollbar */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #0e7c66 #e3efec;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #e3efec;
+}
+::-webkit-scrollbar-thumb {
+  background: #0e7c66;
+  border-radius: 999px;
+  border: 2px solid #e3efec;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0b4f43;
+}
+::-webkit-scrollbar-corner {
+  background: #e3efec;
+}
+
+/* scrollbars inside dark sections */
+.bg-night {
+  scrollbar-color: rgba(255, 255, 255, 0.25) transparent;
+}
+.bg-night ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.bg-night ::-webkit-scrollbar-track {
+  background: transparent;
+}
+.bg-night ::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+}
+.bg-night ::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.32);
+}
+
+/* hidden scrollbar for swipe carousels */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* section scroll offset for the sticky header */
 section[id] {
   scroll-margin-top: 88px;

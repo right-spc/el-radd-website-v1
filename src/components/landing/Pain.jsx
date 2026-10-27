@@ -183,7 +183,7 @@ export default function Pain() {
             ref={scrollRef}
             onScroll={onScroll}
             onTouchStart={() => (userDrove.current = true)}
-            className="mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:pb-0"
+            className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-1 md:grid md:grid-cols-2 md:gap-6 md:overflow-visible md:pb-0"
           >
             <div data-card className="min-w-[86%] shrink-0 snap-center md:min-w-0">
               <SimPhone
