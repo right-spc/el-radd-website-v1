@@ -192,3 +192,12 @@ export function IconWallet({ className = 'h-6 w-6' }) {
     </svg>
   )
 }
+
+export function IconCalendar({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <rect x="4" y="5.5" width="16" height="15" rx="2.5" />
+      <path d="M4 10h16M8 3.5v3.5M16 3.5v3.5" />
+    </svg>
+  )
+}

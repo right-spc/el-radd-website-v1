@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
-import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe, IconWallet } from '../Icons.jsx'
+import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe, IconWallet, IconCalendar } from '../Icons.jsx'
 import { askElradd } from '../../chat.js'
 import { carouselCenterDelta } from '../../carousel.js'
 
@@ -122,6 +122,14 @@ export default function Pricing() {
               <div>
                 <p className="text-sm font-extrabold text-primary">{p.unlimitedLabel}</p>
                 <p className="mt-0.5 text-xs font-bold leading-snug text-ink/55">{plan.unlimitedCap}</p>
+              </div>
+            </div>
+
+            <div className="mt-2.5 flex items-center gap-3 rounded-xl border border-highlight/60 bg-highlight/15 px-4 py-3">
+              <IconCalendar className="h-5 w-5 shrink-0 text-primary" />
+              <div>
+                <p className="text-sm font-extrabold text-primary">{p.annualLabel}</p>
+                <p className="mt-0.5 text-xs font-bold leading-snug text-ink/55">{plan.annual.text}</p>
               </div>
             </div>
 

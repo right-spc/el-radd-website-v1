@@ -109,6 +109,7 @@ export default {
     sub: 'Just two plans — they differ in scale, not in service.',
     perMonth: 'EGP / month',
     unlimitedLabel: 'Unlimited website chat',
+    annualLabel: 'Full-year offer',
     plans: [
       {
         id: 'guard',
@@ -118,6 +119,9 @@ export default {
         oldPrice: '2,000',
         badge: '25% off — limited time',
         unlimitedCap: 'The whole plan — no credits, no meter',
+        annual: {
+          text: 'Pay EGP 18,000 once — live for 14 months instead of 12, setup & training free (save EGP 5,000)',
+        },
         features: [
           'Knowledge base built and managed for you',
           'Setup and guidance — on us',
@@ -135,6 +139,9 @@ export default {
         oldPrice: '5,000',
         badge: '25% off — limited time',
         unlimitedCap: 'Never touches your credits — no matter how busy it gets',
+        annual: {
+          text: 'Pay EGP 45,000 once — live for 14 months instead of 12, setup & training free (save EGP 9,500)',
+        },
         features: [
           'Every channel from your number: WhatsApp, Messenger, Instagram, email',
           '10,000 credits monthly',
