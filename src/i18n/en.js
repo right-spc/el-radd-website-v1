@@ -165,8 +165,6 @@ export default {
       { name: 'Extra credits', price: 'EGP 500 / 1,000 credits' },
     ],
     trust: 'No hidden fees — everything on one bill',
-    askPill: 'Need a custom offer? Ask Elradd →',
-    askMsg: 'Is there a custom offer for my business?',
   },
   qubix: {
     line1: 'Need a website too? 🌐',
