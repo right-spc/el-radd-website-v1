@@ -20,7 +20,7 @@ export default function Ask() {
   const reduced = useReducedMotion()
 
   return (
-    <Section id="ask">
+    <Section id="ask" className="bg-primary-soft/40">
       <Reveal className="mx-auto max-w-xl text-center">
         <h2 className="text-3xl font-extrabold leading-snug text-primary md:text-4xl">{t.ask.header}</h2>
         <p className="mt-3 text-lg leading-relaxed text-ink/75">{t.ask.sub}</p>
