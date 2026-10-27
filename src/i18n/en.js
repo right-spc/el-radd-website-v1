@@ -130,9 +130,10 @@ export default {
           text: 'Pay EGP 18,000 once — live for 14 months instead of 12, setup & training free (save EGP 5,000)',
         },
         features: [
-          'Knowledge base built and managed for you',
-          'Setup and guidance — on us',
-          'Egyptian support',
+          'Replies to your site visitors and books for them — instantly',
+          'Learns your services and prices, and replies like a member of your team',
+          'Hands human-decision cases to your staff',
+          'Elradd team support with you, step by step',
         ],
         cta: 'Hire The Guard',
         ask: "I'd like The Guard — the website chat plan",
@@ -154,9 +155,9 @@ export default {
           text: 'Pay EGP 45,000 once — live for 14 months instead of 12, setup & training free (save EGP 9,500)',
         },
         features: [
-          'Every channel from your number: WhatsApp, Messenger, Instagram, email',
-          '10,000 credits monthly',
-          'Everything in The Guard: managed, set up, supported',
+          'Replies on WhatsApp, Messenger, Instagram, and email — from your own number',
+          '10,000 monthly credits, split across channels as you like',
+          'Everything in The Guard — across all your channels',
         ],
         credits: [
           { icon: 'whatsapp', label: 'WhatsApp', value: '3' },
