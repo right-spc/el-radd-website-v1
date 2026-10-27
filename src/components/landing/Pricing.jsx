@@ -264,7 +264,23 @@ export default function Pricing() {
                 {p.siteOffer.type}
               </span>
               <h3 className="mt-2.5 text-2xl font-extrabold text-primary">{p.siteOffer.name}</h3>
-              <p className="mt-0.5 text-[13px] font-bold text-ink/55">{p.siteOffer.role}</p>
+              <p className="mt-0.5 text-[13px] font-bold text-ink/55">
+                {p.siteOffer.role.split('Qubix Agency').map((part, i, arr) => (
+                  <span key={i}>
+                    {part}
+                    {i < arr.length - 1 && (
+                      <a
+                        href="https://www.qubix.agency/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-primary-2 underline underline-offset-2 transition hover:text-primary"
+                      >
+                        Qubix Agency
+                      </a>
+                    )}
+                  </span>
+                ))}
+              </p>
               <p className="mt-2 text-2xl font-extrabold text-ink">
                 {p.siteOffer.price} <span className="text-sm font-bold text-ink/50">{p.siteOffer.unit}</span>
               </p>

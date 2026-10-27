@@ -67,7 +67,7 @@ export default function Website() {
                 <p className="mt-3 text-sm font-bold text-ink/55">
                   {f.coBrandPre}{' '}
                   <a
-                    href="https://qubix.agency"
+                    href="https://www.qubix.agency/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-primary-2 underline underline-offset-4 transition hover:text-primary"
