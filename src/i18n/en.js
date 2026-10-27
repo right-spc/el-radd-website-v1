@@ -115,7 +115,7 @@ export default {
       monthly: 'Monthly',
       quarterly: 'Quarterly',
       annual: 'Annual',
-      annualTag: 'Save more',
+      annualTag: 'Save up to 40%',
     },
     annualSetupLine: 'Setup & training — free with the annual plan',
     plans: [

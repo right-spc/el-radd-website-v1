@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
@@ -75,9 +75,17 @@ export default function Pricing() {
   const p = t.pricing
   const [billing, setBilling] = useState('annual')
 
-  // mobile carousel state (dots + swipe tracking)
+  // mobile carousel state (dots + swipe tracking) — defaults to the Agent card
   const scrollRef = useRef(null)
-  const [activeCard, setActiveCard] = useState(0)
+  const [activeCard, setActiveCard] = useState(1)
+
+  useEffect(() => {
+    const el = scrollRef.current
+    if (!el || window.innerWidth >= 768) return
+    const card = el.querySelectorAll('[data-card]')[1]
+    if (!card) return
+    el.scrollLeft = el.scrollLeft + carouselCenterDelta(el, card)
+  }, [])
 
   const onScroll = () => {
     const el = scrollRef.current

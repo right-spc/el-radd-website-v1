@@ -115,7 +115,7 @@ export default {
       monthly: 'شهري',
       quarterly: 'ربع سنوي',
       annual: 'سنوي',
-      annualTag: 'وفّر أكتر',
+      annualTag: 'وفّر حتى ٤٠٪',
     },
     annualSetupLine: 'الإعداد والتدريب — مجانًا مع العرض السنوي',
     plans: [
