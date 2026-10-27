@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
@@ -255,15 +256,46 @@ export default function Pricing() {
           </Reveal>
           </div>
         ))}
+
+        <div data-card className="w-[86%] shrink-0 snap-center md:col-span-2 md:w-auto">
+          <div className="flex h-full flex-col gap-4 rounded-[20px] border-2 border-highlight bg-gradient-to-b from-highlight/10 to-white p-6 shadow-soft md:flex-row md:items-center md:justify-between">
+            <div>
+              <span className="inline-flex rounded-full bg-highlight px-3 py-1 text-xs font-extrabold text-ink">
+                {p.siteOffer.type}
+              </span>
+              <h3 className="mt-2.5 text-2xl font-extrabold text-primary">{p.siteOffer.name}</h3>
+              <p className="mt-0.5 text-[13px] font-bold text-ink/55">{p.siteOffer.role}</p>
+              <p className="mt-2 text-2xl font-extrabold text-ink">
+                {p.siteOffer.price} <span className="text-sm font-bold text-ink/50">{p.siteOffer.unit}</span>
+              </p>
+            </div>
+            <div className="flex flex-col gap-4 md:items-end">
+              <ul className="flex flex-col gap-2">
+                {p.siteOffer.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2.5">
+                    <IconCheck className="mt-1 h-[18px] w-[18px] shrink-0 text-primary-2" />
+                    <span className="text-[15px] font-bold leading-relaxed text-ink">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                to="/website"
+                className="inline-flex min-h-[46px] items-center justify-center rounded-full border-2 border-primary bg-white px-6 text-[15px] font-extrabold text-primary transition hover:border-highlight hover:bg-highlight active:scale-[0.98] md:w-full"
+              >
+                {p.siteOffer.cta}
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className="mt-4 flex justify-center gap-2 md:hidden">
-        {p.plans.map((plan, i) => (
+        {[...p.plans.map((plan) => plan.name), p.siteOffer.name].map((name, i) => (
           <button
-            key={plan.id}
+            key={name}
             type="button"
             onClick={() => jumpTo(i)}
-            aria-label={plan.name}
+            aria-label={name}
             aria-current={activeCard === i}
             className={`h-2.5 w-2.5 rounded-full transition ${
               activeCard === i ? 'bg-primary' : 'bg-ink/20'

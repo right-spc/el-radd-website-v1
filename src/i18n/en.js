@@ -188,11 +188,19 @@ export default {
       { id: 'instapay', name: 'InstaPay' },
     ],
     trust: 'No hidden fees — everything on one bill',
-  },
-  qubix: {
-    line1: 'Need a website too? 🌐',
-    line2: 'A hand-designed landing page — EGP 7,000, with the first year of hosting free',
-    cta: 'Learn more →',
+    siteOffer: {
+      type: 'Add-on service · one-time',
+      name: 'Ready-made website',
+      role: 'Hand-designed — with Raddod live on it from day one',
+      price: '7,000',
+      unit: 'EGP one-time',
+      features: [
+        'A landing page designed by hand — not a template',
+        'First year of hosting free',
+        'Raddod pre-installed from day one',
+      ],
+      cta: 'Learn more →',
+    },
   },
   ask: {
     header: "Don't believe it? Ask it yourself",
