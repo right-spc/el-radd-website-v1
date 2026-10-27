@@ -6,7 +6,7 @@ export default {
     },
     website: {
       title: 'A ready-made website for your business — Elradd',
-      desc: 'EGP 7,000 — first year hosting free — and replying to your customers from day one',
+      desc: 'EGP 6,999 — first year hosting free — and replying to your customers from day one',
     },
     contact: { title: 'Contact us — Elradd', desc: "Got a question? We've got the reply." },
     privacy: { title: 'Privacy Policy — Elradd', desc: 'The privacy policy of the Elradd website and service.' },
@@ -189,14 +189,14 @@ export default {
     ],
     trust: 'No hidden fees — everything on one bill',
     siteOffer: {
-      type: 'Add-on service · one-time',
-      name: 'Ready-made website',
-      role: 'Hand-designed — with Raddod live on it from day one',
-      price: '7,000',
+      type: 'Special offer · in partnership with Qubix Agency',
+      name: "Don't have a website yet?",
+      role: 'With any Elradd plan — Qubix Agency designs a custom website for your business',
+      price: '6,999',
       unit: 'EGP one-time',
       features: [
-        'A landing page designed by hand — not a template',
-        'First year of hosting free',
+        'Custom design for your business — not a template',
+        'First-year hosting — covered by Elradd, free',
         'Raddod pre-installed from day one',
       ],
       cta: 'Learn more →',
@@ -221,12 +221,12 @@ export default {
   },
   websitePage: {
     h1: 'A website for your business, designed by hand.',
-    sub1: 'EGP 7,000 — first year hosting free — and replying to your customers from day one',
+    sub1: 'EGP 6,999 — first year hosting free — and replying to your customers from day one',
     sub2: 'A custom design made by hand — not a template and not AI-generated. The timeline is agreed when you reach out.',
     stack: [
-      { label: 'Hand-made design', value: 'EGP 7,000' },
+      { label: 'Hand-made design', value: 'EGP 6,999' },
       { label: 'A full year of hosting', value: 'Free', note: 'The market rate is EGP 1,500 to 3,000' },
-      { label: 'Your total', value: 'Just EGP 7,000' },
+      { label: 'Your total', value: 'Just EGP 6,999' },
     ],
     featuresHeader: 'What you get',
     features: [
