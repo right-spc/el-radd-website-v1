@@ -120,8 +120,6 @@ export default {
       annualTag: 'Save more',
       annualBadge: '25% off + 2 months free',
     },
-    annualUnit: 'EGP / 14 months',
-    quarterlyUnit: 'EGP / 3 months',
     annualSetupLine: 'Setup & training — free with the annual plan',
     plans: [
       {
@@ -130,10 +128,10 @@ export default {
         role: 'Watches your site and answers its visitors',
         price: '1,800',
         oldPrice: '2,000',
-        quarterlyTotal: '4,500',
-        quarterlyOld: '6,000',
-        annualTotal: '18,000',
-        annualOld: '28,000',
+        quarterlyPrice: '1,500',
+        quarterlyBulk: 'Pay EGP 4,500 every 3 months',
+        annualPrice: '1,286',
+        annualBulk: 'Pay EGP 18,000 yearly — live for 14 months instead of 12, setup & training free',
         annualNote: '14 months instead of 12 — setup & training free',
         unlimitedCap: 'The whole plan — no credits, no meter',
         annual: {
@@ -155,10 +153,10 @@ export default {
         role: 'Replies on your behalf on every channel',
         price: '4,500',
         oldPrice: '5,000',
-        quarterlyTotal: '11,250',
-        quarterlyOld: '15,000',
-        annualTotal: '45,000',
-        annualOld: '70,000',
+        quarterlyPrice: '3,750',
+        quarterlyBulk: 'Pay EGP 11,250 every 3 months',
+        annualPrice: '3,214',
+        annualBulk: 'Pay EGP 45,000 yearly — live for 14 months instead of 12, setup & training free',
         annualNote: '14 months instead of 12 — setup & training free',
         unlimitedCap: 'Never touches your credits — no matter how busy it gets',
         annual: {

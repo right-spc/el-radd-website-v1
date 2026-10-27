@@ -152,27 +152,28 @@ export default function Pricing() {
               </span>
             </div>
 
-            {billing === 'annual' && (
-              <div className="mt-4 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.annualTotal}</span>
-                <span className="text-lg font-bold text-ink/40 line-through">{plan.annualOld}</span>
-                <span className="text-[15px] font-bold text-ink/55">{p.annualUnit}</span>
-              </div>
-            )}
-            {billing === 'quarterly' && (
-              <div className="mt-4 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.quarterlyTotal}</span>
-                <span className="text-lg font-bold text-ink/40 line-through">{plan.quarterlyOld}</span>
-                <span className="text-[15px] font-bold text-ink/55">{p.quarterlyUnit}</span>
-              </div>
-            )}
-            {billing === 'monthly' && (
-              <div className="mt-4 flex items-baseline gap-2">
-                <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.price}</span>
-                <span className="text-lg font-bold text-ink/40 line-through">{plan.oldPrice}</span>
-                <span className="text-[15px] font-bold text-ink/55">{p.perMonth}</span>
-              </div>
-            )}
+            {(() => {
+              const big =
+                billing === 'monthly' ? plan.price
+                : billing === 'quarterly' ? plan.quarterlyPrice
+                : plan.annualPrice
+              const bulk =
+                billing === 'quarterly' ? plan.quarterlyBulk
+                : billing === 'annual' ? plan.annualBulk
+                : ''
+              return (
+                <>
+                  <div className="mt-4 flex items-baseline gap-2">
+                    <span className="text-4xl font-extrabold tracking-tight text-ink">{big}</span>
+                    <span className="text-lg font-bold text-ink/40 line-through">{plan.oldPrice}</span>
+                    <span className="text-[15px] font-bold text-ink/55">{p.perMonth}</span>
+                  </div>
+                  {bulk && (
+                    <p className="mt-0.5 text-sm font-extrabold text-primary-2">{bulk}</p>
+                  )}
+                </>
+              )
+            })()}
 
             <div className="mt-4 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary-soft/70 px-4 py-3">
               <span className="text-2xl font-black leading-none text-primary-2" aria-hidden="true">∞</span>

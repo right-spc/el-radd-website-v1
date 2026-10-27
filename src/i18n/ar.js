@@ -120,8 +120,6 @@ export default {
       annualTag: 'وفّر أكتر',
       annualBadge: 'خصم ٢٥٪ + شهرين مجانًا',
     },
-    annualUnit: 'ج.م / ١٤ شهر',
-    quarterlyUnit: 'ج.م / ٣ شهور',
     annualSetupLine: 'الإعداد والتدريب — مجانًا مع العرض السنوي',
     plans: [
       {
@@ -130,10 +128,10 @@ export default {
         role: 'بيحرس موقعك ويرد على زواره',
         price: '١٬٨٠٠',
         oldPrice: '٢٬٠٠٠',
-        quarterlyTotal: '٤٬٥٠٠',
-        quarterlyOld: '٦٬٠٠٠',
-        annualTotal: '١٨٬٠٠٠',
-        annualOld: '٢٨٬٠٠٠',
+        quarterlyPrice: '١٬٥٠٠',
+        quarterlyBulk: 'تدفع ٤٬٥٠٠ ج.م كل ٣ شهور',
+        annualPrice: '١٬٢٨٦',
+        annualBulk: 'تدفع ١٨٬٠٠٠ ج.م سنويًا — شغال ١٤ شهر بدل ١٢، والإعداد والتدريب مجانًا',
         annualNote: '١٤ شهر بدل ١٢ — والإعداد والتدريب مجانًا',
         unlimitedCap: 'ده كل اللي في الخطة — من غير رصيد ولا عدّاد',
         annual: {
@@ -155,10 +153,10 @@ export default {
         role: 'بيرد بالنيابة عنك على كل القنوات',
         price: '٤٬٥٠٠',
         oldPrice: '٥٬٠٠٠',
-        quarterlyTotal: '١١٬٢٥٠',
-        quarterlyOld: '١٥٬٠٠٠',
-        annualTotal: '٤٥٬٠٠٠',
-        annualOld: '٧٠٬٠٠٠',
+        quarterlyPrice: '٣٬٧٥٠',
+        quarterlyBulk: 'تدفع ١١٬٢٥٠ ج.م كل ٣ شهور',
+        annualPrice: '٣٬٢١٤',
+        annualBulk: 'تدفع ٤٥٬٠٠٠ ج.م سنويًا — شغال ١٤ شهر بدل ١٢، والإعداد والتدريب مجانًا',
         annualNote: '١٤ شهر بدل ١٢ — والإعداد والتدريب مجانًا',
         unlimitedCap: 'مش بيستهلك من رصيدك أبدًا — مهما زاد الكلام',
         annual: {
