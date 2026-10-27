@@ -278,7 +278,7 @@ export default {
   contactPage: {
     h1: "Got a question? We've got the reply.",
     whatsappCta: 'Message us on WhatsApp',
-    whatsappPrefill: 'أهلاً، عايز أعرف تفاصيل الرد لمشروعي',
+    whatsappPrefill: 'أهلا، عايز أعرف تفاصيل الرد لمشروعي',
     or: 'Or leave your message here',
     form: {
       name: 'Name',

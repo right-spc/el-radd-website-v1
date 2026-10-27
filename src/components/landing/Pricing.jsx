@@ -61,7 +61,7 @@ function badgeText(billing, plan, lang) {
   const pct = Math.round((1 - priceToNum(rate) / priceToNum(plan.oldPrice)) * 100)
   const pctStr = lang === 'ar' ? String(pct).replace(/\d/g, (d) => '٠١٢٣٤٥٦٧٨٩'[Number(d)]) : String(pct)
   if (lang === 'ar') {
-    return `خصم ${pctStr}٪ ${billing === 'annual' ? '+ شهرين مجانًا' : 'لفترة محدودة'}`
+    return `خصم ${pctStr}٪ ${billing === 'annual' ? '+ شهرين مجانا' : 'لفترة محدودة'}`
   }
   return `${pct}% off ${billing === 'annual' ? '+ 2 months free' : '— limited time'}`
 }
