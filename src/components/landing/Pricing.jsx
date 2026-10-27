@@ -258,7 +258,7 @@ export default function Pricing() {
         ))}
 
         <div data-card className="w-[86%] shrink-0 snap-center md:col-span-2 md:w-auto">
-          <div className="flex h-full flex-col gap-4 rounded-[20px] border-2 border-highlight bg-gradient-to-b from-highlight/10 to-white p-6 shadow-soft md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-col gap-4 rounded-[20px] border-2 border-highlight bg-gradient-to-b from-highlight/10 to-white p-6 shadow-soft md:h-full md:flex-row md:items-center">
             <div>
               <span className="inline-flex rounded-full bg-highlight px-3 py-1 text-xs font-extrabold text-ink">
                 {p.siteOffer.type}
@@ -285,8 +285,7 @@ export default function Pricing() {
                 {p.siteOffer.price} <span className="text-sm font-bold text-ink/50">{p.siteOffer.unit}</span>
               </p>
             </div>
-            <div className="flex flex-col gap-4 md:items-end">
-              <ul className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4 md:items-end">              <ul className="flex flex-col gap-2">
                 {p.siteOffer.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
                     <IconCheck className="mt-1 h-[18px] w-[18px] shrink-0 text-primary-2" />
