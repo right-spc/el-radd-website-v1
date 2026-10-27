@@ -190,21 +190,21 @@ export default function Pricing() {
               </div>
             )}
 
+            <p className="mt-auto pt-4 text-center text-xs font-bold leading-relaxed text-ink/50">
+              {billing === 'annual'
+                ? [p.annualSetupLine, ...plan.extras.filter((extra) => extra.id !== 'setup').map((extra) => `${extra.name} ${extra.price}`)].join(' · ')
+                : plan.extras.map((extra) => `${extra.name} ${extra.price}`).join(' · ')}
+            </p>
+
             <button
               type="button"
               onClick={() => askElradd(plan.ask)}
-              className={`mt-5 inline-flex min-h-[50px] w-full items-center justify-center rounded-full text-base font-extrabold text-white transition active:scale-[0.98] ${
+              className={`mt-3 inline-flex min-h-[50px] w-full items-center justify-center rounded-full text-base font-extrabold text-white transition active:scale-[0.98] ${
                 plan.id === 'agent' ? 'bg-primary-2 hover:bg-primary' : 'bg-primary hover:bg-primary-2'
               }`}
             >
               {plan.cta}
             </button>
-
-            <p className="mt-3 text-center text-xs font-bold leading-relaxed text-ink/50">
-              {billing === 'annual'
-                ? [p.annualSetupLine, ...plan.extras.filter((extra) => extra.id !== 'setup').map((extra) => `${extra.name} ${extra.price}`)].join(' · ')
-                : plan.extras.map((extra) => `${extra.name} ${extra.price}`).join(' · ')}
-            </p>
           </Reveal>
           </div>
         ))}
