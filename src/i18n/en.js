@@ -110,6 +110,9 @@ export default {
     perMonth: 'EGP / month',
     unlimitedLabel: 'Unlimited website chat',
     annualLabel: 'Full-year offer',
+    billing: { monthly: 'Monthly', annual: 'Annual', annualTag: 'Save more' },
+    annualUnit: 'EGP / 14 months',
+    annualSetupLine: 'Setup & training — free with the annual plan',
     plans: [
       {
         id: 'guard',
@@ -118,6 +121,10 @@ export default {
         price: '1,500',
         oldPrice: '2,000',
         badge: '25% off — limited time',
+        annualTotal: '18,000',
+        annualOld: '21,000',
+        annualBadge: 'Save EGP 5,000',
+        annualNote: '14 months instead of 12 — setup & training free',
         unlimitedCap: 'The whole plan — no credits, no meter',
         annual: {
           text: 'Pay EGP 18,000 once — live for 14 months instead of 12, setup & training free (save EGP 5,000)',
@@ -129,7 +136,7 @@ export default {
         ],
         cta: 'Hire The Guard',
         ask: "I'd like The Guard — the website chat plan",
-        extras: [{ name: 'Setup & training', price: 'EGP 2,000 one-time' }],
+        extras: [{ id: 'setup', name: 'Setup & training', price: 'EGP 2,000 one-time' }],
       },
       {
         id: 'agent',
@@ -138,6 +145,10 @@ export default {
         price: '3,750',
         oldPrice: '5,000',
         badge: '25% off — limited time',
+        annualTotal: '45,000',
+        annualOld: '52,500',
+        annualBadge: 'Save EGP 9,500',
+        annualNote: '14 months instead of 12 — setup & training free',
         unlimitedCap: 'Never touches your credits — no matter how busy it gets',
         annual: {
           text: 'Pay EGP 45,000 once — live for 14 months instead of 12, setup & training free (save EGP 9,500)',
@@ -157,8 +168,8 @@ export default {
         cta: 'Hire The Agent',
         ask: "I'd like The Agent — the all-channels plan",
         extras: [
-          { name: 'Setup & training', price: 'EGP 2,000 one-time' },
-          { name: 'Extra credits', price: 'EGP 500 / 1,000 credits' },
+          { id: 'setup', name: 'Setup & training', price: 'EGP 2,000 one-time' },
+          { id: 'credits', name: 'Extra credits', price: 'EGP 500 / 1,000 credits' },
         ],
       },
     ],

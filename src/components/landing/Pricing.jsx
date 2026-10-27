@@ -53,6 +53,7 @@ const paymentMarks = {
 export default function Pricing() {
   const { t } = useLang()
   const p = t.pricing
+  const [billing, setBilling] = useState('monthly')
 
   // mobile carousel state (dots + swipe tracking)
   const scrollRef = useRef(null)
@@ -87,6 +88,36 @@ export default function Pricing() {
         <p className="mt-3 text-lg leading-relaxed text-ink/75">{p.sub}</p>
       </Reveal>
 
+      <Reveal className="mt-6 flex justify-center">
+        <div className="inline-flex rounded-full border border-ink/10 bg-white p-1 shadow-sm" role="group" aria-label={p.annualLabel}>
+          <button
+            type="button"
+            onClick={() => setBilling('monthly')}
+            aria-pressed={billing === 'monthly'}
+            className={`min-h-[44px] rounded-full px-6 text-[15px] font-extrabold transition ${
+              billing === 'monthly' ? 'bg-primary text-white shadow-sm' : 'text-ink/60 hover:text-primary'
+            }`}
+          >
+            {p.billing.monthly}
+          </button>
+          <button
+            type="button"
+            onClick={() => setBilling('annual')}
+            aria-pressed={billing === 'annual'}
+            className={`inline-flex min-h-[44px] items-center gap-2 rounded-full px-6 text-[15px] font-extrabold transition ${
+              billing === 'annual' ? 'bg-primary text-white shadow-sm' : 'text-ink/60 hover:text-primary'
+            }`}
+          >
+            {p.billing.annual}
+            <span className={`rounded-full px-2 py-0.5 text-[10px] font-extrabold ${
+              billing === 'annual' ? 'bg-highlight text-primary' : 'bg-highlight/50 text-ink'
+            }`}>
+              {p.billing.annualTag}
+            </span>
+          </button>
+        </div>
+      </Reveal>
+
       <div
         ref={scrollRef}
         onScroll={onScroll}
@@ -107,29 +138,29 @@ export default function Pricing() {
                 <p className="mt-0.5 text-[13px] font-bold text-ink/55">{plan.role}</p>
               </div>
               <span className="shrink-0 rounded-full bg-highlight px-3 py-1 text-xs font-extrabold text-ink">
-                {plan.badge}
+                {billing === 'annual' ? plan.annualBadge : plan.badge}
               </span>
             </div>
 
-            <div className="mt-4 flex items-baseline gap-2">
-              <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.price}</span>
-              <span className="text-lg font-bold text-ink/40 line-through">{plan.oldPrice}</span>
-              <span className="text-[15px] font-bold text-ink/55">{p.perMonth}</span>
-            </div>
+            {billing === 'annual' ? (
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.annualTotal}</span>
+                <span className="text-lg font-bold text-ink/40 line-through">{plan.annualOld}</span>
+                <span className="text-[15px] font-bold text-ink/55">{p.annualUnit}</span>
+              </div>
+            ) : (
+              <div className="mt-4 flex items-baseline gap-2">
+                <span className="text-4xl font-extrabold tracking-tight text-ink">{plan.price}</span>
+                <span className="text-lg font-bold text-ink/40 line-through">{plan.oldPrice}</span>
+                <span className="text-[15px] font-bold text-ink/55">{p.perMonth}</span>
+              </div>
+            )}
 
             <div className="mt-4 flex items-center gap-3 rounded-xl border border-primary/20 bg-primary-soft/70 px-4 py-3">
               <span className="text-2xl font-black leading-none text-primary-2" aria-hidden="true">∞</span>
               <div>
                 <p className="text-sm font-extrabold text-primary">{p.unlimitedLabel}</p>
                 <p className="mt-0.5 text-xs font-bold leading-snug text-ink/55">{plan.unlimitedCap}</p>
-              </div>
-            </div>
-
-            <div className="mt-2.5 flex items-center gap-3 rounded-xl border border-highlight/60 bg-highlight/15 px-4 py-3">
-              <IconCalendar className="h-5 w-5 shrink-0 text-primary" />
-              <div>
-                <p className="text-sm font-extrabold text-primary">{p.annualLabel}</p>
-                <p className="mt-0.5 text-xs font-bold leading-snug text-ink/55">{plan.annual.text}</p>
               </div>
             </div>
 
@@ -170,7 +201,9 @@ export default function Pricing() {
             </button>
 
             <p className="mt-3 text-center text-xs font-bold leading-relaxed text-ink/50">
-              {plan.extras.map((extra) => `${extra.name} ${extra.price}`).join(' · ')}
+              {billing === 'annual'
+                ? [p.annualSetupLine, ...plan.extras.filter((extra) => extra.id !== 'setup').map((extra) => `${extra.name} ${extra.price}`)].join(' · ')
+                : plan.extras.map((extra) => `${extra.name} ${extra.price}`).join(' · ')}
             </p>
           </Reveal>
           </div>
