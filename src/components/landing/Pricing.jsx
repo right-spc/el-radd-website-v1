@@ -160,6 +160,10 @@ export default function Pricing() {
             >
               {plan.cta}
             </button>
+
+            <p className="mt-3 text-center text-xs font-bold leading-relaxed text-ink/50">
+              {p.addons.map((addon) => `${addon.name} ${addon.price}`).join(' · ')}
+            </p>
           </Reveal>
           </div>
         ))}
@@ -181,7 +185,6 @@ export default function Pricing() {
       </div>
 
       <Reveal className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-        <span className="text-sm font-extrabold text-ink/55">{p.payLabel}</span>
         {p.payments.map((method) => {
           const Mark = paymentMarks[method.id]
           return (
@@ -195,18 +198,6 @@ export default function Pricing() {
             </span>
           )
         })}
-      </Reveal>
-
-      <Reveal className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
-        <span className="text-sm font-extrabold text-ink/55">{p.addonsLabel}</span>
-        {p.addons.map((addon, i) => (
-          <span
-            key={i}
-            className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-4 py-2 text-sm font-bold text-ink/75 shadow-sm"
-          >
-            {addon.name} — <b className="text-primary">{addon.price}</b>
-          </span>
-        ))}
       </Reveal>
 
       <Reveal className="mt-5 flex flex-wrap items-center justify-center text-center">

@@ -150,8 +150,6 @@ export default {
         ask: "I'd like The Agent — the all-channels plan",
       },
     ],
-    addonsLabel: 'Add-ons:',
-    payLabel: 'Pay in EGP:',
     payments: [
       { id: 'cash', name: 'Cash' },
       { id: 'mastercard', name: 'Mastercard' },

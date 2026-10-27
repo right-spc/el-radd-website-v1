@@ -150,8 +150,6 @@ export default {
         ask: 'عايز أنزّل الوكيل — خطة كل القنوات',
       },
     ],
-    addonsLabel: 'إضافات:',
-    payLabel: 'ادفع بالمصري:',
     payments: [
       { id: 'cash', name: 'كاش' },
       { id: 'mastercard', name: 'ماستركارد' },
