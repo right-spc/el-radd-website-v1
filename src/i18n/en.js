@@ -151,6 +151,15 @@ export default {
       },
     ],
     addonsLabel: 'Add-ons:',
+    payLabel: 'Pay in EGP:',
+    payments: [
+      { id: 'cash', name: 'Cash' },
+      { id: 'mastercard', name: 'Mastercard' },
+      { id: 'visa', name: 'VISA' },
+      { id: 'meza', name: 'Meza wallet' },
+      { id: 'paymob', name: 'Paymob' },
+      { id: 'instapay', name: 'InstaPay' },
+    ],
     addons: [
       { name: 'Setup & training', price: 'EGP 2,000 one-time' },
       { name: 'Extra credits', price: 'EGP 500 / 1,000 credits' },

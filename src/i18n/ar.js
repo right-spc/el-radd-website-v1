@@ -151,6 +151,15 @@ export default {
       },
     ],
     addonsLabel: 'إضافات:',
+    payLabel: 'ادفع بالمصري:',
+    payments: [
+      { id: 'cash', name: 'كاش' },
+      { id: 'mastercard', name: 'ماستركارد' },
+      { id: 'visa', name: 'فيزا' },
+      { id: 'meza', name: 'محفظة ميزة' },
+      { id: 'paymob', name: 'باي موب' },
+      { id: 'instapay', name: 'انستاباي' },
+    ],
     addons: [
       { name: 'الإعداد والتدريب', price: '٢٬٠٠٠ مرة واحدة' },
       { name: 'رصيد زيادة', price: '٥٠٠ ج.م / ١٬٠٠٠ رصيد' },

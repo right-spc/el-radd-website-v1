@@ -2,7 +2,7 @@ import { useRef, useState } from 'react'
 import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
-import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe } from '../Icons.jsx'
+import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe, IconWallet } from '../Icons.jsx'
 import { askElradd } from '../../chat.js'
 import { carouselCenterDelta } from '../../carousel.js'
 
@@ -12,6 +12,42 @@ const creditIcons = {
   instagram: IconInstagram,
   email: IconMail,
   webchat: IconGlobe,
+}
+
+// simplified payment marks — swap for official vector logos if assets arrive
+function MastercardMark() {
+  return (
+    <svg viewBox="0 0 36 22" className="h-[22px] w-9" aria-hidden="true">
+      <circle cx="13" cy="11" r="10" fill="#EB001B" />
+      <circle cx="23" cy="11" r="10" fill="#F79E1B" />
+      <path d="M18 3.5a10 10 0 0 1 0 15 10 10 0 0 1 0-15z" fill="#FF5F00" />
+    </svg>
+  )
+}
+function VisaMark() {
+  return (
+    <span className="text-[17px] font-black italic tracking-tight text-[#1a1f71]" style={{ fontFamily: 'system-ui' }}>
+      VISA
+    </span>
+  )
+}
+function MezaMark() {
+  return <span className="text-[15px] font-black lowercase text-[#5d2e8c]">meza</span>
+}
+function PaymobMark() {
+  return <span className="text-[15px] font-black text-[#3b3b98]">paymob</span>
+}
+function InstaPayMark() {
+  return <span className="text-[14px] font-black italic text-[#6a1b9a]">InstaPay</span>
+}
+
+const paymentMarks = {
+  cash: () => <IconWallet className="h-5 w-5 text-primary" />,
+  mastercard: MastercardMark,
+  visa: VisaMark,
+  meza: MezaMark,
+  paymob: PaymobMark,
+  instapay: InstaPayMark,
 }
 
 export default function Pricing() {
@@ -143,6 +179,23 @@ export default function Pricing() {
           />
         ))}
       </div>
+
+      <Reveal className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+        <span className="text-sm font-extrabold text-ink/55">{p.payLabel}</span>
+        {p.payments.map((method) => {
+          const Mark = paymentMarks[method.id]
+          return (
+            <span
+              key={method.id}
+              aria-label={method.name}
+              title={method.name}
+              className="inline-flex h-10 min-w-[64px] items-center justify-center rounded-xl border border-ink/10 bg-white px-3 shadow-sm"
+            >
+              {Mark && <Mark />}
+            </span>
+          )
+        })}
+      </Reveal>
 
       <Reveal className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
         <span className="text-sm font-extrabold text-ink/55">{p.addonsLabel}</span>

@@ -182,3 +182,13 @@ export function IconInstagram({ className = 'h-6 w-6' }) {
     </svg>
   )
 }
+
+export function IconWallet({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M4 7.5A2.5 2.5 0 0 1 6.5 5h11A2.5 2.5 0 0 1 20 7.5v9a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 16.5v-9z" />
+      <path d="M4 9.5h16" />
+      <circle cx="16.5" cy="14" r="1.4" fill="currentColor" stroke="none" />
+    </svg>
+  )
+}
