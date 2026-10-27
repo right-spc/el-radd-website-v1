@@ -5,6 +5,7 @@ import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
 import { ChatMessages } from '../ChatView.jsx'
 import { IconClock, IconWhatsApp, IconMoon, IconUserExit } from '../Icons.jsx'
+import { carouselCenterDelta } from '../../carousel.js'
 
 const cardIcons = { whatsapp: IconWhatsApp, moon: IconMoon, exit: IconUserExit }
 
@@ -134,9 +135,12 @@ export default function Pain() {
 
   const jumpTo = (i) => {
     userDrove.current = true
+    cardIndex.current = i
+    setActiveCard(i)
     const el = scrollRef.current
-    const cards = el?.querySelectorAll('[data-card]')
-    cards?.[i]?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+    const card = el?.querySelectorAll('[data-card]')[i]
+    if (!card || !el) return
+    el.scrollLeft = el.scrollLeft + carouselCenterDelta(el, card)
   }
 
   useEffect(() => {
@@ -144,12 +148,11 @@ export default function Pain() {
     const el = scrollRef.current
     if (!el || window.innerWidth >= 768) return
     const next = cardIndex.current === 0 ? 1 : 0
-    el.querySelectorAll('[data-card]')[next]?.scrollIntoView({
-      behavior: 'smooth',
-      inline: 'center',
-      block: 'nearest',
-    })
+    const card = el.querySelectorAll('[data-card]')[next]
+    if (!card) return
+    el.scrollLeft = el.scrollLeft + carouselCenterDelta(el, card)
     cardIndex.current = next
+    setActiveCard(next)
   }, [phase])
 
   const onScroll = () => {

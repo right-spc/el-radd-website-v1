@@ -1,8 +1,10 @@
+import { useRef, useState } from 'react'
 import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
 import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe } from '../Icons.jsx'
 import { askElradd } from '../../chat.js'
+import { carouselCenterDelta } from '../../carousel.js'
 
 const creditIcons = {
   whatsapp: IconWhatsApp,
@@ -16,6 +18,32 @@ export default function Pricing() {
   const { t } = useLang()
   const p = t.pricing
 
+  // mobile carousel state (dots + swipe tracking)
+  const scrollRef = useRef(null)
+  const [activeCard, setActiveCard] = useState(0)
+
+  const onScroll = () => {
+    const el = scrollRef.current
+    if (!el) return
+    const cards = [...el.querySelectorAll('[data-card]')]
+    const center = el.getBoundingClientRect().left + el.clientWidth / 2
+    const idx = cards.findIndex((c) => {
+      const r = c.getBoundingClientRect()
+      return center >= r.left && center < r.right
+    })
+    if (idx >= 0) setActiveCard(idx)
+  }
+
+  const jumpTo = (i) => {
+    const el = scrollRef.current
+    if (!el) return
+    const card = el.querySelectorAll('[data-card]')[i]
+    if (!card) return
+    // instant jump — smooth scrolling is unreliable in embedded panes
+    el.scrollLeft = el.scrollLeft + carouselCenterDelta(el, card)
+    setActiveCard(i)
+  }
+
   return (
     <Section id="pricing">
       <Reveal className="mx-auto max-w-2xl text-center">
@@ -23,15 +51,20 @@ export default function Pricing() {
         <p className="mt-3 text-lg leading-relaxed text-ink/75">{p.sub}</p>
       </Reveal>
 
-      <div className="mx-auto mt-6 grid max-w-4xl gap-4 md:grid-cols-2">
+      <div
+        ref={scrollRef}
+        onScroll={onScroll}
+        onTouchStart={() => setActiveCard(activeCard)}
+        className="no-scrollbar mx-auto mt-6 flex max-w-4xl snap-x snap-mandatory gap-4 overflow-x-auto pb-1 md:grid md:grid-cols-2 md:gap-4 md:overflow-visible md:pb-0"
+      >
         {p.plans.map((plan, i) => (
-          <Reveal
-            key={plan.id}
-            delay={i * 90}
-            className={`flex flex-col rounded-[20px] bg-white p-6 shadow-soft ${
-              plan.id === 'agent' ? 'border-2 border-primary' : 'border border-ink/10'
-            }`}
-          >
+          <div key={plan.id} data-card className="w-[86%] shrink-0 snap-center md:w-auto">
+            <Reveal
+              delay={i * 90}
+              className={`flex h-full flex-col rounded-[20px] bg-white p-6 shadow-soft ${
+                plan.id === 'agent' ? 'border-2 border-primary' : 'border border-ink/10'
+              }`}
+            >
             <div className="flex items-start justify-between gap-3">
               <div>
                 <h3 className="text-2xl font-extrabold text-primary">{plan.name}</h3>
@@ -92,6 +125,22 @@ export default function Pricing() {
               {plan.cta}
             </button>
           </Reveal>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-4 flex justify-center gap-2 md:hidden">
+        {p.plans.map((plan, i) => (
+          <button
+            key={plan.id}
+            type="button"
+            onClick={() => jumpTo(i)}
+            aria-label={plan.name}
+            aria-current={activeCard === i}
+            className={`h-2.5 w-2.5 rounded-full transition ${
+              activeCard === i ? 'bg-primary' : 'bg-ink/20'
+            }`}
+          />
         ))}
       </div>
 
