@@ -95,7 +95,7 @@ export default {
   },
   how: {
     header: 'How it works',
-    sub: 'All the heavy lifting is ours — your AI is live in under one business day.',
+    sub: 'All the heavy lifting is ours — Raddod is live in under 24 hours.',
     steps: [
       { title: 'We connect your channels', body: 'WhatsApp, your website, and more — guided step by step', who: 'You — with us in it', chip: 'Minutes' },
       { title: 'You share your materials', body: 'Anything you would give a new hire: your services, prices, and tone', who: 'You', chip: 'Minutes too' },
