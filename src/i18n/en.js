@@ -241,13 +241,6 @@ export default {
     offerTotalLabel: 'Your total',
     offerTotal: 'EGP 6,999 only',
     offerMarketNote: 'Hosting on our servers: EGP 6,600/year — free with this offer',
-    processHeader: 'How we work',
-    process: [
-      'Message us on WhatsApp',
-      'We agree on content & timeline',
-      'We design and build',
-      'You receive your site live — with Raddod running on it',
-    ],
     ask: {
       header: 'Questions about your website?',
       sub: 'Ask Raddod — he answers.',

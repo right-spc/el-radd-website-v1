@@ -130,23 +130,6 @@ export default function Website() {
         </div>
       </Section>
 
-      {/* process */}
-      <Section>
-        <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.processHeader}</h2>
-        </Reveal>
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 md:grid-cols-4">
-          {w.process.map((step, i) => (
-            <Reveal key={i} delay={i * 70} className="flex flex-col items-center gap-3 rounded-card border border-ink/10 bg-white p-5 text-center shadow-soft">
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-soft text-lg font-extrabold text-primary">
-                {i + 1}
-              </span>
-              <p className="font-extrabold leading-snug text-ink">{step}</p>
-            </Reveal>
-          ))}
-        </div>
-      </Section>
-
       {/* lead form — data stays local until submission is wired up */}
       <Section id="offer-form" className="bg-white/60">
         <Reveal className="mx-auto max-w-2xl text-center">
