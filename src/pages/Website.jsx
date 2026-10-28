@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
 import Section from '../components/landing/Section.jsx'
@@ -53,6 +54,29 @@ function MiniBrowser({ url }) {
 export default function Website() {
   const { t } = useLang()
   const w = t.websitePage
+
+  // offer lead form — data stays in this component only (no transmission yet)
+  const [fields, setFields] = useState({ name: '', business: '', phone: '', email: '' })
+  const [agreeTerms, setAgreeTerms] = useState(false)
+  const [acknowledge, setAcknowledge] = useState(false)
+  const [agreePrivacy, setAgreePrivacy] = useState(false)
+  const [formError, setFormError] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
+
+  const setField = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
+
+  const onSubmit = (e) => {
+    e.preventDefault()
+    const valid =
+      fields.name.trim() && fields.phone.trim() && fields.email.trim() && agreeTerms && acknowledge && agreePrivacy
+    if (!valid) {
+      setFormError(true)
+      return
+    }
+    setFormError(false)
+    // NOTE: nothing is transmitted — submission destination to be decided
+    setSubmitted(true)
+  }
 
   return (
     <>
@@ -123,29 +147,130 @@ export default function Website() {
         </div>
       </Section>
 
-      {/* terms — فصحى, grouped */}
-      <Section className="bg-white/60">
+      {/* lead form — data stays local until submission is wired up */}
+      <Section id="offer-form" className="bg-white/60">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.termsHeader}</h2>
+          <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.offerFormHeader}</h2>
+          <p className="mt-3 text-lg leading-relaxed text-ink/75">{w.offerFormSub}</p>
         </Reveal>
-        <div className="mx-auto mt-10 grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {w.termsGroups.map((group) => (
-            <Reveal key={group.title} className="rounded-card border border-ink/10 bg-white p-6 shadow-soft">
-              <h3 className="flex items-center gap-2.5 text-lg font-extrabold text-primary">
-                <IconCheck className="h-5 w-5 shrink-0 text-primary-2" />
-                {group.title}
-              </h3>
-              <ul className="mt-4 flex flex-col gap-2.5">
-                {group.items.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-[13.5px] font-semibold leading-relaxed text-ink/75">
-                    <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-2" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-          ))}
-        </div>
+        <Reveal className="mx-auto mt-8 max-w-xl rounded-card border border-ink/10 bg-white p-6 shadow-soft md:p-7">
+          {submitted ? (
+            <div className="py-10 text-center">
+              <IconCheck className="mx-auto h-12 w-12 text-primary-2" />
+              <p className="mt-5 text-lg font-extrabold text-primary">{w.form.success}</p>
+            </div>
+          ) : (
+            <form noValidate onSubmit={onSubmit} className="flex flex-col gap-4">
+              <div>
+                <label className="mb-1.5 block text-sm font-extrabold text-ink" htmlFor="of-name">{w.form.name}</label>
+                <input
+                  id="of-name"
+                  type="text"
+                  value={fields.name}
+                  onChange={setField('name')}
+                  placeholder={w.form.namePh}
+                  className="min-h-[46px] w-full rounded-xl border border-ink/15 bg-white px-4 text-[15px] font-semibold text-ink outline-none transition placeholder:text-ink/35 focus:border-primary"
+                />
+              </div>
+              <div>
+                <label className="mb-1.5 block text-sm font-extrabold text-ink" htmlFor="of-business">{w.form.business}</label>
+                <input
+                  id="of-business"
+                  type="text"
+                  value={fields.business}
+                  onChange={setField('business')}
+                  placeholder={w.form.businessPh}
+                  className="min-h-[46px] w-full rounded-xl border border-ink/15 bg-white px-4 text-[15px] font-semibold text-ink outline-none transition placeholder:text-ink/35 focus:border-primary"
+                />
+              </div>
+              <div>
+                <label className="mb-1.5 block text-sm font-extrabold text-ink" htmlFor="of-phone">{w.form.phone}</label>
+                <input
+                  id="of-phone"
+                  type="tel"
+                  dir="ltr"
+                  value={fields.phone}
+                  onChange={setField('phone')}
+                  placeholder={w.form.phonePh}
+                  className="min-h-[46px] w-full rounded-xl border border-ink/15 bg-white px-4 text-right text-[15px] font-semibold text-ink outline-none transition placeholder:text-ink/35 focus:border-primary"
+                />
+              </div>
+              <div>
+                <label className="mb-1.5 block text-sm font-extrabold text-ink" htmlFor="of-email">{w.form.email}</label>
+                <input
+                  id="of-email"
+                  type="email"
+                  dir="ltr"
+                  value={fields.email}
+                  onChange={setField('email')}
+                  placeholder={w.form.emailPh}
+                  className="min-h-[46px] w-full rounded-xl border border-ink/15 bg-white px-4 text-right text-[15px] font-semibold text-ink outline-none transition placeholder:text-ink/35 focus:border-primary"
+                />
+              </div>
+
+              <div className="mt-2 flex flex-col gap-3 border-t border-ink/10 pt-4">
+                <label className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={agreeTerms}
+                    onChange={() => setAgreeTerms((v) => !v)}
+                    className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
+                  />
+                  <span className="text-sm font-semibold leading-relaxed text-ink/80">
+                    {w.agree1Pre}{' '}
+                    <Link
+                      to="/legal/website-2026-offer"
+                      target="_blank"
+                      className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary"
+                    >
+                      {w.agree1Link}
+                    </Link>
+                  </span>
+                </label>
+                <label className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={acknowledge}
+                    onChange={() => setAcknowledge((v) => !v)}
+                    className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
+                  />
+                  <span className="text-sm font-semibold leading-relaxed text-ink/80">{w.agree2}</span>
+                </label>
+                <label className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={agreePrivacy}
+                    onChange={() => setAgreePrivacy((v) => !v)}
+                    className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
+                  />
+                  <span className="text-sm font-semibold leading-relaxed text-ink/80">
+                    {w.agree3Pre}{' '}
+                    <Link to="/privacy" className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary">
+                      {w.agree3Privacy}
+                    </Link>{' '}
+                    {w.agree3And}{' '}
+                    <Link to="/terms" className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary">
+                      {w.agree3Terms}
+                    </Link>
+                  </span>
+                </label>
+              </div>
+
+              {formError && (
+                <p role="alert" className="rounded-xl bg-red-50 px-4 py-2.5 text-sm font-extrabold text-red-700">
+                  {w.form.error}
+                </p>
+              )}
+
+              <button
+                type="submit"
+                className="mt-2 inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-primary text-base font-extrabold text-white shadow-soft transition hover:bg-primary-2 active:scale-[0.98]"
+              >
+                {w.form.submit}
+              </button>
+            </form>
+          )}
+        </Reveal>
       </Section>
 
       {/* ask pills */}

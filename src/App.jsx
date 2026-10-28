@@ -5,6 +5,7 @@ import Footer from './components/Footer.jsx'
 import MobileBottomBar from './components/MobileBottomBar.jsx'
 import Landing from './pages/Landing.jsx'
 import Website from './pages/Website.jsx'
+import WebsiteOfferTerms from './pages/WebsiteOfferTerms.jsx'
 import Contact from './pages/Contact.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
@@ -55,6 +56,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/website" element={<Website />} />
+          <Route path="/legal/website-2026-offer" element={<WebsiteOfferTerms />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
