@@ -64,13 +64,6 @@ export default function Website() {
             <p className="mt-5 text-xl font-extrabold text-highlight md:text-2xl">{w.priceLine}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <WhatsAppCta label={w.ctaWhatsapp} />
-              <button
-                type="button"
-                onClick={openElradd}
-                className="text-sm font-bold text-white/70 transition hover:text-white"
-              >
-                {w.ctaBot}
-              </button>
             </div>
           </Reveal>
           <Reveal className="order-2 flex justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:justify-end">
@@ -82,7 +75,6 @@ export default function Website() {
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">{w.sub2}</p>
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
               <WhatsAppCta label={w.ctaWhatsapp} />
-              <span className="text-sm font-bold text-white/60">{w.ctaBot}</span>
             </div>
           </div>
         </div>
@@ -191,7 +183,6 @@ export default function Website() {
         <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[24px] bg-gradient-to-l from-primary to-primary-2 px-6 py-12 text-center text-white shadow-soft">
           <div className="flex flex-wrap items-center justify-center gap-3">
             <WhatsAppCta label={w.ctaWhatsapp} />
-            <span className="text-sm font-bold text-white/85">{w.ctaBot}</span>
           </div>
           <Link
             to="/#pricing"

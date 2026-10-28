@@ -221,11 +221,10 @@ export default {
   },
   websitePage: {
     h1: 'A website for your business, designed by hand.',
-    priceLine: 'EGP 6,999 one-time — first year of hosting free',
+    priceLine: 'EGP 6,999 only for the design — first year of hosting on us',
     sub2: 'A custom design made by hand — not a template and not AI-generated. The timeline is agreed when you reach out.',
     mockUrl: 'your-business.com',
     ctaWhatsapp: 'Message us on WhatsApp',
-    ctaBot: 'Or ask Raddod in the chat',
     offerHeader: 'Exactly what you get',
     offer: [
       'A full landing page: header + hero + 3 sections + footer',
@@ -238,7 +237,7 @@ export default {
     ],
     offerTotalLabel: 'Your total',
     offerTotal: 'EGP 6,999 only',
-    offerMarketNote: 'Market hosting costs EGP 1,500–3,000',
+    offerMarketNote: 'Hosting on our servers: EGP 6,600/year — free with this offer',
     processHeader: 'How we work',
     process: [
       'Message us on WhatsApp',
