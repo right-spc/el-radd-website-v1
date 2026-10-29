@@ -327,14 +327,22 @@ export default {
   },
   footer: {
     tagline: 'Leave the replies to us',
-    links: [
-      { label: 'Pricing', to: '/#pricing' },
+    subTagline: 'A name that means what it says — the AI that replies to your customers 24/7',
+    whatsappCta: 'WhatsApp',
+    exploreLabel: 'Explore',
+    legalLabel: 'Legal',
+    explore: [
       { label: 'Try it yourself', to: '/#demo' },
+      { label: 'Pricing', to: '/#pricing' },
       { label: 'Ready-made website', to: '/website' },
       { label: 'Contact', to: '/contact' },
+    ],
+    legal: [
       { label: 'Privacy policy', to: '/privacy' },
       { label: 'Terms', to: '/terms' },
     ],
+    copyright: '© 2026 El Radd — All rights reserved',
     company: 'Right Space — Cairo, Egypt',
   },
+
 }

@@ -326,14 +326,22 @@ export default {
   },
   footer: {
     tagline: 'سيب الرد علينا',
-    links: [
+    subTagline: 'اسم على مسمى — البوت اللي بيرد على عملائك ٢٤ ساعة',
+    whatsappCta: 'كلمنا واتساب',
+    exploreLabel: 'استكشف',
+    legalLabel: 'قانوني',
+    explore: [
+      { label: 'جرّبه بنفسك', to: '/#demo' },
       { label: 'الأسعار', to: '/#pricing' },
-      { label: 'جربه بنفسك', to: '/#demo' },
       { label: 'موقع جاهز', to: '/website' },
       { label: 'تواصل', to: '/contact' },
+    ],
+    legal: [
       { label: 'سياسة الخصوصية', to: '/privacy' },
       { label: 'الشروط', to: '/terms' },
     ],
+    copyright: '© ٢٠٢٦ الرد — جميع الحقوق محفوظة',
     company: 'Right Space — Cairo, Egypt',
   },
+
 }
