@@ -326,7 +326,6 @@ export default {
   },
   footer: {
     tagline: 'سيب الرد علينا',
-    subTagline: 'اسم على مسمى — البوت اللي بيرد على عملائك ٢٤ ساعة',
     whatsappCta: 'كلمنا واتساب',
     exploreLabel: 'استكشف',
     legalLabel: 'قانوني',

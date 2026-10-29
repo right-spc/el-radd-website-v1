@@ -35,7 +35,6 @@ export default function Footer() {
               <Logo light />
             </Link>
             <p className="mt-4 text-lg font-extrabold text-highlight">{t.footer.tagline}</p>
-            <p className="mt-1 text-sm font-bold leading-relaxed text-white/60">{t.footer.subTagline}</p>
             <div className="mt-6">
               <WhatsAppCta label={t.footer.whatsappCta} />
             </div>

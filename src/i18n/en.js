@@ -327,7 +327,6 @@ export default {
   },
   footer: {
     tagline: 'Leave the replies to us',
-    subTagline: 'A name that means what it says — the AI that replies to your customers 24/7',
     whatsappCta: 'WhatsApp',
     exploreLabel: 'Explore',
     legalLabel: 'Legal',
