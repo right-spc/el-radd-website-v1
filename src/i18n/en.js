@@ -194,6 +194,7 @@ export default {
       role: 'With any Elradd plan — Qubix Agency designs a custom website for your business',
       price: '6,999',
       unit: 'EGP one-time',
+      termsApply: 'Terms & conditions apply',
       features: [
         'Custom design for your business — not a template',
         'First-year hosting — covered by Elradd, free',

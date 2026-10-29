@@ -284,6 +284,12 @@ export default function Pricing() {
               <p className="mt-2 text-2xl font-extrabold text-ink">
                 {p.siteOffer.price} <span className="text-sm font-bold text-ink/50">{p.siteOffer.unit}</span>
               </p>
+              <Link
+                to="/legal/website-2026-offer"
+                className="mt-1 inline-flex text-xs font-bold text-ink/50 underline underline-offset-2 transition hover:text-primary"
+              >
+                {p.siteOffer.termsApply}
+              </Link>
             </div>
             <div className="flex flex-col gap-4 md:items-end">              <ul className="flex flex-col gap-2">
                 {p.siteOffer.features.map((f) => (
