@@ -5,7 +5,7 @@ import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
 import WhatsAppCta from '../components/WhatsAppCta.jsx'
 import { askElradd, openElradd } from '../chat.js'
-import { IconArrow, IconCheck, IconChatBubble } from '../components/Icons.jsx'
+import { IconCheck, IconChatBubble } from '../components/Icons.jsx'
 
 function MiniBrowser({ url }) {
   return (
@@ -292,21 +292,6 @@ export default function Website() {
         </Reveal>
       </Section>
 
-      {/* closing band */}
-      <div className="px-4 pb-16">
-        <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-4 rounded-[24px] bg-gradient-to-l from-primary to-primary-2 px-6 py-12 text-center text-white shadow-soft">
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            <WhatsAppCta label={w.ctaWhatsapp} />
-          </div>
-          <Link
-            to="/#pricing"
-            className="mt-2 inline-flex min-h-[44px] items-center gap-2 font-bold text-white/85 underline underline-offset-4 transition hover:text-white"
-          >
-            {w.backToPricing}
-            <IconArrow className="h-5 w-5 rotate-180 rtl:rotate-0" />
-          </Link>
-        </Reveal>
-      </div>
     </>
   )
 }

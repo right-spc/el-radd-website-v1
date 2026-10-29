@@ -280,7 +280,6 @@ export default {
     agree3Privacy: 'Privacy Policy',
     agree3And: 'and',
     agree3Terms: 'Terms of Use',
-    backToPricing: 'Back to pricing',
   },
   websiteOfferTerms: {
     title: 'Website Design Offer — Terms & Conditions',

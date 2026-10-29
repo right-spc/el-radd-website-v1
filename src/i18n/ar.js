@@ -279,7 +279,6 @@ export default {
     agree3Privacy: 'سياسة الخصوصية',
     agree3And: 'و',
     agree3Terms: 'شروط الاستخدام',
-    backToPricing: 'ارجع للأسعار',
   },
   websiteOfferTerms: {
     title: 'شروط وأحكام عرض تصميم المواقع التعريفية',
