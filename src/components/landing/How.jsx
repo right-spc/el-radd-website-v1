@@ -18,9 +18,9 @@ export default function How() {
         <div aria-hidden="true" className="absolute top-[26px] hidden w-full md:block">
           <div className="mx-[11%] border-t-2 border-dashed border-primary/25" />
         </div>
-        <div className="relative grid gap-6 md:grid-cols-4 md:gap-3.5">
+        <div className="relative grid gap-6 md:grid-cols-5 md:gap-3">
           {t.how.steps.map((step, i) => (
-            <div key={i} className="flex w-full items-center gap-4 md:flex-col md:text-center">
+            <div key={i} className="flex w-full items-center gap-4 md:w-auto md:flex-col md:text-center">
               <span
                 className={`inline-flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-full border-[5px] border-primary-soft text-xl font-extrabold text-white ${
                   step.ours ? 'bg-primary' : 'bg-primary-2'
