@@ -99,7 +99,8 @@ export default {
     steps: [
       { title: 'We connect your channels', body: 'WhatsApp, your website, and more — guided step by step', who: 'You — with us in it', chip: 'Minutes' },
       { title: 'You share your materials', body: 'Anything you would give a new hire: your services, prices, and tone', who: 'You', chip: 'Minutes too' },
-      { title: 'We build the knowledge', body: 'The Elradd team prepares the whole knowledge base on your behalf', who: 'On us', chip: 'All the heavy lifting', ours: true },
+      { title: 'We build the knowledge base', body: 'The Elradd team builds the complete knowledge base from your data — on your behalf', who: 'On us', chip: 'The heavy build', ours: true },
+      { title: 'We tune and test the AI', body: 'Questions, answers, and tone tuned across all your channels — every scenario tested before launch', who: 'On us', chip: 'Tuning, cleanup, training, tests', ours: true },
       { title: 'You approve — it is live', body: 'Review it, approve it, and the AI goes live on your channels', who: 'Your final word', chip: 'That is it' },
     ],
     promise: { strong: 'From first hello to live AI: under one business day.', light: 'Your part in all of it: minutes.' },
@@ -340,6 +341,7 @@ export default {
     legal: [
       { label: 'Privacy policy', to: '/privacy' },
       { label: 'Terms', to: '/terms' },
+      { label: 'Website offer terms', to: '/legal/website-2026-offer' },
     ],
     copyright: '© 2026 El Radd — All rights reserved',
     company: 'Right Space — Cairo, Egypt',
