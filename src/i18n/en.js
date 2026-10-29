@@ -239,6 +239,7 @@ export default {
       'One free revision — extras at EGP 500 · extra page at EGP 1,000',
       'In Arabic or English — one language',
     ],
+    termsApply: 'Terms & conditions apply',
     offerTotalLabel: 'Your total',
     offerTotal: 'EGP 6,999 only',
     offerMarketNote: 'Hosting on our servers: EGP 6,600/year — free with this offer',

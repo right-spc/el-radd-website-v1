@@ -126,6 +126,12 @@ export default function Website() {
             </span>
             <p className="text-lg font-extrabold leading-relaxed text-ink">{w.offerTotalLabel}</p>
             <p className="text-4xl font-extrabold tracking-tight text-primary">{w.offerTotal}</p>
+            <Link
+              to="/legal/website-2026-offer"
+              className="mt-1 inline-flex text-xs font-bold text-ink/50 underline underline-offset-2 transition hover:text-primary"
+            >
+              {w.termsApply}
+            </Link>
           </Reveal>
         </div>
       </Section>
