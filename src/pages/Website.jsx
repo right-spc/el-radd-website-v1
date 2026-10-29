@@ -51,6 +51,26 @@ function MiniBrowser({ url }) {
   )
 }
 
+// renders offer items, hyperlinking the Qubix Agency partner mention
+function renderWithQubixLink(text) {
+  const parts = text.split('Qubix Agency')
+  return parts.map((part, i, arr) => (
+    <span key={i}>
+      {part}
+      {i < arr.length - 1 && (
+        <a
+          href="https://www.qubix.agency/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-primary-2 underline underline-offset-2 transition hover:text-primary"
+        >
+          Qubix Agency
+        </a>
+      )}
+    </span>
+  ))
+}
+
 export default function Website() {
   const { t } = useLang()
   const w = t.websitePage
@@ -115,7 +135,7 @@ export default function Website() {
               {w.offer.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <IconCheck className="mt-1 h-5 w-5 shrink-0 text-primary-2" />
-                  <span className="text-[15.5px] font-bold leading-relaxed text-ink">{item}</span>
+                  <span className="text-[15.5px] font-bold leading-relaxed text-ink">{renderWithQubixLink(item)}</span>
                 </li>
               ))}
             </ul>
