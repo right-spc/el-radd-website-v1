@@ -287,6 +287,7 @@ export default {
     publisher: 'Publisher: El Radd',
     effective: 'Effective from the date this offer is published on the El Radd website',
     note: 'The Arabic version is the official and prevailing version — governed by the laws of the Arab Republic of Egypt',
+    termsLink: 'Website terms of use',
     backToSite: 'Back to the offer page',
       },
 

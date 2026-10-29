@@ -49,7 +49,17 @@ export default function Footer() {
 
         <div className="mt-12 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <span>{t.footer.copyright}</span>
-          <span>{t.footer.company}</span>
+          <span>
+            <a
+              href="https://rightspc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 transition hover:text-white/85"
+            >
+              Right Space
+            </a>{' '}
+            — Cairo, Egypt
+          </span>
         </div>
       </div>
     </footer>

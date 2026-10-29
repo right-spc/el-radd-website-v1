@@ -138,6 +138,11 @@ export default function WebsiteOfferTerms() {
 
           <Reveal className="mt-14 rounded-card border border-ink/10 bg-white p-6 shadow-soft">
             <p className="text-sm font-bold leading-relaxed text-ink/70">{terms.note}</p>
+            <p className="mt-3 text-sm font-bold leading-relaxed text-ink/70">
+              <Link to="/terms" className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary">
+                {terms.termsLink}
+              </Link>
+            </p>
             <Link
               to="/website"
               className="mt-4 inline-flex min-h-[44px] items-center font-bold text-primary-2 underline underline-offset-4 transition hover:text-primary"
