@@ -157,7 +157,7 @@ export default function Website() {
       </Section>
 
       {/* lead form — data stays local until submission is wired up */}
-      <Section id="offer-form" className="bg-white/60">
+      <Section id="offer-form">
         <Reveal className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-extrabold text-primary md:text-4xl">{w.offerFormHeader}</h2>
           <p className="mt-3 text-lg leading-relaxed text-ink/75">{w.offerFormSub}</p>
