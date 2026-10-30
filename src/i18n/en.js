@@ -300,7 +300,7 @@ export default {
     askBody: 'He answers questions about pricing and details instantly — and routes you to our team if it needs a decision.',
     askCta: 'Open the chat and ask',
     waTitle: 'Message us on WhatsApp',
-    waBody: 'Prefer talking to someone directly? Message us on WhatsApp and we reply ASAP.',
+    waBody: 'Prefer WhatsApp? Message us there — Raddod replies instantly too, and brings in the team when a human decision is needed.',
     waCta: 'Message on WhatsApp',
     rsTitle: 'Right Space',
     rsBody: '30B Asmaa Fahmy, Al Golf, Nasr City, Cairo Governorate 4451422, Egypt',
