@@ -10,24 +10,27 @@ import { IconWhatsApp, IconChatBubble, IconGlobe, IconCalendar } from '../compon
 export default function Contact() {
   const { t } = useLang()
   const c = t.contactPage
-  const [name, setName] = useState('')
-  const [type, setType] = useState(c.form.types[0])
-  const [message, setMessage] = useState('')
+  const [fields, setFields] = useState({ name: '', phone: '', email: '', message: '' })
   const [consent, setConsent] = useState(false)
-  const [feedback, setFeedback] = useState('')
+  const [errors, setErrors] = useState({})
+  const [submitted, setSubmitted] = useState(false)
+
+  const setField = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
+
+  // Egyptian mobile: 11 digits starting 01, optional +20/20 country code, spaces/dashes tolerated
+  const isEgyptianMobile = (value) => /^(?:\+?20)?01[0125]\d{8}$/.test(value.replace(/[\s-]/g, ''))
 
   const onSubmit = (e) => {
     e.preventDefault()
-    if (!name.trim() || !message.trim() || !consent) {
-      setFeedback(c.form.required)
-      return
-    }
-    if (!isWhatsAppConfigured) {
-      setFeedback(c.form.noWhatsapp)
-      return
-    }
-    const text = `${c.form.composeIntro} ${name.trim()}. ${c.form.composeType} ${type}. ${message.trim()}`
-    window.open(whatsAppLink(text), '_blank', 'noopener,noreferrer')
+    const errs = {}
+    if (!fields.name.trim()) errs.name = c.form.nameErr
+    if (!isEgyptianMobile(fields.phone)) errs.phone = c.form.phoneErr
+    if (!fields.message.trim()) errs.message = c.form.messageErr
+    if (!consent) errs.consent = c.form.consentErr
+    setErrors(errs)
+    if (Object.keys(errs).length) return
+    // NOTE: nothing transmitted yet — submission destination pending
+    setSubmitted(true)
   }
 
   const inputCls =
@@ -103,83 +106,112 @@ export default function Contact() {
             </Reveal>
           </div>
 
-          {/* intake form */}
+          {/* intake form — data stays local until submission is wired up */}
           <Reveal delay={100} className="rounded-card border border-ink/10 bg-white p-6 shadow-soft md:p-7">
-            <form onSubmit={onSubmit} noValidate className="flex flex-col">
-              <label className="block text-sm font-extrabold text-ink">{c.form.type}</label>
-              <div className="mt-2.5 flex flex-wrap gap-2">
-                {c.form.types.map((opt) => (
-                  <button
-                    key={opt}
-                    type="button"
-                    onClick={() => setType(opt)}
-                    className={`rounded-full px-4 py-2 text-sm font-bold transition active:scale-[0.97] ${
-                      type === opt
-                        ? 'bg-primary text-white shadow-sm'
-                        : 'border border-ink/15 bg-white text-ink/70 hover:border-primary/40'
-                    }`}
-                  >
-                    {opt}
-                  </button>
-                ))}
+            {submitted ? (
+              <div className="py-12 text-center">
+                <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-primary-soft text-2xl text-primary">✓</span>
+                <p className="mt-5 text-lg font-extrabold text-primary">{c.form.success}</p>
               </div>
+            ) : (
+              <form onSubmit={onSubmit} noValidate className="flex flex-col gap-4">
+                <div>
+                  <label htmlFor="cf-name" className="block text-sm font-extrabold text-ink">
+                    {c.form.name}
+                  </label>
+                  <input
+                    id="cf-name"
+                    type="text"
+                    value={fields.name}
+                    onChange={setField('name')}
+                    placeholder={c.form.namePh}
+                    className={`mt-1.5 min-h-[48px] w-full rounded-xl border bg-white px-4 py-3 text-[16px] text-ink transition placeholder:text-ink/40 focus:outline-none ${
+                      errors.name ? 'border-red-400 focus:border-red-500' : 'border-ink/15 focus:border-primary-2'
+                    }`}
+                  />
+                  {errors.name && <p className="mt-1 text-xs font-bold text-red-600">{errors.name}</p>}
+                </div>
 
-              <label htmlFor="cf-name" className="mt-6 block text-sm font-extrabold text-ink">
-                {c.form.name}
-              </label>
-              <input
-                id="cf-name"
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder={c.form.namePh}
-                className={`mt-1.5 ${inputCls}`}
-              />
+                <div>
+                  <label htmlFor="cf-phone" className="block text-sm font-extrabold text-ink">
+                    {c.form.phone}
+                  </label>
+                  <input
+                    id="cf-phone"
+                    type="tel"
+                    dir="ltr"
+                    inputMode="numeric"
+                    value={fields.phone}
+                    onChange={setField('phone')}
+                    placeholder={c.form.phonePh}
+                    className={`mt-1.5 min-h-[48px] w-full rounded-xl border bg-white px-4 py-3 text-right text-[16px] text-ink transition placeholder:text-ink/40 focus:outline-none ${
+                      errors.phone ? 'border-red-400 focus:border-red-500' : 'border-ink/15 focus:border-primary-2'
+                    }`}
+                  />
+                  {errors.phone && <p className="mt-1 text-xs font-bold text-red-600">{errors.phone}</p>}
+                </div>
 
-              <label htmlFor="cf-msg" className="mt-5 block text-sm font-extrabold text-ink">
-                {c.form.message}
-              </label>
-              <textarea
-                id="cf-msg"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                placeholder={c.form.messagePh}
-                rows={4}
-                className={`mt-1.5 resize-y ${inputCls}`}
-              />
+                <div>
+                  <label htmlFor="cf-email" className="block text-sm font-extrabold text-ink">
+                    {c.form.email}
+                  </label>
+                  <input
+                    id="cf-email"
+                    type="email"
+                    dir="ltr"
+                    value={fields.email}
+                    onChange={setField('email')}
+                    placeholder={c.form.emailPh}
+                    className="mt-1.5 min-h-[48px] w-full rounded-xl border border-ink/15 bg-white px-4 py-3 text-right text-[16px] text-ink transition placeholder:text-ink/40 focus:border-primary-2 focus:outline-none"
+                  />
+                </div>
 
-              {feedback && (
-                <p className="mt-4 rounded-xl bg-highlight/40 px-4 py-3 text-sm font-bold text-ink" role="status">
-                  {feedback}
-                </p>
-              )}
+                <div>
+                  <label htmlFor="cf-msg" className="block text-sm font-extrabold text-ink">
+                    {c.form.message}
+                  </label>
+                  <textarea
+                    id="cf-msg"
+                    value={fields.message}
+                    onChange={setField('message')}
+                    placeholder={c.form.messagePh}
+                    rows={4}
+                    className={`mt-1.5 resize-y min-h-[48px] w-full rounded-xl border bg-white px-4 py-3 text-[16px] text-ink transition placeholder:text-ink/40 focus:outline-none ${
+                      errors.message ? 'border-red-400 focus:border-red-500' : 'border-ink/15 focus:border-primary-2'
+                    }`}
+                  />
+                  {errors.message && <p className="mt-1 text-xs font-bold text-red-600">{errors.message}</p>}
+                </div>
 
-              <label className="mt-5 flex items-start gap-3">
-                <input
-                  type="checkbox"
-                  checked={consent}
-                  onChange={() => setConsent((v) => !v)}
-                  className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
-                />
-                <span className="text-sm font-semibold leading-relaxed text-ink/80">
-                  {c.form.consent}{' '}
-                  <Link
-                    to="/terms"
-                    className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary"
-                  >
-                    {c.form.consentTerms}
-                  </Link>
-                </span>
-              </label>
+                <label className="mt-2 flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={consent}
+                    onChange={() => setConsent((v) => !v)}
+                    className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
+                  />
+                  <span className="text-sm font-semibold leading-relaxed text-ink/80">
+                    {c.form.consent}{' '}
+                    <Link
+                      to="/terms"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary"
+                    >
+                      {c.form.consentTerms}
+                    </Link>
+                  </span>
+                </label>
+                {errors.consent && <p className="text-xs font-bold text-red-600">{errors.consent}</p>}
 
-              <button
-                type="submit"
-                className="mt-6 inline-flex min-h-[52px] w-full items-center justify-center gap-2 rounded-full bg-primary px-6 text-lg font-bold text-white shadow-sm transition hover:bg-primary-2 active:scale-[0.98]"
-              >
-                <IconWhatsApp className="h-5 w-5" />
-                {c.form.submit}
-              </button>
-            </form>
+                <button
+                  type="submit"
+                  className="mt-2 inline-flex min-h-[52px] w-full items-center justify-center rounded-full bg-primary text-lg font-bold text-white shadow-sm transition hover:bg-primary-2 active:scale-[0.98]"
+                >
+                  {c.form.submit}
+                </button>
+              </form>
+            )}
           </Reveal>
         </div>
       </Section>
