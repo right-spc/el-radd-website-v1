@@ -16,7 +16,6 @@ export default {
   langToggle: 'EN',
   header: {
     nav: [
-      { label: 'جربه بنفسك', to: '/#demo' },
       { label: 'إزاي بيشتغل', to: '/#how' },
       { label: 'الأسعار', to: '/#pricing' },
       { label: 'موقع جاهز', to: '/website' },

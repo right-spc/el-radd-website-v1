@@ -16,7 +16,6 @@ export default {
   langToggle: 'عربي',
   header: {
     nav: [
-      { label: 'Try it yourself', to: '/#demo' },
       { label: 'How it works', to: '/#how' },
       { label: 'Pricing', to: '/#pricing' },
       { label: 'Ready-made website', to: '/website' },
