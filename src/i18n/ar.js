@@ -304,7 +304,6 @@ export default {
     rsOffice: 'المكتب',
     rsTitle: 'Right Space',
     rsBody: '30ب اسماء فهمي, الجولف, مدينة نصر. القاهرة 4451422',
-    rsNote: 'مدير حسابك المخصص بيشتغل في نفس ساعاتك وتوقيتك.',
     whatsappCta: 'كلمنا واتساب',
     whatsappPrefill: 'أهلا، عايز أعرف تفاصيل الرد لمشروعي',
     form: {

@@ -305,7 +305,6 @@ export default {
     rsOffice: 'Office',
     rsTitle: 'Right Space',
     rsBody: '30B Asmaa Fahmy, Al Golf, Nasr City, Cairo Governorate 4451422, Egypt',
-    rsNote: 'Your dedicated account manager works on your hours and time zone.',
     whatsappCta: 'Message us on WhatsApp',
     whatsappPrefill: 'أهلا، عايز أعرف تفاصيل الرد لمشروعي',
     form: {
