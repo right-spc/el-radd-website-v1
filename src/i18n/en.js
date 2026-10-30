@@ -302,9 +302,10 @@ export default {
     waTitle: 'Message us on WhatsApp',
     waBody: 'Prefer WhatsApp? Message us there — Raddod replies instantly too, and brings in the team when a human decision is needed.',
     waCta: 'Message on WhatsApp',
+    rsOffice: 'Office',
     rsTitle: 'Right Space',
     rsBody: '30B Asmaa Fahmy, Al Golf, Nasr City, Cairo Governorate 4451422, Egypt',
-    rsLink: 'rightspc.com',
+    rsNote: 'Your dedicated account manager works on your hours and time zone.',
     whatsappCta: 'Message us on WhatsApp',
     whatsappPrefill: 'أهلا، عايز أعرف تفاصيل الرد لمشروعي',
     form: {

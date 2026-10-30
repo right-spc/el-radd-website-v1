@@ -201,3 +201,12 @@ export function IconCalendar({ className = 'h-6 w-6' }) {
     </svg>
   )
 }
+
+export function IconMapPin({ className = 'h-6 w-6' }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+      <path d="M12 21s-6.5-5.2-6.5-10a6.5 6.5 0 1 1 13 0c0 4.8-6.5 10-6.5 10z" />
+      <circle cx="12" cy="10.5" r="2.3" />
+    </svg>
+  )
+}

@@ -5,7 +5,7 @@ import { useLang } from '../i18n/LangContext.jsx'
 import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { openElradd } from '../chat.js'
-import { IconWhatsApp, IconChatBubble, IconGlobe, IconCalendar } from '../components/Icons.jsx'
+import { IconWhatsApp, IconChatBubble, IconMapPin, IconCalendar } from '../components/Icons.jsx'
 
 export default function Contact() {
   const { t } = useLang()
@@ -90,19 +90,22 @@ export default function Contact() {
             )}
 
             <Reveal className="rounded-card border border-ink/10 bg-white p-6 shadow-soft">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-soft text-primary">
-                <IconGlobe className="h-5 w-5" />
-              </span>
-              <h3 className="mt-4 text-xl font-extrabold text-ink">{c.rsTitle}</h3>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink/70">{c.rsBody}</p>
+              <div className="flex items-center gap-3">
+                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary-soft text-primary">
+                  <IconMapPin className="h-5 w-5" />
+                </span>
+                <h3 className="text-lg font-extrabold text-ink">{c.rsOffice}</h3>
+              </div>
               <a
                 href="https://rightspc.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-3 inline-flex text-sm font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary"
+                className="mt-4 inline-block text-sm font-extrabold text-ink transition hover:text-primary"
               >
-                {c.rsLink}
+                {c.rsTitle}
               </a>
+              <p className="mt-1 text-sm leading-relaxed text-ink/70">{c.rsBody}</p>
+              <p className="mt-2 text-[13px] leading-relaxed text-ink/55">{c.rsNote}</p>
             </Reveal>
           </div>
 
