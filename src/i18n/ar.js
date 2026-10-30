@@ -302,7 +302,7 @@ export default {
     waBody: 'فضلت تكلم حد مباشرة؟ ابعت على واتساب وبنرد في أسرع وقت.',
     waCta: 'ابعت على واتساب',
     rsTitle: 'Right Space',
-    rsBody: 'Right Space — Cairo, Egypt',
+    rsBody: '30B Asmaa Fahmy, Al Golf, Nasr City, Cairo Governorate 4451422, Egypt',
     rsLink: 'rightspc.com',
     whatsappCta: 'كلمنا واتساب',
     whatsappPrefill: 'أهلا، عايز أعرف تفاصيل الرد لمشروعي',

@@ -303,7 +303,7 @@ export default {
     waBody: 'Prefer talking to someone directly? Message us on WhatsApp and we reply ASAP.',
     waCta: 'Message on WhatsApp',
     rsTitle: 'Right Space',
-    rsBody: 'Right Space — Cairo, Egypt',
+    rsBody: '30B Asmaa Fahmy, Al Golf, Nasr City, Cairo Governorate 4451422, Egypt',
     rsLink: 'rightspc.com',
     whatsappCta: 'Message us on WhatsApp',
     whatsappPrefill: 'أهلا، عايز أعرف تفاصيل الرد لمشروعي',
