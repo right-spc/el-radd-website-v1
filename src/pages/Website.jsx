@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
 import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
-import WhatsAppCta from '../components/WhatsAppCta.jsx'
 import { askElradd, openElradd } from '../chat.js'
 import { IconCheck, IconChatBubble } from '../components/Icons.jsx'
 
@@ -106,9 +105,6 @@ export default function Website() {
           <Reveal className="order-1 lg:order-none lg:col-start-1 lg:row-start-1">
             <h1 className="text-4xl font-extrabold leading-[1.2] text-white md:text-5xl">{w.h1}</h1>
             <p className="mt-5 text-xl font-extrabold text-highlight md:text-2xl">{w.priceLine}</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-              <WhatsAppCta label={w.ctaWhatsapp} />
-            </div>
           </Reveal>
           <Reveal className="order-2 flex justify-center lg:order-none lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:justify-end">
             <div className="w-full max-w-md">
@@ -117,9 +113,6 @@ export default function Website() {
           </Reveal>
           <div className="order-3 lg:order-none lg:col-start-1 lg:row-start-2">
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/70">{w.sub2}</p>
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-              <WhatsAppCta label={w.ctaWhatsapp} />
-            </div>
           </div>
         </div>
       </section>

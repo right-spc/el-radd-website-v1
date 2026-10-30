@@ -225,7 +225,6 @@ export default {
     priceLine: 'EGP 6,999 only for the design — first year of hosting on us',
     sub2: 'A custom design made by hand — not a template and not AI-generated. The timeline is agreed when you reach out.',
     mockUrl: 'your-business.com',
-    ctaWhatsapp: 'Message us on WhatsApp',
     offerHeader: 'Exactly what you get',
     offer: [
       'A full landing page: header + hero + 3 sections + footer + Terms & Privacy pages',
