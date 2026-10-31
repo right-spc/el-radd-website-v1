@@ -130,7 +130,7 @@ export default {
         annualPrice: '1,199',
         annualBulk: 'Pay EGP 14,388 yearly — live for 14 months instead of 12, setup & training free',
         annualNote: '14 months instead of 12 — setup & training free',
-        unlimitedCap: 'A full plan — no limits, nothing counted against you',
+        unlimitedCap: 'The whole plan — no credits, no meter',
         annual: {
           text: 'Pay EGP 18,000 once — live for 14 months instead of 12, setup & training free (save EGP 5,000)',
         },
