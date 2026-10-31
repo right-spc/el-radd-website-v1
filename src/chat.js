@@ -3,7 +3,7 @@
 // exposed their API on window.horusDesk — whichever exposes open() wins.
 // Falls back to scrolling to the demo section when the widget
 // script hasn't loaded (e.g. blocked) so CTAs never dead-end.
-function widget() {
+export function widget() {
   if (typeof window === 'undefined') return undefined
   const withApi = [window.horusDesk, window.chatWidget].find(
     (c) => c && typeof c.open === 'function',

@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { widget } from '../chat.js'
 import ar from './ar.js'
 import en from './en.js'
 
@@ -31,8 +32,9 @@ export function LangProvider({ children }) {
   useEffect(() => {
     let tries = 0
     const apply = () => {
-      if (typeof window.horusDesk?.setLanguage === 'function') {
-        window.horusDesk.setLanguage(lang)
+      const hd = widget()
+      if (hd && typeof hd.setLanguage === 'function') {
+        hd.setLanguage(lang)
         return true
       }
       return false
