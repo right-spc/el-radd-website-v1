@@ -1,3 +1,10 @@
 {
+  "redirects": [
+    {
+      "source": "/widget",
+      "destination": "https://ctr.horusdesk.com/widget.js",
+      "statusCode": 302
+    }
+  ],
   "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
 }
