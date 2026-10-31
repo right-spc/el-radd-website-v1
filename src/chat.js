@@ -1,8 +1,14 @@
-// Bridge to the Horus Desk widget embedded in index.html.
+// Bridge to the chat widget embedded in index.html.
+// The snippet config global is window.chatWidget (orgKey); older builds
+// exposed their API on window.horusDesk — whichever exposes open() wins.
 // Falls back to scrolling to the demo section when the widget
 // script hasn't loaded (e.g. blocked) so CTAs never dead-end.
 function widget() {
-  return typeof window !== 'undefined' ? window.horusDesk : undefined
+  if (typeof window === 'undefined') return undefined
+  const withApi = [window.horusDesk, window.chatWidget].find(
+    (c) => c && typeof c.open === 'function',
+  )
+  return withApi || window.horusDesk || window.chatWidget
 }
 
 export function openElradd() {
