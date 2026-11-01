@@ -12,7 +12,7 @@ export default {
     privacy: { title: 'سياسة الخصوصية — الرد', desc: 'سياسة الخصوصية لموقع وخدمة الرد.' },
     terms: { title: 'الشروط والأحكام — الرد', desc: 'الشروط والأحكام لموقع وخدمة الرد.' },
   },
-  brand: { wordmark: 'الرد' },
+  brand: { wordmark: 'الــــرد' },
   langToggle: 'EN',
   header: {
     nav: [
