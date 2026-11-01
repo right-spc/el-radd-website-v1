@@ -10,7 +10,7 @@ export default {
     },
     contact: { title: 'Contact us — Elradd', desc: "Got a question? We've got the reply." },
     privacy: { title: 'Privacy Policy — Elradd', desc: 'The privacy policy of the Elradd website and service.' },
-    terms: { title: 'Terms & Conditions — Elradd', desc: 'The terms and conditions of the Elradd website and service.' },
+    terms: { title: 'Terms of Service — Elradd', desc: 'Terms of Service for Elradd, provided by Right Space.' },
   },
   brand: { wordmark: 'Elradd' },
   langToggle: 'عربي',
@@ -278,7 +278,7 @@ export default {
     agree3Pre: 'I accept the',
     agree3Privacy: 'Privacy Policy',
     agree3And: 'and',
-    agree3Terms: 'Terms of Use',
+    agree3Terms: 'Terms of Service',
   },
   websiteOfferTerms: {
     title: 'Website Design Offer — Terms & Conditions',
@@ -286,7 +286,7 @@ export default {
     publisher: 'Publisher: El Radd',
     effective: 'Effective from the date this offer is published on the El Radd website',
     note: 'The Arabic version is the official and prevailing version — governed by the laws of the Arab Republic of Egypt',
-    termsLink: 'Website terms of use',
+    termsLink: 'Terms of Service',
     backToSite: 'Back to the offer page',
       },
 
@@ -331,9 +331,8 @@ export default {
     link: 'Got a question — talk to us',
   },
   termsPage: {
-    h1: 'Terms & Conditions',
-    body: "By using Elradd's website or services, you agree that we may contact you about the service. Detailed pricing and terms are laid out in the service agreement at subscription. Prices shown on the site are monthly and in Egyptian pounds.",
-    link: 'Got a question — talk to us',
+    title: 'Terms of Service',
+    publisher: 'Right Space — operating as El Radd',
   },
   bottomBar: {
     try: 'Try Elradd',
@@ -352,7 +351,7 @@ export default {
     ],
     legal: [
       { label: 'Privacy policy', to: '/privacy' },
-      { label: 'Terms', to: '/terms' },
+      { label: 'Terms of Service', to: '/terms' },
       { label: 'Website offer terms', to: '/legal/website-2026-offer' },
     ],
     copyright: '© 2026 El Radd — All rights reserved',
