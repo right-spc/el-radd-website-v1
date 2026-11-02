@@ -2,17 +2,29 @@
 // bigLevel: which markdown heading level gets the large section treatment
 // (website-offer terms use `###` for articles; standard documents use `##`).
 
-// renders inline **bold** and *italic* exactly as written
+// renders inline **bold**, *italic*, and [text](url) links exactly as written
 function inline(text, keyBase) {
   const parts = []
-  const re = /\*\*([^*]+)\*\*|\*([^*]+)\*/g
+  const re = /\*\*([^*]+)\*\*|\*([^*]+)\*|\[([^\]]+)\]\(([^)\s]+)\)/g
   let last = 0
   let m
   let k = 0
   while ((m = re.exec(text))) {
     if (m.index > last) parts.push(text.slice(last, m.index))
     if (m[1]) parts.push(<strong key={`${keyBase}-b${k++}`} className="font-extrabold text-ink">{m[1]}</strong>)
-    else parts.push(<em key={`${keyBase}-i${k++}`} className="font-bold text-primary-2">{m[2]}</em>)
+    else if (m[3]) {
+      parts.push(
+        <a
+          key={`${keyBase}-a${k++}`}
+          href={m[4]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary"
+        >
+          {m[3]}
+        </a>,
+      )
+    } else parts.push(<em key={`${keyBase}-i${k++}`} className="font-bold text-primary-2">{m[2]}</em>)
     last = m.index + m[0].length
   }
   if (last < text.length) parts.push(text.slice(last))

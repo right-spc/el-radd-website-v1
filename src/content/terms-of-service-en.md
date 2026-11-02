@@ -45,7 +45,7 @@ You agree to either: (a) install the JavaScript widget code on your website your
 
 ### 2.3 WhatsApp Business Account
 
-To enable the WhatsApp channel, you must maintain a valid WhatsApp Business account in good standing and comply with Meta's Commerce Policy and Business Messaging Policy. You represent that you are the lawful owner of, or are authorized to use, any phone number connected to the Service. We may suspend WhatsApp services if your account violates Meta's terms.
+To enable the WhatsApp channel, you must maintain a valid WhatsApp Business account in good standing and comply with Meta's [Commerce Policy](https://www.meta.com/policies/commerce/) and [Business Messaging Policy](https://www.whatsapp.com/legal/business-policy/). You represent that you are the lawful owner of, or are authorized to use, any phone number connected to the Service. We may suspend WhatsApp services if your account violates [Meta's terms](https://www.whatsapp.com/legal/terms-of-service/).
 
 ---
 
@@ -63,7 +63,7 @@ You must provide accurate, current, and complete information during registration
 
 You agree to:
 - Keep your contact information, payment details, and business information current.
-- Maintain your WhatsApp Business account in good standing; we are not responsible for service interruptions caused by Meta suspending your account due to your violation of their policies.
+- Maintain your WhatsApp Business account in good standing; we are not responsible for service interruptions caused by Meta suspending your account due to your violation of [their policies](https://whatsappbusiness.com/policy/).
 - Review AI interactions periodically and notify us of AI errors or service issues as soon as you discover them. We are not responsible for correcting errors we have not been informed of.
 - Not interfere with, modify, or reverse-engineer the widget code after installation; if you break the widget by editing its code, repair is your cost.
 - Retain responsibility for maintaining your own backups of critical customer data and conversation history.
@@ -92,7 +92,7 @@ Custom pricing applies to engagements outside standard plans.
 
 ### 4.2 Payment Processing
 
-All payments are processed through Paymob or InstaPay. We do not store your credit card details or banking information on our servers, nor do we have access to such information. It is your sole responsibility to complete payment by the due date.
+All payments are processed through [Paymob](https://paymob.com/en/privacy-policy) or [InstaPay](https://www.instapay.eg/?page_id=225&lang=en). We do not store your credit card details or banking information on our servers, nor do we have access to such information. It is your sole responsibility to complete payment by the due date.
 
 - **Paymob Auto-Pay:** If you opt in to automatic recurring payments via Paymob, it is your sole responsibility to ensure your payment method remains active and has sufficient funds before each due date. Failure to maintain a valid payment method resulting in a failed auto-pay transaction may result in immediate service suspension. Auto-pay is entirely optional and may be disabled at any time.
 - **InstaPay:** If you pay via InstaPay, it is your sole responsibility to notify us of the payment immediately after it is made, providing proof of transfer, so we can confirm receipt and avoid service suspension. Delays in notification are at your own risk.
