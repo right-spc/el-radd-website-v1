@@ -234,7 +234,7 @@ We act as a Data Processor regarding your customers' personal data. You act as t
 
 ### 7.4 Third-Party Services
 
-The Service integrates with third-party services including AI model providers, cloud database and hosting providers, Meta Platforms (WhatsApp), and payment processors. Each has their own privacy policies and terms. We are not responsible for the privacy practices or service availability of these third parties.
+The Service integrates with third-party services including AI model providers, cloud database and hosting providers, Meta Platforms (WhatsApp), and payment processors.
 
 ### 7.5 Security
 
