@@ -22,16 +22,38 @@ function inline(text, keyBase) {
 export default function MarkdownTerms({ md, bigLevel = 3 }) {
   const blocks = []
   let bullets = []
+  let tableLines = []
   const flushBullets = () => {
     if (bullets.length) {
       blocks.push({ type: 'ul', items: [...bullets] })
       bullets = []
     }
   }
+  // markdown table: consecutive `|` lines; the |---| separator row is syntax, not content
+  const flushTable = () => {
+    if (tableLines.length) {
+      const rows = tableLines
+        .filter((l) => !/^\|[\s:|-]+\|?$/.test(l.trim()))
+        .map((l) =>
+          l
+            .trim()
+            .replace(/^\|/, '')
+            .replace(/\|$/, '')
+            .split('|')
+            .map((c) => c.trim()),
+        )
+      blocks.push({ type: 'table', rows })
+      tableLines = []
+    }
+  }
+  const flushAll = () => {
+    flushTable()
+    flushBullets()
+  }
   md.split('\n').forEach((raw, li) => {
     const line = raw.trim()
     if (!line) {
-      flushBullets()
+      flushAll()
       return
     }
     if (line.startsWith('**تنويه') || line.startsWith('**Disclaimer')) {
@@ -39,17 +61,22 @@ export default function MarkdownTerms({ md, bigLevel = 3 }) {
       return
     }
     if (line === '---') {
-      flushBullets()
+      flushAll()
       blocks.push({ type: 'hr', key: `hr-${li}` })
       return
     }
-    if (line.startsWith('### ')) {
+    if (line.startsWith('|')) {
       flushBullets()
+      tableLines.push(line)
+      return
+    }
+    if (line.startsWith('### ')) {
+      flushAll()
       blocks.push({ type: 'h3', level: 3, key: `h3-${li}`, text: line.slice(4) })
       return
     }
     if (line.startsWith('## ')) {
-      flushBullets()
+      flushAll()
       blocks.push({ type: 'h2', level: 2, key: `h2-${li}`, text: line.slice(3) })
       return
     }
@@ -58,13 +85,14 @@ export default function MarkdownTerms({ md, bigLevel = 3 }) {
       return
     }
     if (line.startsWith('- ')) {
+      flushTable()
       bullets.push(line.slice(2))
       return
     }
-    flushBullets()
+    flushAll()
     blocks.push({ type: 'p', key: `p-${li}`, text: line })
   })
-  flushBullets()
+  flushAll()
 
   const heading = (level) => (level === bigLevel ? 'big' : 'sub')
 
@@ -86,6 +114,33 @@ export default function MarkdownTerms({ md, bigLevel = 3 }) {
             )
           case 'hr':
             return <hr key={block.key} className="my-10 border-ink/10" />
+          case 'table':
+            return (
+              <div key={`tbl-${i}`} className="mt-6 overflow-x-auto rounded-xl border border-ink/10">
+                <table className="w-full min-w-[560px] border-collapse text-sm">
+                  <thead>
+                    <tr className="bg-primary-soft">
+                      {block.rows[0].map((cell, ci) => (
+                        <th key={ci} className="px-3.5 py-2.5 text-start text-[13px] font-extrabold text-primary">
+                          {inline(cell, `th${i}-${ci}`)}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {block.rows.slice(1).map((row, ri) => (
+                      <tr key={ri} className="border-t border-ink/10 align-top">
+                        {row.map((cell, ci) => (
+                          <td key={ci} className="px-3.5 py-2.5 leading-relaxed text-ink/85">
+                            {inline(cell, `td${i}-${ri}-${ci}`)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )
           case 'ul':
             return (
               <ul key={`ul-${i}`} className="mt-4 flex flex-col gap-2.5 ps-5">

@@ -9,7 +9,7 @@ export default {
       desc: 'EGP 6,999 — first year hosting free — and replying to your customers from day one',
     },
     contact: { title: 'Contact us — Elradd', desc: "Got a question? We've got the reply." },
-    privacy: { title: 'Privacy Policy — Elradd', desc: 'The privacy policy of the Elradd website and service.' },
+    privacy: { title: 'Privacy Policy — Elradd', desc: 'Privacy Policy for Elradd, provided by Right Space.' },
     terms: { title: 'Terms of Service — Elradd', desc: 'Terms of Service for Elradd, provided by Right Space.' },
   },
   brand: { wordmark: 'Elradd' },
@@ -326,9 +326,8 @@ export default {
     nudge: "Don't bother — ask Elradd 😄",
   },
   privacyPage: {
-    h1: 'Privacy Policy',
-    body: "Elradd is a service by Right Space — Cairo, Egypt. We only collect the data needed to serve you: what a customer writes in the chat or the form, and we use it only to reply to customers and improve the service. We don't sell your data and we don't share it with any third party for marketing purposes.",
-    link: 'Got a question — talk to us',
+    title: 'Privacy Policy',
+    publisher: 'Right Space — operating as El Radd',
   },
   termsPage: {
     title: 'Terms of Service',
