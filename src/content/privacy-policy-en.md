@@ -109,8 +109,6 @@ We do not sell, rent, or trade personal data. We share data only with the follow
 | **Speech-to-text provider** | Transcribing voice note audio | Voice note audio files |
 | **Paymob / InstaPay** | Payment processing | Payment amount, transaction reference (no card data) |
 
-Each of these providers operates under its own privacy policy and terms of service. We are not responsible for their privacy practices, but we select providers that implement appropriate technical and organizational security measures.
-
 We may also disclose data if required by law, court order, or governmental authority, or to protect our rights, property, or safety, or that of our users.
 
 ---
