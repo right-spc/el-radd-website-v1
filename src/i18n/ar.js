@@ -13,6 +13,7 @@ export default {
     terms: { title: 'شروط الخدمة — الرد', desc: 'شروط خدمة الرد المقدمة من رايت سبيس.' },
   },
   brand: { wordmark: 'الــــرد' },
+  prelaunchBanner: 'الموقع قيد التجهيز — الخدمات لم تطلق بعد؛ بعض الخدمات غير مفعلة حاليا وقيد الاختبار.',
   langToggle: 'EN',
   header: {
     nav: [

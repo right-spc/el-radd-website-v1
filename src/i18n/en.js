@@ -13,6 +13,7 @@ export default {
     terms: { title: 'Terms of Service — Elradd', desc: 'Terms of Service for Elradd, provided by Right Space.' },
   },
   brand: { wordmark: 'Elradd' },
+  prelaunchBanner: 'The website is under construction — services have not launched yet; some services are currently inactive and under testing.',
   langToggle: 'عربي',
   header: {
     nav: [

@@ -3,6 +3,7 @@ import { Route, Routes, useLocation } from 'react-router-dom'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import MobileBottomBar from './components/MobileBottomBar.jsx'
+import PreLaunchBanner from './components/PreLaunchBanner.jsx'
 import Landing from './pages/Landing.jsx'
 import Website from './pages/Website.jsx'
 import WebsiteOfferTerms from './pages/WebsiteOfferTerms.jsx'
@@ -51,6 +52,7 @@ export default function App() {
   return (
     <div className="flex min-h-[100dvh] flex-col">
       <ScrollAndSeo />
+      <PreLaunchBanner />
       <Header />
       <main className="flex-1">
         <Routes>
