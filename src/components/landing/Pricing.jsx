@@ -4,7 +4,6 @@ import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
 import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe, IconWallet, IconCalendar } from '../Icons.jsx'
-import { askElradd } from '../../chat.js'
 import { carouselCenterDelta } from '../../carousel.js'
 
 const creditIcons = {
@@ -244,15 +243,14 @@ export default function Pricing() {
                 : plan.extras.map((extra) => `${extra.name} ${extra.price}`).join(' · ')}
             </p>
 
-            <button
-              type="button"
-              onClick={() => askElradd(plan.ask)}
+            <Link
+              to={`/signup?plan=${plan.id}`}
               className={`mt-3 inline-flex min-h-[50px] w-full items-center justify-center rounded-full text-base font-extrabold text-white transition active:scale-[0.98] ${
                 plan.id === 'agent' ? 'bg-primary-2 hover:bg-primary' : 'bg-primary hover:bg-primary-2'
               }`}
             >
               {plan.cta}
-            </button>
+            </Link>
           </Reveal>
           </div>
         ))}

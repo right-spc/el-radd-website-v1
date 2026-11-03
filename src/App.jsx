@@ -8,6 +8,7 @@ import Landing from './pages/Landing.jsx'
 import Website from './pages/Website.jsx'
 import WebsiteOfferTerms from './pages/WebsiteOfferTerms.jsx'
 import Contact from './pages/Contact.jsx'
+import Signup from './pages/Signup.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
 import { useLang } from './i18n/LangContext.jsx'
@@ -60,6 +61,7 @@ export default function App() {
           <Route path="/website" element={<Website />} />
           <Route path="/legal/website-2026-offer" element={<WebsiteOfferTerms />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<Landing />} />
