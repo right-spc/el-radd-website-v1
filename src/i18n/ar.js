@@ -367,8 +367,6 @@ export default {
       currentChannelsOptions: { whatsapp: 'واتساب', website: 'موقع', instagram: 'انستجرام', facebook: 'فيسبوك', phone: 'تليفون' },
     },
     request: {
-      plan: 'الباقة اللي عايز تنزلها',
-      planErr: 'اختار الباقة الأول',
       plans: {
         guard: 'الحارس — شات الموقع',
         agent: 'الوكيل — كل قنوات المراسلة',
@@ -397,7 +395,8 @@ export default {
       h2: 'استلمنا بياناتك',
       body: 'مهندس مبيعات هيتواصل معاك خلال يوم عمل يساعدك في التسجيل ويجاوب على أسئلتك.',
       whatsapp: 'ابعت نفس الطلب على واتساب',
-      waTemplate: 'أهلا، أنا {name} من {business} — بعت طلبي على الموقع وعايز أنزل باقة {plan}. حابب أكمل التسجيل.',
+      waTemplatePlan: 'أهلا، أنا {name} من {business} — بعت طلبي على الموقع وعايز أنزل باقة {plan}. حابب أكمل التسجيل.',
+      waTemplateNoPlan: 'أهلا، أنا {name} من {business} — بعت طلبي على الموقع وحابب أكمل التسجيل.',
       backToPricing: 'رجوع للباقات',
     },
   },

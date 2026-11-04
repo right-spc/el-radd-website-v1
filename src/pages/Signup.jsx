@@ -88,7 +88,6 @@ export default function Signup() {
       if (!fields.businessName.trim()) errs.businessName = s.business.businessNameErr
       if (!fields.industry) errs.industry = s.business.industryErr
     } else if (idx === 2) {
-      if (!fields.plan) errs.plan = s.request.planErr
       if (!fields.channelsWanted.length) errs.channelsWanted = s.request.channelsWantedErr
     }
     setErrors(errs)
@@ -126,11 +125,11 @@ export default function Signup() {
     window.scrollTo(0, 0)
   }
 
-  const planLabel = s.request.plans[fields.plan]
-  const waMessage = s.success.waTemplate
+  const hasPlan = ['guard', 'agent', 'istiqbal'].includes(fields.plan)
+  const waTemplate = hasPlan ? s.success.waTemplatePlan.replace('{plan}', s.request.plans[fields.plan]) : s.success.waTemplateNoPlan
+  const waMessage = waTemplate
     .replace('{name}', fields.name)
     .replace('{business}', fields.businessName)
-    .replace('{plan}', planLabel)
 
   const stepLabels = s.steps
 
@@ -363,27 +362,6 @@ export default function Signup() {
 
               {step === 2 && (
                 <>
-                  <Field label={s.request.plan} error={errors.plan}>
-                    <div className="flex flex-col gap-2">
-                      {Object.entries(s.request.plans).map(([key, label]) => (
-                        <button
-                          key={key}
-                          type="button"
-                          onClick={() => setFields((f) => ({ ...f, plan: key }))}
-                          className={`flex min-h-[48px] items-center gap-3 rounded-xl border-[1.5px] px-4 py-2.5 text-start text-[15px] font-bold transition ${
-                            fields.plan === key
-                              ? 'border-primary bg-primary-soft text-primary'
-                              : 'border-ink/15 bg-white text-ink/75 hover:border-primary/40'
-                          }`}
-                        >
-                          <span className={`flex h-5 w-5 shrink-0 items-center justify-center rounded-full border-2 ${fields.plan === key ? 'border-primary bg-primary' : 'border-ink/25'}`}>
-                            {fields.plan === key && <span className="h-1.5 w-1.5 rounded-full bg-white" />}
-                          </span>
-                          {label}
-                        </button>
-                      ))}
-                    </div>
-                  </Field>
                   <Field label={s.request.channelsWanted} error={errors.channelsWanted}>
                     <div className="flex flex-wrap gap-2">
                       {Object.entries(s.request.channelsWantedOptions).map(([key, label]) => (

@@ -368,8 +368,6 @@ export default {
       currentChannelsOptions: { whatsapp: 'WhatsApp', website: 'Website', instagram: 'Instagram', facebook: 'Facebook', phone: 'Phone' },
     },
     request: {
-      plan: 'Which plan do you want?',
-      planErr: 'Pick a plan first',
       plans: {
         guard: 'The Guard — website chat',
         agent: 'The Agent — every texting channel',
@@ -398,7 +396,8 @@ export default {
       h2: "We've received your details",
       body: 'A member of our sales team will reach out within one business day to help you sign up and answer any questions.',
       whatsapp: 'Send the same request on WhatsApp',
-      waTemplate: "Hello, I'm {name} from {business} — I just submitted my request on the website and I'd like to sign up for the {plan}.",
+      waTemplatePlan: "Hello, I'm {name} from {business} — I just submitted my request on the website and I'd like to sign up for the {plan}.",
+      waTemplateNoPlan: "Hello, I'm {name} from {business} — I just submitted my request on the website and I'd like to complete my signup.",
       backToPricing: 'Back to pricing',
     },
   },
