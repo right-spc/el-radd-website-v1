@@ -378,7 +378,7 @@ export default {
       },
       channelsWanted: 'Channels to activate',
       channelsWantedErr: 'Pick at least one channel',
-      channelsWantedOptions: { whatsapp: 'WhatsApp', website: 'Website chat', email: 'Email' },
+      channelsWantedOptions: { whatsapp: 'WhatsApp', website: 'Website chat', messenger: 'Messenger', instagram: 'Instagram', email: 'Email' },
       questions: 'Questions for the sales team (optional)',
       questionsPh: 'Anything you want to ask before signing up',
     },

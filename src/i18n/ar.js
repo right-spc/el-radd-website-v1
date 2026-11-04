@@ -377,7 +377,7 @@ export default {
       },
       channelsWanted: 'القنوات اللي عايز تشغلها',
       channelsWantedErr: 'اختار قناة واحدة على الأقل',
-      channelsWantedOptions: { whatsapp: 'واتساب', website: 'شات الموقع', email: 'الإيميل' },
+      channelsWantedOptions: { whatsapp: 'واتساب', website: 'شات الموقع', messenger: 'ماسنجر', instagram: 'انستجرام', email: 'الإيميل' },
       questions: 'أسئلة لفريق المبيعات (اختياري)',
       questionsPh: 'أي حاجة عايز تسألها قبل التسجيل',
     },
