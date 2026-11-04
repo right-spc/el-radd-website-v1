@@ -3,7 +3,6 @@ import { Link, useLocation } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
 import Logo from './Logo.jsx'
 import { IconClose, IconMenu } from './Icons.jsx'
-import { openElradd } from '../chat.js'
 
 export default function Header() {
   const { t, toggle } = useLang()
@@ -73,13 +72,12 @@ export default function Header() {
           >
             {t.langToggle}
           </button>
-          <button
-            type="button"
-            onClick={openElradd}
+          <Link
+            to="/signup"
             className="hidden min-h-[44px] items-center justify-center rounded-full bg-primary px-5 font-bold text-white shadow-sm transition hover:bg-primary-2 active:scale-[0.98] sm:inline-flex"
           >
             {t.header.cta}
-          </button>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen(true)}
@@ -116,13 +114,12 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <button
-              type="button"
-              onClick={openElradd}
+            <Link
+              to="/signup"
               className="mt-4 inline-flex min-h-[52px] items-center justify-center rounded-full bg-primary px-6 text-lg font-bold text-white shadow-sm transition hover:bg-primary-2"
             >
               {t.header.cta}
-            </button>
+            </Link>
           </nav>
       </div>
     )}
