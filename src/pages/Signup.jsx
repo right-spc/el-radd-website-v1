@@ -266,6 +266,10 @@ export default function Signup() {
                         {s.consents.termsRead}{' '}
                         <Link to="/terms" target="_blank" rel="noopener noreferrer" className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary">
                           {s.consents.agreeLink}
+                        </Link>{' '}
+                        {s.consents.andJoin}
+                        <Link to="/privacy" target="_blank" rel="noopener noreferrer" className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary">
+                          {s.consents.privacyLink}
                         </Link>
                       </span>
                     </label>

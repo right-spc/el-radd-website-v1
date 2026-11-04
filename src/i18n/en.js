@@ -389,7 +389,8 @@ export default {
     },
     consents: {
       termsRead: 'I confirm I have read and understood the',
-      s1Err: 'Please accept the terms and the marketing consent first',
+      andJoin: 'and ',
+      s1Err: 'Please accept the terms, the privacy policy, and the marketing consent first',
       marketing: "I agree to receive news and offers about Elradd's own services only — I can opt out at any time.",
       agree: 'I agree to the',
       agreeLink: 'Terms of Service',
