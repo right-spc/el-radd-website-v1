@@ -414,7 +414,6 @@ export default {
   },
   footer: {
     tagline: 'سيب الرد علينا',
-    whatsappCta: 'كلمنا واتساب',
     exploreLabel: 'استكشف',
     legalLabel: 'قانوني',
     explore: [
@@ -429,7 +428,7 @@ export default {
       { label: 'شروط عرض المواقع', to: '/legal/website-2026-offer' },
     ],
     copyright: '© ٢٠٢٦ الرد — جميع الحقوق محفوظة',
-    company: 'Right Space — Cairo, Egypt',
+    serviceLine: 'A Right Space Service',
   },
 
 }

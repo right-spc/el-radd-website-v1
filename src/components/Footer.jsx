@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
 import Logo from './Logo.jsx'
-import WhatsAppCta from './WhatsAppCta.jsx'
 
 function FooterColumn({ label, links }) {
   return (
@@ -35,9 +34,7 @@ export default function Footer() {
               <Logo light />
             </Link>
             <p className="mt-4 text-lg font-extrabold text-highlight">{t.footer.tagline}</p>
-            <div className="mt-6">
-              <WhatsAppCta label={t.footer.whatsappCta} />
-            </div>
+            <p className="mt-2 text-sm font-bold text-white/60">{t.footer.serviceLine}</p>
           </div>
 
           {/* explore */}
@@ -47,19 +44,8 @@ export default function Footer() {
           <FooterColumn label={t.footer.legalLabel} links={t.footer.legal} />
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-white/15 pt-6 text-sm text-white/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 border-t border-white/15 pt-6 text-sm text-white/60">
           <span>{t.footer.copyright}</span>
-          <span>
-            <a
-              href="https://rightspc.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 transition hover:text-white/85"
-            >
-              Right Space
-            </a>{' '}
-            — Cairo, Egypt
-          </span>
         </div>
       </div>
     </footer>

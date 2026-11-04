@@ -415,7 +415,6 @@ export default {
   },
   footer: {
     tagline: 'Leave the replies to us',
-    whatsappCta: 'WhatsApp',
     exploreLabel: 'Explore',
     legalLabel: 'Legal',
     explore: [
@@ -430,7 +429,7 @@ export default {
       { label: 'Website offer terms', to: '/legal/website-2026-offer' },
     ],
     copyright: '© 2026 El Radd — All rights reserved',
-    company: 'Right Space — Cairo, Egypt',
+    serviceLine: 'A Right Space Service',
   },
 
 }
