@@ -344,7 +344,7 @@ export default {
       emailPh: 'you@example.com',
       channel: 'أحسن قناة للتواصل معاك',
       channelErr: 'اختار قناة التواصل الأول',
-      channels: { whatsapp: 'واتساب', call: 'اتصال', email: 'إيميل' },
+      channels: { whatsapp: 'واتساب', call: 'اتصال' },
       bestTime: 'الوقت المناسب للتواصل (اختياري)',
       bestTimePh: 'مثلا: بعد الخامسة العصر',
     },

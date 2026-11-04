@@ -345,7 +345,7 @@ export default {
       emailPh: 'you@example.com',
       channel: 'Preferred contact channel',
       channelErr: 'Pick a contact channel first',
-      channels: { whatsapp: 'WhatsApp', call: 'Phone call', email: 'Email' },
+      channels: { whatsapp: 'WhatsApp', call: 'Phone call' },
       bestTime: 'Best time to reach you (optional)',
       bestTimePh: 'e.g. after 5 PM',
     },
