@@ -13,7 +13,7 @@ export function submitLead(payload) {
   //   name, phone, email?, preferredChannel, bestTime?,
   //   businessName, industry, city?, businessSize?, hasWebsite?, websiteUrl?,
   //   currentChannels: [],
-//   plan, channelsWanted: [], volume?, notes, questions?,
+//   plan, channelsWanted: [], notes?, questions?,
 //   marketingConsent,
 //   submittedAt,
   // }

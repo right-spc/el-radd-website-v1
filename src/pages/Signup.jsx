@@ -67,8 +67,6 @@ export default function Signup() {
     currentChannels: [],
     plan: ['guard', 'agent', 'istiqbal'].includes(planParam) ? planParam : 'unsure',
     channelsWanted: [],
-    volume: '',
-    notes: '',
     questions: '',
   })
 
@@ -92,7 +90,6 @@ export default function Signup() {
     } else if (idx === 2) {
       if (!fields.plan) errs.plan = s.request.planErr
       if (!fields.channelsWanted.length) errs.channelsWanted = s.request.channelsWantedErr
-      if (!fields.notes.trim()) errs.notes = s.request.notesErr
     }
     setErrors(errs)
     return !Object.keys(errs).length
@@ -395,27 +392,6 @@ export default function Signup() {
                         </Pill>
                       ))}
                     </div>
-                  </Field>
-                  <Field label={s.request.volume}>
-                    <div className="flex flex-wrap gap-2">
-                      {Object.entries(s.request.volumes).map(([key, label]) => (
-                        <Pill key={key} active={fields.volume === key} onClick={() => setFields((f) => ({ ...f, volume: key }))}>
-                          {label}
-                        </Pill>
-                      ))}
-                    </div>
-                  </Field>
-                  <Field label={s.request.notes} error={errors.notes}>
-                    <textarea
-                      id="su-notes"
-                      value={fields.notes}
-                      onChange={setField('notes')}
-                      placeholder={s.request.notesPh}
-                      rows={4}
-                      className={`resize-y rounded-xl border bg-white px-4 py-3 text-[16px] leading-relaxed text-ink transition placeholder:text-ink/40 focus:outline-none ${
-                        errors.notes ? 'border-red-400' : 'border-ink/15 focus:border-primary-2'
-                      }`}
-                    />
                   </Field>
                   <Field label={s.request.questions}>
                     <textarea
