@@ -50,7 +50,7 @@ export default function Signup() {
   const [step, setStep] = useState(0)
   const [submitted, setSubmitted] = useState(false)
   const [errors, setErrors] = useState({})
-  const [consents, setConsents] = useState({ terms: false, acknowledge: false, privacy: false })
+  const [consents, setConsents] = useState({ step1Terms: false, marketing: false, terms: false, acknowledge: false, privacy: false })
   const [consentErr, setConsentErr] = useState(false)
   const [fields, setFields] = useState({
     name: '',
@@ -85,6 +85,7 @@ export default function Signup() {
       if (!fields.name.trim()) errs.name = s.contact.nameErr
       if (!isEgyptianMobile(fields.phone)) errs.phone = s.contact.phoneErr
       if (!fields.preferredChannel) errs.preferredChannel = s.contact.channelErr
+      if (!consents.step1Terms || !consents.marketing) errs.s1Consent = s.consents.s1Err
     } else if (idx === 1) {
       if (!fields.businessName.trim()) errs.businessName = s.business.businessNameErr
       if (!fields.industry) errs.industry = s.business.industryErr
@@ -120,6 +121,7 @@ export default function Signup() {
       source: 'onboarding',
       lang,
       ...fields,
+      marketingConsent: consents.marketing,
       submittedAt: new Date().toISOString(),
     })
     // NOTE: nothing transmitted yet — submission destination pending (see src/lead.js)
@@ -252,6 +254,32 @@ export default function Signup() {
                       className={inputCls}
                     />
                   </Field>
+                  <div className="mt-1 flex flex-col gap-2.5 border-t border-ink/10 pt-4">
+                    <label className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        checked={consents.step1Terms}
+                        onChange={() => setConsents((c) => ({ ...c, step1Terms: !c.step1Terms }))}
+                        className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
+                      />
+                      <span className="text-sm font-semibold leading-relaxed text-ink/80">
+                        {s.consents.termsRead}{' '}
+                        <Link to="/terms" target="_blank" rel="noopener noreferrer" className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary">
+                          {s.consents.agreeLink}
+                        </Link>
+                      </span>
+                    </label>
+                    <label className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        checked={consents.marketing}
+                        onChange={() => setConsents((c) => ({ ...c, marketing: !c.marketing }))}
+                        className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
+                      />
+                      <span className="text-sm font-semibold leading-relaxed text-ink/80">{s.consents.marketing}</span>
+                    </label>
+                    {errors.s1Consent && <p className={errCls}>{errors.s1Consent}</p>}
+                  </div>
                 </>
               )}
 

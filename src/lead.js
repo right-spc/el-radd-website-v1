@@ -13,8 +13,9 @@ export function submitLead(payload) {
   //   name, phone, email?, preferredChannel, bestTime?,
   //   businessName, industry, city?, businessSize?, hasWebsite?, websiteUrl?,
   //   currentChannels: [],
-  //   plan, channelsWanted: [], volume?, notes, questions?,
-  //   submittedAt,
+//   plan, channelsWanted: [], volume?, notes, questions?,
+//   marketingConsent,
+//   submittedAt,
   // }
   return Promise.resolve({ ok: true })
 }
