@@ -12,6 +12,7 @@ export function submitLead(payload) {
   //   lang: 'ar' | 'en',
   //   name, phone, email?, preferredChannel, bestTime?,
   //   businessName, industry, city?, businessSize?, hasWebsite?, websiteUrl?,
+//   websiteOfferInterest?,
   //   currentChannels: [],
 //   plan, channelsWanted: [], notes?, questions?,
 //   marketingConsent,

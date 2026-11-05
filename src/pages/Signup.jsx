@@ -64,6 +64,7 @@ export default function Signup() {
     businessSize: '',
     hasWebsite: 'no',
     websiteUrl: '',
+    websiteOfferInterest: '',
     currentChannels: [],
     plan: ['guard', 'agent', 'istiqbal'].includes(planParam) ? planParam : 'unsure',
     channelsWanted: [],
@@ -346,6 +347,26 @@ export default function Signup() {
                         placeholder={s.business.websiteUrlPh}
                         className={`${inputCls} text-right`}
                       />
+                    </Field>
+                  )}
+                  {fields.hasWebsite === 'no' && (
+                    <Field label={s.business.offerInterest}>
+                      <div className="flex flex-wrap gap-2">
+                        <Pill active={fields.websiteOfferInterest === 'yes'} onClick={() => setFields((f) => ({ ...f, websiteOfferInterest: 'yes' }))}>
+                          {s.business.offerOptions.yes}
+                        </Pill>
+                        <Pill active={fields.websiteOfferInterest === 'no'} onClick={() => setFields((f) => ({ ...f, websiteOfferInterest: 'no' }))}>
+                          {s.business.offerOptions.no}
+                        </Pill>
+                      </div>
+                      <Link
+                        to="/website"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-2 inline-flex items-center text-sm font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary"
+                      >
+                        {s.business.offerLink}
+                      </Link>
                     </Field>
                   )}
                   <Field label={s.business.currentChannels}>
