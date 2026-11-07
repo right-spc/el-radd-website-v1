@@ -42,7 +42,7 @@ export default function Footer() {
   return (
     <footer className="bg-primary text-white">
       <div className="mx-auto max-w-6xl px-4 py-14 md:py-16">
-        <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr]">
+        <div className="grid gap-12 md:grid-cols-[1.5fr_1fr_1fr_1.6fr]">
           {/* brand */}
           <div>
             <Link to="/" aria-label="Elradd" className="inline-block">
@@ -57,16 +57,12 @@ export default function Footer() {
 
           {/* legal */}
           <FooterColumn label={t.footer.legalLabel} links={t.footer.legal} />
-        </div>
 
-        {/* newsletter */}
-        <div className="mt-12 rounded-card border border-white/10 bg-white/5 p-6 md:p-7">
-          <div className="md:flex md:items-center md:justify-between md:gap-10">
-            <div className="shrink-0">
-              <h3 className="text-lg font-extrabold text-white">{n.header}</h3>
-              <p className="mt-1 text-sm text-white/70">{n.sub}</p>
-            </div>
-            <form onSubmit={submit} noValidate className="mt-4 flex w-full flex-col gap-3 sm:flex-row md:mt-0 md:max-w-md">
+          {/* newsletter */}
+          <div className="rounded-card border border-white/10 bg-white/5 p-5 md:p-6">
+            <h3 className="text-lg font-extrabold text-white">{n.header}</h3>
+            <p className="mt-1 text-sm text-white/70">{n.sub}</p>
+            <form onSubmit={submit} noValidate className="mt-4 flex flex-col gap-3">
               <input
                 type="email"
                 dir="ltr"
@@ -78,31 +74,31 @@ export default function Footer() {
                   setSubscribed(false)
                 }}
                 placeholder={n.placeholder}
-                className={`h-11 flex-1 rounded-full border bg-white/10 px-4 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-highlight ${error ? 'border-highlight' : 'border-white/20'}`}
+                className={`h-11 w-full rounded-full border bg-white/10 px-4 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-highlight ${error ? 'border-highlight' : 'border-white/20'}`}
               />
               <button
                 type="submit"
-                className={`h-11 shrink-0 rounded-full px-7 text-sm font-extrabold text-ink transition ${subscribed ? 'bg-white' : 'bg-highlight hover:opacity-90'}`}
+                className={`h-11 w-full rounded-full text-sm font-extrabold text-ink transition ${subscribed ? 'bg-white' : 'bg-highlight hover:opacity-90'}`}
               >
                 {subscribed ? n.done : n.cta}
               </button>
             </form>
+            {error && <p className="mt-2 text-xs font-bold text-highlight">{n.error}</p>}
+            <p className="mt-4 text-xs leading-relaxed text-white/60">
+              {n.notePre}
+              <Link to="/website" className="font-extrabold text-highlight transition hover:text-white">
+                {n.noteLink}
+              </Link>
+              {n.notePost}
+            </p>
+            <p className="mt-1.5 text-xs text-white/40">
+              {n.consentPre}
+              <Link to="/privacy" className="underline underline-offset-2 transition hover:text-white/70">
+                {n.consentLink}
+              </Link>
+              .
+            </p>
           </div>
-          {error && <p className="mt-2 text-xs font-bold text-highlight">{n.error}</p>}
-          <p className="mt-4 text-xs leading-relaxed text-white/60">
-            {n.notePre}
-            <Link to="/website" className="font-extrabold text-highlight transition hover:text-white">
-              {n.noteLink}
-            </Link>
-            {n.notePost}
-          </p>
-          <p className="mt-1.5 text-xs text-white/40">
-            {n.consentPre}
-            <Link to="/privacy" className="underline underline-offset-2 transition hover:text-white/70">
-              {n.consentLink}
-            </Link>
-            .
-          </p>
         </div>
 
         <div className="mt-12 border-t border-white/15 pt-6 text-sm text-white/60">
