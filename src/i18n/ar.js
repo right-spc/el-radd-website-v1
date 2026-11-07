@@ -432,7 +432,7 @@ export default {
       { label: 'شروط عرض المواقع', to: '/legal/website-2026-offer' },
     ],
     copyright: '© ٢٠٢٦ الرد — جميع الحقوق محفوظة',
-    serviceLine: 'A Right Space Service',
+    serviceLine: 'من خدمات رايت سبيس',
   },
 
 }
