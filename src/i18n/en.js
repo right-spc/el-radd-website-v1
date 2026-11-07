@@ -434,6 +434,19 @@ export default {
     ],
     copyright: '© 2026 El Radd — All rights reserved',
     serviceLine: 'A Right Space Service',
+    newsletter: {
+      header: 'Be the first to know',
+      sub: 'Leave your email and we will send you offers and updates the moment they drop.',
+      placeholder: 'you@example.com',
+      cta: 'Subscribe',
+      done: 'Subscribed ✓',
+      error: 'Enter a valid email first',
+      notePre: 'In the meantime, check out the ',
+      noteLink: 'website offer with Qubix Agency',
+      notePost: ' — a full site at EGP 6,999, first year of hosting on us.',
+      consentPre: 'By subscribing you agree to the ',
+      consentLink: 'Privacy Policy',
+    },
   },
 
 }

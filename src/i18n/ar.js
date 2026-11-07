@@ -433,6 +433,19 @@ export default {
     ],
     copyright: '© ٢٠٢٦ الرد — جميع الحقوق محفوظة',
     serviceLine: 'من خدمات رايت سبيس',
+    newsletter: {
+      header: 'خليك أول واحد يعرف',
+      sub: 'سيب إيميلك ونبعتلك العروض والجديد أول ما ينزل.',
+      placeholder: 'you@example.com',
+      cta: 'اشترك',
+      done: 'تم الاشتراك ✓',
+      error: 'اكتب إيميل صحيح الأول',
+      notePre: 'في الوقت ده، شوف ',
+      noteLink: 'عرض المواقع بالشراكة مع Qubix Agency',
+      notePost: ' — موقع كامل بـ ٦٬٩٩٩ ج.م والاستضافة أول سنة علينا.',
+      consentPre: 'عند الاشتراك أنت توافق على ',
+      consentLink: 'سياسة الخصوصية',
+    },
   },
 
 }
