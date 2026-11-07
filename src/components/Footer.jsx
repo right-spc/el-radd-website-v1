@@ -84,14 +84,7 @@ export default function Footer() {
               </button>
             </form>
             {error && <p className="mt-2 text-xs font-bold text-highlight">{n.error}</p>}
-            <p className="mt-4 text-xs leading-relaxed text-white/60">
-              {n.notePre}
-              <Link to="/website" className="font-extrabold text-highlight transition hover:text-white">
-                {n.noteLink}
-              </Link>
-              {n.notePost}
-            </p>
-            <p className="mt-1.5 text-xs text-white/40">
+            <p className="mt-3 text-xs text-white/40">
               {n.consentPre}
               <Link to="/privacy" className="underline underline-offset-2 transition hover:text-white/70">
                 {n.consentLink}
