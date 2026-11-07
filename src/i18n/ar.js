@@ -436,7 +436,7 @@ export default {
     newsletter: {
       header: 'خليك أول واحد يعرف',
       sub: 'سيب إيميلك ونبعتلك العروض والجديد أول ما ينزل.',
-      placeholder: 'you@example.com',
+      placeholder: 'you@elradd.com',
       cta: 'اشترك',
       done: 'تم الاشتراك ✓',
       error: 'اكتب إيميل صحيح الأول',

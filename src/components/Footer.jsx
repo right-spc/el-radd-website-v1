@@ -74,7 +74,7 @@ export default function Footer() {
                   setSubscribed(false)
                 }}
                 placeholder={n.placeholder}
-                className={`h-11 w-full rounded-full border bg-white/10 px-4 text-sm text-white placeholder:text-white/40 outline-none transition focus:border-highlight ${error ? 'border-highlight' : 'border-white/20'}`}
+                className={`h-11 w-full rounded-full border bg-white/10 px-4 text-sm text-white placeholder:text-center placeholder:text-white/40 outline-none transition focus:border-highlight ${error ? 'border-highlight' : 'border-white/20'}`}
               />
               <button
                 type="submit"

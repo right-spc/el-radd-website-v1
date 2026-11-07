@@ -437,7 +437,7 @@ export default {
     newsletter: {
       header: 'Be the first to know',
       sub: 'Leave your email and we will send you offers and updates the moment they drop.',
-      placeholder: 'you@example.com',
+      placeholder: 'you@elradd.com',
       cta: 'Subscribe',
       done: 'Subscribed ✓',
       error: 'Enter a valid email first',
