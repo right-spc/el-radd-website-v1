@@ -91,7 +91,7 @@
 
 ### 6. Free Hosting (Static Files Only)
 
-6.1 The Free Hosting consists solely of **static file hosting** — HTML, CSS, JavaScript, and image assets. **No database, no backend server, and no dynamic data storage** are included.
+6.1 The Free Hosting consists solely of **static file hosting** — HTML, CSS, JavaScript, and image assets. **No database, no backend server, and no dynamic data storage** are included. The Free Hosting also includes issuance and renewal of an **SSL certificate** for the site for as long as the hosting lasts, so the site is served over encrypted HTTPS at no additional charge.
 
 6.2 Free Hosting is available **only for as long as the Client maintains an active, current, paid El Radd subscription**. The Free Hosting is tied to the live subscription and ceases immediately upon cancellation, lapse, or non-payment of the El Radd plan. It does not convert into a permanent or standalone entitlement.
 

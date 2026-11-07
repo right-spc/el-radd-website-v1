@@ -234,7 +234,7 @@ export default {
       'Raddod live from day one — replying to your customers instantly',
       'Page copywriting + one contact/booking form — included',
       'Mobile-first and fast + basic on-page SEO',
-      'First year of hosting free — we tell you renewal costs before they happen',
+      'First year of hosting free — SSL certificate included — we tell you renewal costs before they happen',
       'Figma file and full source code handed over — yours entirely',
       'The domain in your name — or we buy it for you at EGP 1,800/year',
       'One free revision — extras at EGP 500 · extra page at EGP 1,000',
