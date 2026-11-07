@@ -138,7 +138,10 @@ export default function Website() {
               {w.offerMarketNote}
             </span>
             <p className="text-lg font-extrabold leading-relaxed text-ink">{w.offerTotalLabel}</p>
-            <p className="text-4xl font-extrabold tracking-tight text-primary">{w.offerTotal}</p>
+            <p className="flex flex-wrap items-baseline gap-x-3">
+              <span className="text-xl font-extrabold text-ink/40 line-through">{w.offerTotalBefore}</span>
+              <span className="text-4xl font-extrabold tracking-tight text-primary">{w.offerTotal}</span>
+            </p>
             <Link
               to="/legal/website-2026-offer"
               className="mt-1 inline-flex text-xs font-bold text-ink/50 underline underline-offset-2 transition hover:text-primary"

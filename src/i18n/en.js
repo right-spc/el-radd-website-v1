@@ -242,6 +242,7 @@ export default {
     ],
     termsApply: 'Terms & conditions apply',
     offerTotalLabel: 'Your total',
+    offerTotalBefore: 'EGP 12,000',
     offerTotal: 'EGP 6,999 only',
     offerMarketNote: 'Hosting on our servers: EGP 6,600/year — free with this offer',
     ask: {

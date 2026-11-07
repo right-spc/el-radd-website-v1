@@ -241,7 +241,8 @@ export default {
     ],
     termsApply: 'تطبق الشروط والأحكام',
     offerTotalLabel: 'المجموع عليك',
-    offerTotal: '٦٬٩٩٩ ج.م بس',
+    offerTotalBefore: '١٢٬٠٠٠ ج.م',
+    offerTotal: '٦٬٩٩٩ ج.م فقط',
     offerMarketNote: 'الاستضافة على سيرفراتنا = ٦٬٦٠٠ ج.م في السنة — مجانا مع العرض',
     ask: {
       header: 'عندك سؤال عن موقعك؟',
