@@ -422,7 +422,7 @@ export default {
     exploreLabel: 'Explore',
     legalLabel: 'Legal',
     explore: [
-      { label: 'Try it yourself', to: '/#demo' },
+      { label: 'How it works', to: '/#how' },
       { label: 'Pricing', to: '/#pricing' },
       { label: 'Ready-made website', to: '/website' },
       { label: 'Contact', to: '/contact' },
@@ -436,7 +436,7 @@ export default {
     serviceLine: 'A Right Space Service',
     newsletter: {
       header: 'Be the first to know',
-      sub: 'Leave your email and we will send you offers and updates the moment they drop.',
+      sub: 'Leave your email and we will send you offers and updates.',
       placeholder: 'you@elradd.com',
       cta: 'Subscribe',
       done: 'Subscribed ✓',

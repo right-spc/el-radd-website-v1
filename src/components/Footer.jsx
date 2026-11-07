@@ -49,7 +49,14 @@ export default function Footer() {
               <Logo light />
             </Link>
             <p className="mt-4 text-lg font-extrabold text-highlight">{t.footer.tagline}</p>
-            <p className="mt-2 text-sm font-bold text-white/60">{t.footer.serviceLine}</p>
+            <a
+              href="https://rightspc.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-sm font-bold text-white/60 transition hover:text-white/85 hover:underline hover:underline-offset-2"
+            >
+              {t.footer.serviceLine}
+            </a>
           </div>
 
           {/* explore */}
@@ -62,7 +69,7 @@ export default function Footer() {
           <div className="rounded-card border border-white/10 bg-white/5 p-5 md:p-6">
             <h3 className="text-lg font-extrabold text-white">{n.header}</h3>
             <p className="mt-1 text-sm text-white/70">{n.sub}</p>
-            <form onSubmit={submit} noValidate className="mt-4 flex flex-col gap-3">
+            <form onSubmit={submit} noValidate className="mt-3 flex gap-2">
               <input
                 type="email"
                 dir="ltr"
@@ -74,17 +81,17 @@ export default function Footer() {
                   setSubscribed(false)
                 }}
                 placeholder={n.placeholder}
-                className={`h-11 w-full rounded-full border bg-white/10 px-4 text-sm text-white placeholder:text-center placeholder:text-white/40 outline-none transition focus:border-highlight ${error ? 'border-highlight' : 'border-white/20'}`}
+                className={`h-10 min-w-0 flex-1 rounded-full border bg-white/10 px-3.5 text-sm text-white placeholder:text-center placeholder:text-white/40 outline-none transition focus:border-highlight ${error ? 'border-highlight' : 'border-white/20'}`}
               />
               <button
                 type="submit"
-                className={`h-11 w-full rounded-full text-sm font-extrabold text-ink transition ${subscribed ? 'bg-white' : 'bg-highlight hover:opacity-90'}`}
+                className={`h-10 shrink-0 rounded-full px-5 text-sm font-extrabold text-ink transition ${subscribed ? 'bg-white' : 'bg-highlight hover:opacity-90'}`}
               >
                 {subscribed ? n.done : n.cta}
               </button>
             </form>
             {error && <p className="mt-2 text-xs font-bold text-highlight">{n.error}</p>}
-            <p className="mt-3 text-xs text-white/40">
+            <p className="mt-2.5 text-xs text-white/40">
               {n.consentPre}
               <Link to="/privacy" className="underline underline-offset-2 transition hover:text-white/70">
                 {n.consentLink}

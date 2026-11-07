@@ -421,7 +421,7 @@ export default {
     exploreLabel: 'استكشف',
     legalLabel: 'قانوني',
     explore: [
-      { label: 'جرّبه بنفسك', to: '/#demo' },
+      { label: 'إزاي بيشتغل', to: '/#how' },
       { label: 'الأسعار', to: '/#pricing' },
       { label: 'موقع جاهز', to: '/website' },
       { label: 'تواصل', to: '/contact' },
@@ -435,7 +435,7 @@ export default {
     serviceLine: 'من خدمات رايت سبيس',
     newsletter: {
       header: 'خليك أول واحد يعرف',
-      sub: 'سيب إيميلك ونبعتلك العروض والجديد أول ما ينزل.',
+      sub: 'سيب إيميلك ونبعتلك العروض والجديد.',
       placeholder: 'you@elradd.com',
       cta: 'اشترك',
       done: 'تم الاشتراك ✓',
