@@ -205,7 +205,39 @@ We verify identity using account credentials, email confirmation, or business do
 
 ---
 
-## 12. Cookies and Tracking
+## 12. Marketing Communications
+
+### 12.1 Scope of Marketing Communications
+
+We may use your contact information — including your phone number and/or email address — to send you promotional offers and marketing information about El Radd's services, as well as Right Space services and our other brands, as all of our brands operate under the same license. This includes new services, features, special offers, and plan updates.
+
+### 12.2 Consent Is Entirely Optional
+
+Subscribing to marketing communications is optional, and your service, plan, or account features are never affected in any way whether you are subscribed or unsubscribed. Marketing consent is never a condition of contracting with us or of continuing the service.
+
+### 12.3 How to Unsubscribe
+
+You may withdraw your consent at any time, free of charge, by either of the following:
+
+- **Email:** clicking the "Unsubscribe" button at the bottom of any marketing email.
+- **Text channels:** messaging **STOP** on any of the text channels we contact you on (such as WhatsApp).
+
+You may also unsubscribe by contacting us at legal@elradd.com.
+
+### 12.4 Scope of Unsubscribe
+
+Unsubscribing affects only the source you unsubscribe from, as follows:
+
+- **Unsubscribing via email** stops marketing communications sent to your email address only, and does not extend to your phone number; if you are subscribed to offers via your phone number, those continue as they are.
+- **Messaging STOP via any texting channel** stops marketing communications on all channels tied to that phone number — including WhatsApp, SMS, and offers tied to that number.
+
+### 12.5 Effect of Unsubscribe
+
+Unsubscribing is automated and takes effect immediately, and is fully applied within 24 hours at most from the time of the request. Unsubscribing from marketing communications does not affect operational or contractual messages necessary for the service (such as billing notices or service interruption alerts).
+
+---
+
+## 13. Cookies and Tracking
 
 Our website uses essential cookies necessary for the operation of the site and the Service. We do not use third-party advertising cookies or tracking pixels for behavioral profiling.
 
@@ -213,19 +245,19 @@ Our website chat widget uses session cookies to maintain conversation continuity
 
 ---
 
-## 13. Children's Privacy
+## 14. Children's Privacy
 
 The Service is not directed at children under the age of 18, and we do not knowingly collect personal data from children. If you believe we have inadvertently collected data from a minor, please contact us immediately at legal@elradd.com, and we will delete such data within 72 hours of verification.
 
 ---
 
-## 14. Changes to This Privacy Policy
+## 15. Changes to This Privacy Policy
 
 We may update this Privacy Policy from time to time. If we make material changes, we will notify you by email at least 14 days before the changes take effect. Your continued use of the Service after the effective date of the revised Policy constitutes your acceptance of the changes.
 
 ---
 
-## 15. Contact Us
+## 16. Contact Us
 
 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us at:
 
@@ -240,7 +272,7 @@ Support: support@elradd.com
 
 ---
 
-## 16. Definitions
+## 17. Definitions
 
 - **"Client" or "Account Holder":** The business entity or individual subscribing to El Radd services.
 - **"Customer" or "End-User":** The individual who contacts the Client's business through the Service.
