@@ -222,7 +222,7 @@ You may withdraw your consent at any time, free of charge, by either of the foll
 - **Email:** clicking the "Unsubscribe" button at the bottom of any marketing email.
 - **Text channels:** messaging **STOP** on any of the text channels we contact you on (such as WhatsApp).
 
-You may also unsubscribe by contacting us at legal@elradd.com.
+You may also unsubscribe by contacting us at marketing@elradd.com.
 
 ### 12.4 Scope of Unsubscribe
 
@@ -234,6 +234,10 @@ Unsubscribing affects only the source you unsubscribe from, as follows:
 ### 12.5 Effect of Unsubscribe
 
 Unsubscribing is automated and takes effect immediately, and is fully applied within 24 hours at most from the time of the request. Unsubscribing from marketing communications does not affect operational or contractual messages necessary for the service (such as billing notices or service interruption alerts).
+
+### 12.6 Re-subscribing
+
+If you accept promotional material again by signing up through any form, you are removed from our suppression list and become eligible to receive promotional material again, unless you unsubscribe again.
 
 ---
 
