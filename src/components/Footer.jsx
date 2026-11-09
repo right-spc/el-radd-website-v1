@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
 import Logo from './Logo.jsx'
+import { IconLinkedIn, IconFacebook } from './Icons.jsx'
 
 function FooterColumn({ label, links }) {
   return (
@@ -101,8 +102,28 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/15 pt-6 text-sm text-white/60">
+        <div className="mt-12 flex items-center justify-between border-t border-white/15 pt-6 text-sm text-white/60">
           <span>{t.footer.copyright}</span>
+          <div className="flex items-center gap-2.5">
+            <a
+              href="https://www.linkedin.com/showcase/el-radd/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/60 transition hover:border-white/40 hover:text-white"
+            >
+              <IconLinkedIn className="h-4 w-4" />
+            </a>
+            <a
+              href="https://www.facebook.com/elradd.eg"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 text-white/60 transition hover:border-white/40 hover:text-white"
+            >
+              <IconFacebook className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
