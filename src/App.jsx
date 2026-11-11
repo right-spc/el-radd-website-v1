@@ -11,6 +11,7 @@ import Contact from './pages/Contact.jsx'
 import Signup from './pages/Signup.jsx'
 import Privacy from './pages/Privacy.jsx'
 import Terms from './pages/Terms.jsx'
+import Trust from './pages/Trust.jsx'
 import { useLang } from './i18n/LangContext.jsx'
 
 function ScrollAndSeo() {
@@ -64,6 +65,7 @@ export default function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/trust" element={<Trust />} />
           <Route path="*" element={<Landing />} />
         </Routes>
       </main>
