@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { useLang } from '../i18n/LangContext.jsx'
+import { useLang, LANG_TOGGLE_VISIBLE } from '../i18n/LangContext.jsx'
 import Logo from './Logo.jsx'
 import { IconClose, IconMenu } from './Icons.jsx'
 
@@ -65,13 +65,15 @@ export default function Header() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <button
-            type="button"
-            onClick={toggle}
-            className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-ink/15 bg-white px-3 text-sm font-extrabold text-primary transition hover:bg-primary-soft"
-          >
-            {t.langToggle}
-          </button>
+          {LANG_TOGGLE_VISIBLE && (
+            <button
+              type="button"
+              onClick={toggle}
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-full border border-ink/15 bg-white px-3 text-sm font-extrabold text-primary transition hover:bg-primary-soft"
+            >
+              {t.langToggle}
+            </button>
+          )}
           <Link
             to="/signup"
             className="hidden min-h-[44px] items-center justify-center rounded-full bg-primary px-5 font-bold text-white shadow-sm transition hover:bg-primary-2 active:scale-[0.98] sm:inline-flex"

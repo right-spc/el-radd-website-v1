@@ -6,8 +6,13 @@ import en from './en.js'
 const LangContext = createContext(null)
 const dicts = { ar, en }
 
+// Owner decision 2026-11-13: Arabic-only while the EN version is not a focus.
+// Flip to true to bring the AR/EN toggle back (language persistence resumes).
+export const LANG_TOGGLE_VISIBLE = false
+
 export function LangProvider({ children }) {
   const [lang, setLang] = useState(() => {
+    if (!LANG_TOGGLE_VISIBLE) return 'ar'
     try {
       return localStorage.getItem('elradd-lang') || 'ar'
     } catch {
