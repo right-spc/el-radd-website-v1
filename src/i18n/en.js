@@ -192,9 +192,9 @@ export default {
     ],
     trust: 'No hidden fees — everything on one bill',
     siteOffer: {
-      type: 'Special offer · in partnership with Qubix Agency',
+      type: 'Special offer',
       name: "Don't have a website yet?",
-      role: 'With any Elradd plan — Qubix Agency designs a custom website for your business',
+      role: 'With any Elradd plan — we design a custom website for your business',
       price: '6,999',
       unit: 'EGP one-time',
       termsApply: 'Terms & conditions apply',
@@ -231,7 +231,7 @@ export default {
     offerHeader: 'Exactly what you get',
     offer: [
       'A full landing page: header + hero + 3 sections + footer + Terms & Privacy pages',
-      'Hand-made design — in partnership with Qubix Agency',
+      'Hand-made design — tailored to your business',
       'Raddod live from day one — replying to your customers instantly',
       'Page copywriting + one contact/booking form — included',
       'Mobile-first and fast + basic on-page SEO',
@@ -286,7 +286,7 @@ export default {
   },
   websiteOfferTerms: {
     title: 'Website Design Offer — Terms & Conditions',
-    partnership: 'In partnership with Qubix Agency',
+    partnership: 'Special offer',
     publisher: 'Publisher: El Radd',
     effective: 'Effective from the date this offer is published on the El Radd website',
     note: 'The Arabic version is the official and prevailing version — governed by the laws of the Arab Republic of Egypt',
@@ -427,7 +427,7 @@ export default {
     docs: [
       { title: 'Terms of Service', desc: 'The full agreement between you and El Radd — service, payments, responsibilities, and cancellation.', to: '/terms' },
       { title: 'Privacy Policy', desc: 'How we collect, use, and protect your data — and every right you have over it.', to: '/privacy' },
-      { title: 'Website Offer Terms', desc: 'Terms of the website design offer with Qubix Agency — price, delivery, and hosting.', to: '/legal/website-2026-offer' },
+      { title: 'Website Offer Terms', desc: 'Terms of the website design offer — price, delivery, and hosting.', to: '/legal/website-2026-offer' },
     ],
     channelsHeader: 'Policies of the channels we run on',
     channelsSub: 'The service relies on third-party messaging and payment channels — these are their official policies.',
