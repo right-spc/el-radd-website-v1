@@ -221,19 +221,24 @@ export default function Pricing() {
             </ul>
 
             {plan.credits && (
-              <div className="mt-4 flex flex-wrap gap-2 rounded-xl bg-page p-3">
-                {plan.credits.map((c) => {
-                  const CIcon = creditIcons[c.icon]
-                  return (
-                    <span
-                      key={c.icon}
-                      className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-3 py-1 text-xs font-extrabold text-ink/75"
-                    >
-                      {CIcon && <CIcon className="h-[13px] w-[13px] text-primary-2" />}
-                      {c.label} <b className="text-primary">{c.value}</b>
-                    </span>
-                  )
-                })}
+              <div className="mt-4 rounded-xl bg-page p-3">
+                <div className="flex flex-wrap gap-2">
+                  {plan.credits.map((c) => {
+                    const CIcon = creditIcons[c.icon]
+                    return (
+                      <span
+                        key={c.icon}
+                        className="inline-flex items-center gap-1.5 rounded-full border border-ink/10 bg-white px-3 py-1 text-xs font-extrabold text-ink/75"
+                      >
+                        {CIcon && <CIcon className="h-[13px] w-[13px] text-primary-2" />}
+                        {c.label} <b className="text-primary">{c.value}</b>
+                      </span>
+                    )
+                  })}
+                </div>
+                {plan.creditsNote && (
+                  <p className="mt-2 text-[11px] font-bold leading-relaxed text-ink/55">{plan.creditsNote}</p>
+                )}
               </div>
             )}
 

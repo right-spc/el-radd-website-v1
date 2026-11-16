@@ -89,7 +89,7 @@ export default {
     ],
     chips: [
       { icon: 'tone', title: 'بيتعلم نبرتك وصوتك', note: 'يبيع ولا يساعد؟ انت بتحدد' },
-      { icon: 'channels', title: 'دماغ واحدة، كل القنوات', note: 'واتساب · انستجرام · إيميل · الموقع' },
+      { icon: 'channels', title: 'دماغ واحدة، كل القنوات', note: 'واتساب · ماسنجر · إيميل · الموقع' },
       { icon: 'egp', title: 'بالدولار؟ لأ — بالجنيه', note: 'فاتورة واحدة، من غير مفاجآت صرف' },
       { icon: 'support', title: 'دعم مصري', note: 'اللي بيساعدك مصري زيك' },
       { icon: 'handoff', title: 'بيحول لبشري لما يلزم', note: 'مساعد لفريقك، مش بديل عنه' },
@@ -163,17 +163,17 @@ export default {
           text: 'ادفع ٤٥٬٠٠٠ مرة واحدة — شغال ١٤ شهر بدل ١٢، والإعداد والتدريب مجانا (بتوفر ٩٬٥٠٠ ج.م)',
         },
         features: [
-          'بيرد على واتساب وماسنجر وانستجرام والإيميل — من رقمك أنت',
+          'بيرد على واتساب وماسنجر والإيميل — من رقمك أنت',
           'رصيد ١٠٬٠٠٠ شهريًا، بتقسمه على القنوات زي ما تحب',
           'كل مميزات الحارس — بس على كل قنواتك',
         ],
         credits: [
-          { icon: 'whatsapp', label: 'واتساب', value: '٣' },
+          { icon: 'whatsapp', label: 'واتساب', value: '٢' },
           { icon: 'messenger', label: 'ماسنجر', value: '١' },
-          { icon: 'instagram', label: 'انستجرام', value: '١' },
           { icon: 'email', label: 'إيميل', value: '١' },
           { icon: 'webchat', label: 'الموقع', value: '∞' },
         ],
+        creditsNote: 'الرسايل الصوتية على واتساب: ٢ رصيد لكل دقيقة مبدوءة — بحساب ٣ دقايق كحد أقصى للرسالة الواحدة',
         cta: 'نزل الوكيل',
         ask: 'عايز أنزل الوكيل — خطة كل القنوات',
         extras: [
@@ -380,7 +380,7 @@ export default {
       },
       channelsWanted: 'القنوات اللي عايز تشغلها',
       channelsWantedErr: 'اختار قناة واحدة على الأقل',
-      channelsWantedOptions: { whatsapp: 'واتساب', website: 'شات الموقع', messenger: 'ماسنجر', instagram: 'انستجرام', email: 'الإيميل' },
+      channelsWantedOptions: { whatsapp: 'واتساب', website: 'شات الموقع', messenger: 'ماسنجر', email: 'الإيميل' },
       questions: 'أسئلة لفريق المبيعات (اختياري)',
       questionsPh: 'أي حاجة عايز تسألها قبل التسجيل',
     },

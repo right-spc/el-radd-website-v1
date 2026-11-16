@@ -89,7 +89,7 @@ export default {
     ],
     chips: [
       { icon: 'tone', title: 'Learns your tone and voice', note: 'Salesy or helpful? You decide' },
-      { icon: 'channels', title: 'One brain, every channel', note: 'WhatsApp · Instagram · Email · Website' },
+      { icon: 'channels', title: 'One brain, every channel', note: 'WhatsApp · Messenger · Email · Website' },
       { icon: 'egp', title: 'Billed in EGP, not USD', note: 'One invoice, no FX surprises' },
       { icon: 'support', title: 'Egyptian support', note: 'The person helping you is Egyptian too' },
       { icon: 'handoff', title: 'Hands off to humans when needed', note: 'An assistant to your team, not a replacement' },
@@ -163,17 +163,17 @@ export default {
           text: 'Pay EGP 45,000 once — live for 14 months instead of 12, setup & training free (save EGP 9,500)',
         },
         features: [
-          'Replies on WhatsApp, Messenger, Instagram, and email — from your own number',
+          'Replies on WhatsApp, Messenger, and email — from your own number',
           '10,000 monthly credits, split across channels as you like',
           'Everything in The Guard — across all your channels',
         ],
         credits: [
-          { icon: 'whatsapp', label: 'WhatsApp', value: '3' },
+          { icon: 'whatsapp', label: 'WhatsApp', value: '2' },
           { icon: 'messenger', label: 'Messenger', value: '1' },
-          { icon: 'instagram', label: 'Instagram', value: '1' },
           { icon: 'email', label: 'Email', value: '1' },
           { icon: 'webchat', label: 'Website', value: '∞' },
         ],
+        creditsNote: 'WhatsApp voice notes: 2 credits per started minute — capped at 3 minutes per note',
         cta: 'Hire The Agent',
         ask: "I'd like The Agent — the all-channels plan",
         extras: [
@@ -381,7 +381,7 @@ export default {
       },
       channelsWanted: 'Channels to activate',
       channelsWantedErr: 'Pick at least one channel',
-      channelsWantedOptions: { whatsapp: 'WhatsApp', website: 'Website chat', messenger: 'Messenger', instagram: 'Instagram', email: 'Email' },
+      channelsWantedOptions: { whatsapp: 'WhatsApp', website: 'Website chat', messenger: 'Messenger', email: 'Email' },
       questions: 'Questions for the sales team (optional)',
       questionsPh: 'Anything you want to ask before signing up',
     },
