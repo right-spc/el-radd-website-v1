@@ -1,5 +1,4 @@
 **Terms and Conditions — Promotional Website Design Offer**
-*In partnership with Qubix Agency*
 
 **Publisher:** El Radd  
 **Effective Date:** The date this offer is published on the El Radd website.
@@ -97,7 +96,7 @@
 
 6.3 El Radd targets high availability for hosted sites. In the event of proven gross misconduct by El Radd directly causing extended unavailability, El Radd's liability is limited as set out in Section 11.5.
 
-6.4 The Free Hosting runs on El Radd's infrastructure, not Qubix Agency's. It can only be claimed through El Radd's official channels; any direct arrangement with Qubix does not entitle the Client to Free Hosting.
+6.4 The Free Hosting runs exclusively on El Radd's infrastructure and is not provided through any other party. It can only be claimed through El Radd's official channels; any direct arrangement with any other party does not entitle the Client to Free Hosting.
 
 6.5 If the Client cancels their El Radd plan or stops paying, El Radd will notify the Client of the following two options:
 - **(a) Self-host:** Receive the full website files (source code and Figma files) and host them anywhere the Client chooses, at no charge and with no involvement from El Radd.
@@ -141,9 +140,9 @@
 
 9.1 The Client is responsible for providing all required content (text, images, logos, contact details) within the timeline stated in the agreement. Delays caused by the Client extend the delivery schedule on a day-for-day basis.
 
-9.2 **El Radd and Qubix Agency will not source, purchase, or use any stock photography, illustrations, or visual assets.** All images, logos, and visual content must be supplied by the Client.
+9.2 **El Radd — including any partner or subcontractor working under it — will not source, purchase, or use any stock photography, illustrations, or visual assets.** All images, logos, and visual content must be supplied by the Client.
 
-9.3 The Client warrants that they own or have secured all necessary rights to any materials they provide. The Client agrees to indemnify and hold harmless El Radd and Qubix Agency against any claims, damages, liabilities, or legal costs arising from the use of Client-provided materials.
+9.3 The Client warrants that they own or have secured all necessary rights to any materials they provide. The Client agrees to indemnify and hold harmless El Radd and any partner or subcontractor working under it against any claims, damages, liabilities, or legal costs arising from the use of Client-provided materials.
 
 9.4 If the Client loses their delivered files, El Radd will re-send them upon request at no charge.
 
@@ -159,19 +158,19 @@
 
 ---
 
-### 11. Relationship with Qubix Agency, Subcontracting, and Limitation of Liability
+### 11. Subcontracting, Partners, and Limitation of Liability
 
-11.1 El Radd is the **sole contracting party** with the Client for this Offer.
+11.1 El Radd is the **sole contracting party** with the Client for this Offer. The Client obtains the Offer and all of its components exclusively through El Radd and its official channels, and the continuation of ongoing service components — hosting and customer replies — remains tied to an active Elradd plan per Section 6. Work is performed by El Radd's internal employees or through partners and subcontractors operating under El Radd's full responsibility, without prejudice to the Client's rights under this agreement.
 
 11.2 All payments, communications, and instructions must flow exclusively through El Radd's official channels.
 
-11.3 El Radd reserves the right to engage subcontractors, including but not limited to Qubix Agency, to perform portions of the work. El Radd remains solely responsible to the Client for the complete performance of this agreement regardless of subcontractor involvement.
+11.3 El Radd reserves the right to engage subcontractors, commercial partners, or members of its internal team, at its sole discretion, to perform portions of the work. El Radd remains solely responsible to the Client for the complete performance of this agreement, regardless of who performs the work or the involvement of any subcontractor or partner.
 
-11.4 Free Hosting runs on El Radd's infrastructure and is governed solely by El Radd's policies. Qubix Agency assumes no responsibility for hosting, performance, uptime, or continuity of the website.
+11.4 Free Hosting runs on El Radd's infrastructure and is governed solely by El Radd's policies. No partner or subcontractor bears any responsibility toward the Client for hosting, performance, uptime, or continuity of the website.
 
 11.5 **Limitation of Liability:** El Radd's total liability under this agreement is capped at **EGP 5,000** and applies only in cases where gross misconduct by El Radd is proven. Under no circumstances shall El Radd be liable for lost profits, lost revenue, lost business opportunities, or any indirect, consequential, or economic damages.
 
-11.6 Any separate agreement entered into directly between the Client and Qubix Agency (or any third party) falls outside the scope of this Offer, and El Radd assumes no liability for its outcomes.
+11.6 Any separate agreement entered into directly between the Client and any partner, subcontractor, or third party falls outside the scope of this Offer, and El Radd assumes no liability for its outcomes.
 
 ---
 
