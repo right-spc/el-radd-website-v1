@@ -269,7 +269,8 @@ Right Space
 Attn: Data Protection / Legal Department  
 30B Asmaa Fahmi, Al Golf, Nasr City  
 Cairo Governorate 4451422  
-Arab Republic of Egypt
+Arab Republic of Egypt  
+Commercial Register No. 105300200316712
 
 Email: legal@elradd.com  
 Support: support@elradd.com

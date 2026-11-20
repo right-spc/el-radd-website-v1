@@ -462,6 +462,7 @@ export default {
       { label: 'Website offer terms', to: '/legal/website-2026-offer' },
     ],
     copyright: '© 2026 El Radd — All rights reserved',
+    commercialRegister: 'Commercial Register No. 105300200316712',
     serviceLine: 'A Right Space Service',
     newsletter: {
       header: 'Be the first to know',

@@ -461,6 +461,7 @@ export default {
       { label: 'شروط عرض المواقع', to: '/legal/website-2026-offer' },
     ],
     copyright: '© ٢٠٢٦ الرد — جميع الحقوق محفوظة',
+    commercialRegister: 'سجل تجاري رقم: ١٠٥٣٠٠٢٠٠٣١٦٧١٢',
     serviceLine: 'من خدمات رايت سبيس',
     newsletter: {
       header: 'خليك أول واحد يعرف',

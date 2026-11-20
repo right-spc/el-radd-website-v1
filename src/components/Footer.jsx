@@ -103,7 +103,10 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 flex items-center justify-between border-t border-white/15 pt-6 text-sm text-white/60">
-          <span>{t.footer.copyright}</span>
+          <div>
+            <span>{t.footer.copyright}</span>
+            <p className="mt-1 text-xs text-white/40">{t.footer.commercialRegister}</p>
+          </div>
           <div className="flex items-center gap-2.5">
             <a
               href="https://www.linkedin.com/showcase/el-radd/"

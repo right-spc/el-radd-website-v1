@@ -1,6 +1,7 @@
 **Terms and Conditions — Promotional Website Design Offer**
 
 **Publisher:** El Radd  
+**Commercial Register No.:** 105300200316712  
 **Effective Date:** The date this offer is published on the El Radd website.
 
 ---
