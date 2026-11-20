@@ -4,7 +4,7 @@ import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
 import {
   IconWhatsApp,
-  IconInstagram,
+  IconFacebook,
   IconMail,
   IconGlobe,
   IconAudioLines,
@@ -48,7 +48,7 @@ export default function Why() {
     channels: (
       <span className="flex items-center gap-[2px]">
         <IconWhatsApp className="h-3 w-3 text-wa" />
-        <IconInstagram className="h-3 w-3 text-[#b3328c]" />
+        <IconFacebook className="h-3 w-3 text-primary-2" />
         <IconMail className="h-3 w-3 text-ink/45" />
         <IconGlobe className="h-3 w-3 text-primary-2" />
       </span>

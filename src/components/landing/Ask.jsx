@@ -2,13 +2,14 @@ import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
 import { askElradd, openElradd } from '../../chat.js'
-import { IconChatBubble, IconAudioLines, IconWhatsApp, IconBolt, IconCheck, IconHandoff, IconReceipt } from '../Icons.jsx'
+import { IconChatBubble, IconAudioLines, IconWhatsApp, IconBolt, IconCheck, IconHandoff, IconReceipt, IconGlobe } from '../Icons.jsx'
 
 const pillIcons = {
   chat: IconChatBubble,
   tone: IconAudioLines,
   whatsapp: IconWhatsApp,
   bolt: IconBolt,
+  globe: IconGlobe,
   check: IconCheck,
   handoff: IconHandoff,
   receipt: IconReceipt,

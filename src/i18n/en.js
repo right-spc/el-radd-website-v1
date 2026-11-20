@@ -219,7 +219,7 @@ export default {
       { icon: 'tone', text: 'Can I control how it talks?' },
       { icon: 'whatsapp', text: 'Do WhatsApp messages come to my number?' },
       { icon: 'bolt', text: 'How do I set it up?' },
-      { icon: 'check', text: 'Can I try it before paying?' },
+      { icon: 'globe', text: 'What channels do you cover?' },
       { icon: 'handoff', text: 'What if a customer asks something complex?' },
       { icon: 'receipt', text: 'How does payment work?' },
     ],

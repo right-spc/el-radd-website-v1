@@ -219,7 +219,7 @@ export default {
       { icon: 'tone', text: 'أقدر أتحكم في أسلوبه؟' },
       { icon: 'whatsapp', text: 'رسايل الواتساب بتوصل على رقمي؟' },
       { icon: 'bolt', text: 'أشغله إزاي؟' },
-      { icon: 'check', text: 'أقدر أجربه قبل ما أدفع؟' },
+      { icon: 'globe', text: 'إيه القنوات اللي بتغطيها؟' },
       { icon: 'handoff', text: 'لو العميل سأل سؤال معقد؟' },
       { icon: 'receipt', text: 'الدفع بيبقى إزاي؟' },
     ],
