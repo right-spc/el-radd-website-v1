@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../../i18n/LangContext.jsx'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
-import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe, IconWallet, IconCalendar } from '../Icons.jsx'
+import { IconCheck, IconShield, IconWhatsApp, IconBolt, IconInstagram, IconMail, IconGlobe, IconWallet, IconCalendar, IconFacebook } from '../Icons.jsx'
 import { carouselCenterDelta } from '../../carousel.js'
 
 const creditIcons = {
   whatsapp: IconWhatsApp,
   messenger: IconBolt,
+  facebook: IconFacebook,
   instagram: IconInstagram,
   email: IconMail,
   webchat: IconGlobe,
@@ -237,7 +238,11 @@ export default function Pricing() {
                   })}
                 </div>
                 {plan.creditsNote && (
-                  <p className="mt-2 text-[11px] font-bold leading-relaxed text-ink/55">{plan.creditsNote}</p>
+                  <div className="mt-2 space-y-1">
+                    {plan.creditsNote.map((note) => (
+                      <p key={note} className="text-[11px] font-bold leading-relaxed text-ink/55">{note}</p>
+                    ))}
+                  </div>
                 )}
               </div>
             )}
