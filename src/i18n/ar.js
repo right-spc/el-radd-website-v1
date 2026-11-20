@@ -443,6 +443,15 @@ export default {
     ],
     contact: 'سؤال قانوني؟ legal@elradd.com — ولإلغاء الاشتراك التسويقي: marketing@elradd.com',
   },
+  notFoundPage: {
+    code: '٤٠٤',
+    title: 'الصفحة دي مش موجودة',
+    sub: 'يبدو إن الرابط غلط أو الصفحة اتنقلت.',
+    botName: 'ردود',
+    bubble: 'مفيش صفحة بالاسم ده — بس أنا موجود لو حابب تسأل.',
+    homeCta: 'ارجع للرئيسية',
+    askCta: 'اسأل ردود',
+  },
   footer: {
     tagline: 'سيب الرد علينا',
     exploreLabel: 'استكشف',

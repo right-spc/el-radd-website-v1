@@ -444,6 +444,15 @@ export default {
     ],
     contact: 'Legal question? legal@elradd.com — to unsubscribe from marketing: marketing@elradd.com',
   },
+  notFoundPage: {
+    code: '404',
+    title: "This page doesn't exist",
+    sub: 'The link looks wrong, or the page has moved.',
+    botName: 'Raddod',
+    bubble: "No page by that name — but I'm here if you want to ask.",
+    homeCta: 'Back to home',
+    askCta: 'Ask Raddod',
+  },
   footer: {
     tagline: 'Leave the replies to us',
     exploreLabel: 'Explore',
