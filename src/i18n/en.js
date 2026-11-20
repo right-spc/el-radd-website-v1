@@ -214,7 +214,6 @@ export default {
   ask: {
     header: "Don't believe it? Ask it yourself",
     sub: 'Skip the FAQ page — ask Raddod, and he answers.',
-    live: 'Raddod is live — your reply comes in seconds',
     pills: [
       { icon: 'chat', text: 'Is this like a regular chatbot?' },
       { icon: 'tone', text: 'Can I control how it talks?' },

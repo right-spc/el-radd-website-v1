@@ -1,5 +1,4 @@
 import { useLang } from '../../i18n/LangContext.jsx'
-import { useReducedMotion } from '../../hooks/useReducedMotion.js'
 import Section from './Section.jsx'
 import Reveal from '../Reveal.jsx'
 import { askElradd, openElradd } from '../../chat.js'
@@ -17,25 +16,12 @@ const pillIcons = {
 
 export default function Ask() {
   const { t } = useLang()
-  const reduced = useReducedMotion()
 
   return (
     <Section id="ask" className="bg-primary-soft/40">
       <Reveal className="mx-auto max-w-xl text-center">
         <h2 className="text-3xl font-extrabold leading-snug text-primary md:text-4xl">{t.ask.header}</h2>
         <p className="mt-3 text-lg leading-relaxed text-ink/75">{t.ask.sub}</p>
-      </Reveal>
-
-      <Reveal className="mt-6 flex justify-center">
-        <span className="inline-flex items-center gap-2 rounded-full border border-ink/10 bg-white px-4 py-2 text-[13px] font-extrabold text-ink/60 shadow-sm">
-          <span className="relative flex h-2.5 w-2.5">
-            {!reduced && (
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-wa opacity-75" />
-            )}
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-wa" />
-          </span>
-          {t.ask.live}
-        </span>
       </Reveal>
 
       <Reveal className="mt-7 flex flex-wrap justify-center gap-2.5">
