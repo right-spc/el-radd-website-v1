@@ -163,10 +163,10 @@ export default {
           text: 'Pay EGP 45,000 once — live for 14 months instead of 12, setup & training free (save EGP 9,500)',
         },
         features: [
+          'Everything in The Guard — across all your channels',
           'Replies on WhatsApp, Messenger, and email — from your own number',
           'It watches your Facebook comments — deletes spam and replies to customers on its own',
-          '10,000 monthly credits, split across channels as you like',
-          'Everything in The Guard — across all your channels',
+          '10,000 monthly credits — deducted based on usage',
         ],
         credits: [
           { icon: 'whatsapp', label: 'WhatsApp', value: '2' },
