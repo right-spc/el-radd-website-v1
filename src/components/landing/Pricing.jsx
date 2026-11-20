@@ -289,7 +289,8 @@ export default function Pricing() {
                   </span>
                 ))}
               </p>
-              <p className="mt-2 text-2xl font-extrabold text-ink">
+              <p className="mt-2 flex flex-wrap items-baseline gap-x-2.5 text-2xl font-extrabold text-ink">
+                <span className="text-lg font-extrabold text-ink/40 line-through">{p.siteOffer.priceBefore}</span>
                 {p.siteOffer.price} <span className="text-sm font-bold text-ink/50">{p.siteOffer.unit}</span>
               </p>
               <Link
