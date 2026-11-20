@@ -177,7 +177,6 @@ export default {
         ],
         creditsNote: [
           'WhatsApp voice notes: 2 credits per started minute — capped at 3 minutes per note',
-          'Facebook moderation: deleting and ignoring costs no credits — replying to a comment costs 1 credit',
         ],
         cta: 'Hire The Agent',
         ask: "I'd like The Agent — the all-channels plan",
