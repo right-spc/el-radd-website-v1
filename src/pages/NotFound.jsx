@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
 import Reveal from '../components/Reveal.jsx'
@@ -6,6 +7,17 @@ import { openElradd } from '../chat.js'
 export default function NotFound() {
   const { t } = useLang()
   const p = t.notFoundPage
+
+  // tell search engines to drop unknown URLs (true 404 status isn't
+  // possible behind the SPA catch-all rewrite; noindex + Google's
+  // soft-404 detection is the equivalent)
+  useEffect(() => {
+    const meta = document.createElement('meta')
+    meta.name = 'robots'
+    meta.content = 'noindex'
+    document.head.appendChild(meta)
+    return () => meta.remove()
+  }, [])
 
   return (
     <section className="bg-night py-20 md:py-28">
