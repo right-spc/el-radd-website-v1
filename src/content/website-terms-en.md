@@ -2,7 +2,7 @@
 
 **Publisher:** El Radd  
 **Commercial Register No.:** 105300200316712  
-**Effective Date:** The date this offer is published on the El Radd website.
+**Effective Date:** From the date this offer is published on the El Radd website, and it remains in effect until the offer is removed from the site.
 
 ---
 
