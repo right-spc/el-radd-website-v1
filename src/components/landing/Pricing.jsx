@@ -334,17 +334,22 @@ export default function Pricing() {
         ))}
       </div>
 
-      <Reveal className="mt-5 flex flex-wrap items-center justify-center gap-2.5">
+      <Reveal className="mt-6 flex flex-wrap items-center justify-center gap-2.5 pt-1.5">
         {p.payments.map((method) => {
           const Mark = paymentMarks[method.id]
           return (
             <span
               key={method.id}
-              aria-label={method.name}
-              title={method.name}
-              className="inline-flex h-10 min-w-[64px] items-center justify-center rounded-xl border border-ink/10 bg-white px-3 shadow-sm"
+              aria-label={method.soon ? `${method.name} — ${p.paymentsSoon}` : method.name}
+              title={method.soon ? `${method.name} — ${p.paymentsSoon}` : method.name}
+              className={`relative inline-flex h-10 min-w-[64px] items-center justify-center rounded-xl border border-ink/10 bg-white px-3 shadow-sm ${method.soon ? 'opacity-55' : ''}`}
             >
               {Mark && <Mark />}
+              {method.soon && (
+                <span className="absolute -top-2 start-2 rounded-full bg-ink px-1.5 py-px text-[9px] font-extrabold text-white">
+                  {p.paymentsSoon}
+                </span>
+              )}
             </span>
           )
         })}
