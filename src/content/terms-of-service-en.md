@@ -53,7 +53,7 @@ To enable the WhatsApp channel, you must maintain a valid WhatsApp Business acco
 
 ### 3.1 Eligibility
 
-You must be at least 18 years old and capable of forming a binding contract. By using the Service, you represent and warrant that you meet these requirements. The Service is available only to businesses located and operating in Egypt.
+You must be at least 21 years old and capable of forming a binding contract. By using the Service, you represent and warrant that you meet these requirements. The Service is available only to businesses located and operating in Egypt.
 
 ### 3.2 Account Setup
 
