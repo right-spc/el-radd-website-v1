@@ -67,7 +67,7 @@
 
 4.3 If El Radd cancels the project, the deposit will be refunded in full within fourteen (14) business days.
 
-4.4 Payment is accepted via the methods provided by El Radd (Paymob / InstaPay).
+4.4 Payment is accepted via the methods provided by El Radd (Paymob / InstaPay), and any refunded amounts are returned to the same payment method used for the original payment.
 
 ---
 

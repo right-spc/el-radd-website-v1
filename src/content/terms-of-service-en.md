@@ -115,6 +115,8 @@ Subscriptions renew automatically at the selected billing cycle unless cancelled
 
 Setup fees are non-refundable unless the Service is non-functional due to our error for more than 7 days after onboarding.
 
+All refunds are issued back to the same payment method used for the original payment.
+
 ### 4.6 Add-on Credits
 
 Add-on credit packages are available for purchase. They are consumed only after your monthly allowance and never expire while your subscription remains active and paid on time.
