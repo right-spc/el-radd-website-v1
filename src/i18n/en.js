@@ -201,7 +201,7 @@ export default {
       role: 'With any Elradd plan — we design a custom website for your business',
       priceBefore: 'EGP 12,000',
       price: '6,999',
-      unit: 'EGP one-time',
+      unit: 'EGP',
       termsApply: 'Terms & conditions apply',
       features: [
         'Custom design for your business — not a template',
