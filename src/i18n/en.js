@@ -327,7 +327,7 @@ export default {
       nameErr: 'Please write your name first',
       messageErr: 'Please write your message first',
       consentErr: 'Please accept the terms first',
-      consent: 'You acknowledge that submitting this data is for contacting you about your inquiry only',
+      consent: 'You agree that the data you submit will be used to contact you about your inquiry only, in accordance with the',
       consentTerms: 'Terms',
       submit: 'Send message',
       success: 'Message received — we will contact you soon',
