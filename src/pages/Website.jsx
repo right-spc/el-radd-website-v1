@@ -4,6 +4,7 @@ import { useLang } from '../i18n/LangContext.jsx'
 import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { askElradd, openElradd } from '../chat.js'
+import { submitLead, sendViaRaddod } from '../lead.js'
 import { IconCheck, IconChatBubble } from '../components/Icons.jsx'
 
 function MiniBrowser({ url }) {
@@ -71,21 +72,28 @@ function renderWithQubixLink(text) {
 }
 
 export default function Website() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const w = t.websitePage
 
-  // offer lead form — data stays in this component only (no transmission yet)
+  // offer lead form — submits through the shared lead pipeline (see src/lead.js)
   const [fields, setFields] = useState({ name: '', business: '', phone: '', email: '' })
   const [agreeTerms, setAgreeTerms] = useState(false)
   const [acknowledge, setAcknowledge] = useState(false)
   const [agreePrivacy, setAgreePrivacy] = useState(false)
   const [formError, setFormError] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [fallback, setFallback] = useState(null)
+  const [hp, setHp] = useState('')
 
   const setField = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
 
   const onSubmit = (e) => {
     e.preventDefault()
+    // honeypot filled = bot — pretend success, send nothing
+    if (hp.trim()) {
+      setSubmitted(true)
+      return
+    }
     const valid =
       fields.name.trim() && fields.phone.trim() && fields.email.trim() && agreeTerms && acknowledge && agreePrivacy
     if (!valid) {
@@ -93,8 +101,26 @@ export default function Website() {
       return
     }
     setFormError(false)
-    // NOTE: nothing is transmitted — submission destination to be decided
-    setSubmitted(true)
+    setFallback(null)
+    const lead = {
+      source: 'website-offer',
+      lang,
+      name: fields.name,
+      phone: fields.phone,
+      email: fields.email,
+      businessName: fields.business,
+      privacyAccepted: agreePrivacy,
+      submittedAt: new Date().toISOString(),
+    }
+    submitLead(lead).then((r) => {
+      if (r.ok) {
+        setSubmitted(true)
+        return
+      }
+      console.error('Website-offer submission failed:', r.status)
+      const outcome = sendViaRaddod(lead)
+      setFallback(outcome === 'asked' ? 'ai' : 'down')
+    })
   }
 
   return (
@@ -166,6 +192,8 @@ export default function Website() {
             </div>
           ) : (
             <form noValidate onSubmit={onSubmit} className="flex flex-col gap-4">
+              {/* honeypot — invisible to humans, bots fill it and get dropped */}
+              <input type="text" name="website_alt" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
               <div>
                 <label className="mb-1.5 block text-sm font-extrabold text-ink" htmlFor="of-name">{w.form.name}</label>
                 <input
@@ -265,6 +293,21 @@ export default function Website() {
                 <p role="alert" className="rounded-xl bg-red-50 px-4 py-2.5 text-sm font-extrabold text-red-700">
                   {w.form.error}
                 </p>
+              )}
+
+              {fallback && (
+                <div className={`rounded-xl border p-4 text-sm font-bold leading-relaxed ${fallback === 'ai' ? 'border-highlight bg-highlight/15 text-ink' : 'border-red-300 bg-red-50 text-ink'}`}>
+                  <p>{fallback === 'ai' ? t.formFallback.aiNotice : t.formFallback.systemDown}</p>
+                  {fallback === 'down' && (
+                    <button
+                      type="button"
+                      onClick={openElradd}
+                      className="mt-3 inline-flex min-h-[42px] items-center rounded-full bg-primary px-6 text-sm font-extrabold text-white transition hover:bg-primary-2"
+                    >
+                      {t.formFallback.openRaddod}
+                    </button>
+                  )}
+                </div>
               )}
 
               <button

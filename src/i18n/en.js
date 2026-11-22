@@ -454,6 +454,11 @@ export default {
     homeCta: 'Back to home',
     askCta: 'Ask Raddod',
   },
+  formFallback: {
+    aiNotice: 'The form hit an error — we are sending your details through Raddod instead, and it will log them for you.',
+    systemDown: 'Our form system is not working right now — send your details to Raddod in the chat, and it will log them for you on a separate system.',
+    openRaddod: 'Open Raddod',
+  },
   footer: {
     tagline: 'Leave the replies to us',
     exploreLabel: 'Explore',

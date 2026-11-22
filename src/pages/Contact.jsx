@@ -5,15 +5,18 @@ import { useLang } from '../i18n/LangContext.jsx'
 import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { openElradd } from '../chat.js'
+import { submitLead, sendViaRaddod } from '../lead.js'
 import { IconWhatsApp, IconChatBubble, IconMapPin, IconCalendar } from '../components/Icons.jsx'
 
 export default function Contact() {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   const c = t.contactPage
   const [fields, setFields] = useState({ name: '', phone: '', email: '', message: '' })
   const [consent, setConsent] = useState(false)
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
+  const [fallback, setFallback] = useState(null)
+  const [hp, setHp] = useState('')
 
   const setField = (key) => (e) => setFields((f) => ({ ...f, [key]: e.target.value }))
 
@@ -22,6 +25,11 @@ export default function Contact() {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    // honeypot filled = bot — pretend success, send nothing
+    if (hp.trim()) {
+      setSubmitted(true)
+      return
+    }
     const errs = {}
     if (!fields.name.trim()) errs.name = c.form.nameErr
     if (!isEgyptianMobile(fields.phone)) errs.phone = c.form.phoneErr
@@ -29,8 +37,26 @@ export default function Contact() {
     if (!consent) errs.consent = c.form.consentErr
     setErrors(errs)
     if (Object.keys(errs).length) return
-    // NOTE: nothing transmitted yet — submission destination pending
-    setSubmitted(true)
+    setFallback(null)
+    const lead = {
+      source: 'contact',
+      lang,
+      name: fields.name,
+      phone: fields.phone,
+      email: fields.email,
+      message: fields.message,
+      privacyAccepted: consent,
+      submittedAt: new Date().toISOString(),
+    }
+    submitLead(lead).then((r) => {
+      if (r.ok) {
+        setSubmitted(true)
+        return
+      }
+      console.error('Contact submission failed:', r.status)
+      const outcome = sendViaRaddod(lead)
+      setFallback(outcome === 'asked' ? 'ai' : 'down')
+    })
   }
 
   const inputCls =
@@ -117,6 +143,8 @@ export default function Contact() {
               </div>
             ) : (
               <form onSubmit={onSubmit} noValidate className="flex flex-col gap-4">
+                {/* honeypot — invisible to humans, bots fill it and get dropped */}
+                <input type="text" name="website_alt" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
                 <div>
                   <label htmlFor="cf-name" className="block text-sm font-extrabold text-ink">
                     {c.form.name}
@@ -205,6 +233,21 @@ export default function Contact() {
                   </span>
                 </label>
                 {errors.consent && <p className="text-xs font-bold text-red-600">{errors.consent}</p>}
+
+                {fallback && (
+                  <div className={`rounded-xl border p-4 text-sm font-bold leading-relaxed ${fallback === 'ai' ? 'border-highlight bg-highlight/15 text-ink' : 'border-red-300 bg-red-50 text-ink'}`}>
+                    <p>{fallback === 'ai' ? t.formFallback.aiNotice : t.formFallback.systemDown}</p>
+                    {fallback === 'down' && (
+                      <button
+                        type="button"
+                        onClick={openElradd}
+                        className="mt-3 inline-flex min-h-[42px] items-center rounded-full bg-primary px-6 text-sm font-extrabold text-white transition hover:bg-primary-2"
+                      >
+                        {t.formFallback.openRaddod}
+                      </button>
+                    )}
+                  </div>
+                )}
 
                 <button
                   type="submit"

@@ -1,9 +1,10 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
+import { submitLead, submitLeadPartial, sendViaRaddod } from '../lead.js'
+import { openElradd } from '../chat.js'
 import Section from '../components/landing/Section.jsx'
 import Reveal from '../components/Reveal.jsx'
-import { submitLead } from '../lead.js'
 import { whatsAppLink } from '../config.js'
 import { IconCheck, IconWhatsApp } from '../components/Icons.jsx'
 
@@ -49,6 +50,9 @@ export default function Signup() {
 
   const [step, setStep] = useState(0)
   const [submitted, setSubmitted] = useState(false)
+  const [fallback, setFallback] = useState(null)
+  const partialSentRef = useRef(false)
+  const [hp, setHp] = useState('')
   const [errors, setErrors] = useState({})
   const [consents, setConsents] = useState({ step1Terms: false, marketing: false, terms: false, acknowledge: false, privacy: false })
   const [consentErr, setConsentErr] = useState(false)
@@ -97,6 +101,25 @@ export default function Signup() {
 
   const goNext = () => {
     if (!validateStep(step)) return
+    // step-0 safety net: send the partial lead once per session so a visitor
+    // who abandons later still lands in the inbox. Fire-and-forget — it must
+    // never block or error the step transition (silent failure, never the AI).
+    if (step === 0 && !partialSentRef.current) {
+      partialSentRef.current = true
+      submitLeadPartial({
+        source: 'onboarding',
+        lang,
+        name: fields.name,
+        phone: fields.phone,
+        email: fields.email,
+        preferredChannel: fields.preferredChannel,
+        privacyAccepted: consents.step1Terms,
+        marketingConsent: consents.marketing,
+        submittedAt: new Date().toISOString(),
+      }).then((r) => {
+        if (!r.ok) console.error('Partial lead send failed:', r.status)
+      })
+    }
     setStep((v) => Math.min(v + 1, 2))
     window.scrollTo(0, 0)
   }
@@ -108,22 +131,36 @@ export default function Signup() {
 
   const onSubmit = (e) => {
     e.preventDefault()
+    // honeypot filled = bot — pretend success, send nothing
+    if (hp.trim()) {
+      setSubmitted(true)
+      return
+    }
     if (!validateStep(2)) return
     if (!(consents.terms && consents.acknowledge && consents.privacy)) {
       setConsentErr(true)
       return
     }
     setConsentErr(false)
-    submitLead({
+    setFallback(null)
+    const lead = {
       source: 'onboarding',
       lang,
       ...fields,
       marketingConsent: consents.marketing,
+      privacyAccepted: consents.terms,
       submittedAt: new Date().toISOString(),
+    }
+    submitLead(lead).then((r) => {
+      if (r.ok) {
+        setSubmitted(true)
+        window.scrollTo(0, 0)
+        return
+      }
+      console.error('Lead submission failed:', r.status)
+      const outcome = sendViaRaddod(lead)
+      setFallback(outcome === 'asked' ? 'ai' : 'down')
     })
-    // NOTE: nothing transmitted yet — submission destination pending (see src/lead.js)
-    setSubmitted(true)
-    window.scrollTo(0, 0)
   }
 
   const hasPlan = ['guard', 'agent', 'istiqbal'].includes(fields.plan)
@@ -170,6 +207,8 @@ export default function Signup() {
             </div>
           ) : (
             <form onSubmit={onSubmit} noValidate className="flex flex-col gap-5">
+              {/* honeypot — invisible to humans, bots fill it and get dropped */}
+              <input type="text" name="website_alt" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
               {/* progress */}
               <div className="flex items-center justify-center gap-2 pb-1">
                 {stepLabels.map((label, i) => (
@@ -430,6 +469,21 @@ export default function Signup() {
                     {consentErr && <p className={errCls}>{s.consents.consentErr}</p>}
                   </div>
                 </>
+              )}
+
+              {fallback && (
+                <div className={`mt-4 rounded-xl border p-4 text-sm font-bold leading-relaxed ${fallback === 'ai' ? 'border-highlight bg-highlight/15 text-ink' : 'border-red-300 bg-red-50 text-ink'}`}>
+                  <p>{fallback === 'ai' ? t.formFallback.aiNotice : t.formFallback.systemDown}</p>
+                  {fallback === 'down' && (
+                    <button
+                      type="button"
+                      onClick={openElradd}
+                      className="mt-3 inline-flex min-h-[42px] items-center rounded-full bg-primary px-6 text-sm font-extrabold text-white transition hover:bg-primary-2"
+                    >
+                      {t.formFallback.openRaddod}
+                    </button>
+                  )}
+                </div>
               )}
 
               {/* nav */}

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useLang } from '../i18n/LangContext.jsx'
 import Logo from './Logo.jsx'
 import { IconLinkedIn, IconFacebook } from './Icons.jsx'
+import { submitNewsletter } from '../lead.js'
 
 function FooterColumn({ label, links }) {
   return (
@@ -29,16 +30,26 @@ export default function Footer() {
   const [email, setEmail] = useState('')
   const [subscribed, setSubscribed] = useState(false)
   const [error, setError] = useState(false)
+  const [hp, setHp] = useState('')
   const n = t.footer.newsletter
   const submit = (e) => {
     e.preventDefault()
-    // stub — same as the rest of the forms: validates locally, transmits nothing yet
+    // honeypot filled = bot — pretend success, send nothing (fail-silent anyway)
+    if (hp.trim()) {
+      setSubscribed(true)
+      return
+    }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) {
       setError(true)
       return
     }
     setError(false)
+    // fail-silent by owner decision — the visitor always sees success; a
+    // notification failure is logged server-side and never surfaces here
     setSubscribed(true)
+    submitNewsletter(email.trim(), 'footer newsletter form — elradd.com').then((r) => {
+      if (!r.ok) console.error('Newsletter send failed:', r.status)
+    })
   }
   return (
     <footer className="bg-primary text-white">
@@ -71,6 +82,8 @@ export default function Footer() {
             <h3 className="text-lg font-extrabold text-white">{n.header}</h3>
             <p className="mt-1 text-sm text-white/70">{n.sub}</p>
             <form onSubmit={submit} noValidate className="mt-3 flex gap-2">
+              {/* honeypot — invisible to humans, bots fill it and get dropped */}
+              <input type="text" name="website_alt" value={hp} onChange={(e) => setHp(e.target.value)} tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
               <input
                 type="email"
                 dir="ltr"
