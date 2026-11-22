@@ -168,6 +168,7 @@ export default {
           'Replies on WhatsApp, Messenger, and email — from your own number',
           'It watches your Facebook comments — deletes spam and replies to customers on its own',
           '10,000 monthly credits — deducted based on usage',
+          'Unused credits roll over for one extra month',
         ],
         credits: [
           { icon: 'whatsapp', label: 'WhatsApp', value: '2' },
