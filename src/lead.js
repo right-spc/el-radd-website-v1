@@ -77,16 +77,39 @@ const FALLBACK_FIELD_LABELS = {
   },
 }
 
-// Compact one-line rendering of the lead, skipping empty fields.
+// Compact one-line rendering of the lead, skipping empty fields. The visitor
+// sees this as their own chat message, so enum tokens are translated to Arabic
+// (EN language keeps tokens as-is — it's unreachable while AR-only).
+const FALLBACK_VALUE_LABELS = {
+  guard: 'الحارس',
+  agent: 'الوكيل',
+  istiqbal: 'موظف الاستقبال',
+  unsure: 'غير محدد',
+  whatsapp: 'واتساب',
+  messenger: 'ماسنجر',
+  facebook: 'فيسبوك',
+  instagram: 'انستجرام',
+  email: 'إيميل',
+  website: 'الموقع',
+  phone: 'تليفون',
+  yes: 'أيوه',
+  no: 'لا',
+}
+
+function translateToken(value) {
+  return FALLBACK_VALUE_LABELS[String(value).trim()] || String(value).trim()
+}
+
 function buildCompactDetails(lead) {
   const lang = lead.lang === 'en' ? 'en' : 'ar'
   const labels = FALLBACK_FIELD_LABELS[lang]
+  const tr = (v) => (lang === 'ar' ? translateToken(v) : v)
   const parts = []
   const push = (key, value) => {
     if (value === null || value === undefined) return
     const v = Array.isArray(value)
-      ? value.map(String).filter(Boolean).join(' + ')
-      : String(value).trim()
+      ? value.map((item) => tr(String(item).trim())).filter(Boolean).join(' + ')
+      : tr(String(value).trim())
     if (v) parts.push(`${labels[key]}: ${v}`)
   }
   push('name', lead.name)
@@ -119,9 +142,9 @@ export function buildFallbackMessage(lead) {
       : `${formName} failed — here are my details instead:`
   const details = buildCompactDetails(lead)
   const single = `${notice}\n${details}`
-  // widget cap is 500 chars; 400+ goes out as two asks fired together —
-  // the widget queues the second and auto-sends it after ردود replies
-  if (single.length <= 480) return [single]
+  // owner spec: over 400 chars → two asks fired together; the widget queues
+  // the second and auto-sends it after ردود replies to the first
+  if (single.length <= 400) return [single]
   return [notice, details]
 }
 
