@@ -13,6 +13,7 @@ export default function Contact() {
   const c = t.contactPage
   const [fields, setFields] = useState({ name: '', phone: '', email: '', message: '' })
   const [consent, setConsent] = useState(false)
+  const [marketingConsent, setMarketingConsent] = useState(false)
   const [errors, setErrors] = useState({})
   const [submitted, setSubmitted] = useState(false)
   const [fallback, setFallback] = useState(null)
@@ -46,6 +47,7 @@ export default function Contact() {
       email: fields.email,
       message: fields.message,
       privacyAccepted: consent,
+      marketingConsent,
       submittedAt: new Date().toISOString(),
     }
     submitLead(lead).then((r) => {
@@ -223,7 +225,7 @@ export default function Contact() {
                   <span className="text-sm font-semibold leading-relaxed text-ink/80">
                     {c.form.consent}{' '}
                     <Link
-                      to="/terms"
+                      to="/privacy"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-extrabold text-primary-2 underline underline-offset-2 transition hover:text-primary"
@@ -231,6 +233,15 @@ export default function Contact() {
                       {c.form.consentTerms}
                     </Link>
                   </span>
+                </label>
+                <label className="flex items-start gap-3">
+                  <input
+                    type="checkbox"
+                    checked={marketingConsent}
+                    onChange={() => setMarketingConsent((v) => !v)}
+                    className="mt-0.5 h-5 w-5 shrink-0 accent-primary"
+                  />
+                  <span className="text-sm font-semibold leading-relaxed text-ink/80">{c.form.consentMarketing}</span>
                 </label>
                 {errors.consent && <p className="text-xs font-bold text-red-600">{errors.consent}</p>}
 
