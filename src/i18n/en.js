@@ -85,7 +85,8 @@ export default {
       { from: 'customer', text: 'Good evening, how much is the follow-up visit?' },
       { from: 'bot', text: 'Hi Menna 👋 EGP 350 — shall I book you tomorrow at 6?' },
       { from: 'customer', text: 'Confirm please. Do I need to give my details again?' },
-      { from: 'bot', text: "Not at all — your details are saved from the first time ✅ and I'll remind you an hour before", highlight: 'your details are saved from the first time' },
+      { from: 'bot', text: 'Not at all — your details are saved from the first time ✅', highlight: 'your details are saved from the first time' },
+      { from: 'customer', text: 'Then yes — book me with Dr Hana' },
     ],
     chips: [
       { icon: 'tone', title: 'Learns your tone and voice', note: 'Salesy or helpful? You decide' },
