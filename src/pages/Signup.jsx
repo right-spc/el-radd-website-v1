@@ -153,6 +153,8 @@ export default function Signup() {
     }
     submitLead(lead).then((r) => {
       if (r.ok) {
+        // this wizard run is done — a NEW run re-arms the partial email
+        partialSentRef.current = false
         setSubmitted(true)
         window.scrollTo(0, 0)
         return
