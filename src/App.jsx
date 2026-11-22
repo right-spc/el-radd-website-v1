@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Route, Routes, useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Header from './components/Header.jsx'
 import Footer from './components/Footer.jsx'
 import MobileBottomBar from './components/MobileBottomBar.jsx'
@@ -71,6 +72,8 @@ export default function App() {
         </Routes>
       </main>
       <Footer />
+      {/* Vercel Analytics — page views + referrers, tracked on every route change */}
+      <Analytics />
       <MobileBottomBar />
     </div>
   )
