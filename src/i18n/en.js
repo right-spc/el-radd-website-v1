@@ -283,7 +283,7 @@ export default {
     },
     agree1Pre: 'I accept the',
     agree1Link: 'Website design offer terms & conditions',
-    agree2: 'I understand that filling this form does not mean El Radd has taken the job — it will be used to contact me about this offer only',
+    agree2: 'I understand that filling this form does not mean El Radd has agreed to take the job',
     agree3Pre: 'I accept the',
     agree3Privacy: 'Privacy Policy',
     agree3And: 'and',
