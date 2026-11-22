@@ -1,8 +1,8 @@
 import { useLang } from '../i18n/LangContext.jsx'
 
 // Pre-launch status banner shown above the header on every page.
-// OWNER: set SHOW to false when the service fully launches.
-const SHOW = true
+// OWNER: set SHOW to false when the service fully launches. (Taken down 2026-11-23.)
+const SHOW = false
 
 export default function PreLaunchBanner() {
   const { t } = useLang()
